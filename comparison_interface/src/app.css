@@ -1,0 +1,98 @@
+/*
+ * For licensing see accompanying LICENSE file.
+ * Copyright (C) 2024 Apple Inc. All Rights Reserved.
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Disables the back/forward navigation shortcut when scrolling */
+html {
+  overscroll-behavior-x: none;
+}
+
+svg text {
+  user-select: none;
+}
+
+select {
+  @apply border border-gray-300 text-gray-900 text-sm rounded-lg block py-1 px-2;
+  outline: none;
+  background: url("data:image/svg+xml,<svg height='10px' width='10px' viewBox='0 0 16 16' fill='%23000000' xmlns='http://www.w3.org/2000/svg'><path d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/></svg>")
+      no-repeat,
+    #f9fafb;
+  background-position: calc(100% - 0.75rem) center !important;
+  -moz-appearance: none !important;
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  padding-right: 2rem !important;
+}
+
+select:focus {
+  @apply ring-blue-500 border-blue-500;
+}
+
+input[type="checkbox"] {
+  @apply w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded;
+}
+
+input[type="checkbox"]:focus {
+  @apply ring-blue-500 ring-2;
+}
+
+input[type="text"] {
+  @apply border border-gray-300 text-gray-900 text-sm rounded-lg block py-1 px-2;
+}
+
+.primary-btn {
+  @apply py-1 px-3 rounded-full text-white bg-blue-500 text-sm;
+}
+
+.primary-btn:hover:enabled {
+  @apply bg-blue-600;
+}
+
+.primary-btn:disabled {
+  @apply opacity-50;
+}
+
+.secondary-btn {
+  @apply px-3 py-1 rounded-full bg-gray-500 text-white text-sm;
+}
+
+.secondary-btn:hover:enabled {
+  @apply bg-gray-600;
+}
+
+.secondary-btn:disabled {
+  @apply opacity-50;
+}
+
+.tertiary-btn {
+  @apply px-3 py-1 rounded-full bg-gray-200 text-sm;
+}
+
+.tertiary-btn:hover:enabled {
+  @apply bg-gray-300;
+}
+
+.tertiary-btn:disabled {
+  @apply opacity-50;
+}
+
+.pane-border {
+  @apply border-gray-300;
+}
+
+.transparent-btn {
+  @apply px-3 py-1 rounded-full bg-transparent text-gray-800 text-sm;
+}
+
+.transparent-btn:hover:enabled {
+  @apply bg-gray-400/50;
+}
+
+.transparent-btn:disabled {
+  @apply opacity-50;
+}

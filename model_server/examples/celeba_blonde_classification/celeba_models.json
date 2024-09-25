@@ -1,0 +1,223 @@
+{
+  "metrics": [
+    {
+      "name": "Top-1 Accuracy",
+      "min": 0.0,
+      "max": 1.0,
+      "primary": true,
+      "format": ".2%"
+    },
+    {
+      "name": "Top-5 Accuracy",
+      "min": 0.0,
+      "max": 1.0,
+      "primary": true,
+      "format": ".2%"
+    },
+    {
+      "name": "Latency",
+      "min": 0.0,
+      "max": null,
+      "primary": true,
+      "unit": "ms"
+    },
+    {
+      "name": "Model Size",
+      "min": 0.0,
+      "max": null,
+      "primary": true,
+      "format": ".2~s"
+    },
+    {
+      "name": "Sparsity",
+      "min": 0.0,
+      "max": 1.0,
+      "primary": true,
+      "format": ".2%"
+    },
+    {
+      "name": "Epochs",
+      "min": 0.0,
+      "max": null,
+      "primary": true
+    }
+  ],
+  "operations": [
+    {
+      "name": "train",
+      "parameters": ["epochs"]
+    },
+    {
+      "name": "iterative magnitude prune",
+      "parameters": ["epochs", "sparsity", "frequency"]
+    }
+  ],
+  "models": [
+    {
+      "id": "magnitudepruning70",
+      "base": "resnet18trained",
+      "operation": {
+        "name": "iterative magnitude prune",
+        "parameters": {
+          "epochs": 16,
+          "sparsity": 0.7,
+          "frequency": 1
+        }
+      },
+      "tag": "Iterative Magnitude Prune (epochs: 16, sparsity: 0.7, frequency: 1)",
+      "metrics": {
+        "Top-1 Accuracy": 0.8798216611561968,
+        "Top-5 Accuracy": 1.0,
+        "Latency": 81.67731170654297,
+        "Model Size": 17359050,
+        "Sparsity": 0.699999965764305,
+        "Epochs": 16
+      }
+    },
+    {
+      "id": "magnitudepruning99",
+      "base": "resnet18trained",
+      "operation": {
+        "name": "iterative magnitude prune",
+        "parameters": {
+          "epochs": 16,
+          "sparsity": 0.99,
+          "frequency": 1
+        }
+      },
+      "tag": "Iterative Magnitude Prune (epochs: 16, sparsity: 0.99, frequency: 1)",
+      "metrics": {
+        "Top-1 Accuracy": 0.8997094479511071,
+        "Top-5 Accuracy": 1.0,
+        "Latency": 80.30863418579102,
+        "Model Size": 2875964,
+        "Sparsity": 0.9900000102707085,
+        "Epochs": 16
+      }
+    },
+    {
+      "id": "resnet18trained",
+      "base": null,
+      "operation": {
+        "name": "train",
+        "parameters": {
+          "epochs": 1
+        }
+      },
+      "tag": "Train (epochs: 1)",
+      "metrics": {
+        "Top-1 Accuracy": 0.9437932070934776,
+        "Top-5 Accuracy": 1.0,
+        "Latency": 82.66526565551757,
+        "Model Size": 43413842,
+        "Sparsity": 0.0,
+        "Epochs": 15
+      }
+    },
+    {
+      "id": "magnitudepruning50",
+      "base": "resnet18trained",
+      "operation": {
+        "name": "iterative magnitude prune",
+        "parameters": {
+          "epochs": 16,
+          "sparsity": 0.5,
+          "frequency": 1
+        }
+      },
+      "tag": "Iterative Magnitude Prune (epochs: 16, sparsity: 0.5, frequency: 1)",
+      "metrics": {
+        "Top-1 Accuracy": 0.9026149684400361,
+        "Top-5 Accuracy": 1.0,
+        "Latency": 82.22453689575195,
+        "Model Size": 26030394,
+        "Sparsity": 0.5,
+        "Epochs": 16
+      }
+    },
+    {
+      "id": "magnitudepruning10",
+      "base": "resnet18trained",
+      "operation": {
+        "name": "iterative magnitude prune",
+        "parameters": {
+          "epochs": 16,
+          "sparsity": 0.1,
+          "frequency": 1
+        }
+      },
+      "tag": "Iterative Magnitude Prune (epochs: 16, sparsity: 0.1, frequency: 1)",
+      "metrics": {
+        "Top-1 Accuracy": 0.9332231239354775,
+        "Top-5 Accuracy": 1.0,
+        "Latency": 83.05756149291992,
+        "Model Size": 40711177,
+        "Sparsity": 0.09999998288215252,
+        "Epochs": 16
+      }
+    },
+    {
+      "id": "magnitudepruning95",
+      "base": "resnet18trained",
+      "operation": {
+        "name": "iterative magnitude prune",
+        "parameters": {
+          "epochs": 16,
+          "sparsity": 0.95,
+          "frequency": 1
+        }
+      },
+      "tag": "Iterative Magnitude Prune (epochs: 16, sparsity: 0.95, frequency: 1)",
+      "metrics": {
+        "Top-1 Accuracy": 0.910580102194169,
+        "Top-5 Accuracy": 1.0,
+        "Latency": 81.37912216186524,
+        "Model Size": 5603630,
+        "Sparsity": 0.949999965764305,
+        "Epochs": 16
+      }
+    },
+    {
+      "id": "magnitudepruning30",
+      "base": "resnet18trained",
+      "operation": {
+        "name": "iterative magnitude prune",
+        "parameters": {
+          "epochs": 16,
+          "sparsity": 0.3,
+          "frequency": 1
+        }
+      },
+      "tag": "Iterative Magnitude Prune (epochs: 16, sparsity: 0.3, frequency: 1)",
+      "metrics": {
+        "Top-1 Accuracy": 0.9124336238853822,
+        "Top-5 Accuracy": 1.0,
+        "Latency": 82.12439041137695,
+        "Model Size": 33679395,
+        "Sparsity": 0.30000003423569493,
+        "Epochs": 16
+      }
+    },
+    {
+      "id": "magnitudepruning90",
+      "base": "resnet18trained",
+      "operation": {
+        "name": "iterative magnitude prune",
+        "parameters": {
+          "epochs": 16,
+          "sparsity": 0.9,
+          "frequency": 1
+        }
+      },
+      "tag": "Iterative Magnitude Prune (epochs: 16, sparsity: 0.9, frequency: 1)",
+      "metrics": {
+        "Top-1 Accuracy": 0.8743111912634005,
+        "Top-5 Accuracy": 1.0,
+        "Latency": 81.68028259277344,
+        "Model Size": 8130616,
+        "Sparsity": 0.9000000171178475,
+        "Epochs": 16
+      }
+    }
+  ]
+}

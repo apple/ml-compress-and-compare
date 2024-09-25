@@ -1,0 +1,177 @@
+{
+    "metrics": [
+        {
+            "name": "Top-1 Accuracy",
+            "min": 0.0,
+            "max": 1.0,
+            "primary": true,
+            "format": ".2%"
+        },
+        {
+            "name": "Top-5 Accuracy",
+            "min": 0.0,
+            "max": 1.0,
+            "primary": true,
+            "format": ".2%"
+        },
+        {
+            "name": "Latency",
+            "min": 0.0,
+            "max": null,
+            "primary": true,
+            "unit": "ms"
+        },
+        {
+            "name": "Model Size",
+            "min": 0.0,
+            "max": null,
+            "primary": true,
+            "format": ".2~s"
+        },
+        {
+            "name": "Sparsity",
+            "min": 0.0,
+            "max": 1.0,
+            "primary": true,
+            "format": ".2%"
+        },
+        {
+            "name": "Epochs",
+            "min": 0,
+            "max": null,
+            "primary": true,
+            "format": "00"
+        }
+    ],
+    "operations": [
+        {
+            "name": "quantize",
+            "parameters": [
+                "amount",
+                "method"
+            ]
+        },
+        {
+            "name": "gradient prune",
+            "parameters": [
+                "amount"
+            ]
+        },
+        {
+            "name": "magnitude prune",
+            "parameters": [
+                "amount"
+            ]
+        },
+        {
+            "name": "calibrate",
+            "parameters": [
+                "data"
+            ]
+        },
+        {
+            "name": "train",
+            "parameters": [
+                "epochs"
+            ]
+        }
+    ],
+    "models": [
+        {
+            "id": "resnet50trained_quantizeint8",
+            "base": "resnet50trained",
+            "operation": {
+                "name": "quantize",
+                "parameters": {
+                    "amount": "int8",
+                    "method": "quantize"
+                }
+            },
+            "tag": "Quantize (amount: int8, method: quantize)",
+            "metrics": {
+                "Top-1 Accuracy": 0.7885775168864587,
+                "Top-5 Accuracy": 0.9440133483435188,
+                "Latency": 2041.1813110351563,
+                "Model Size": 15526322,
+                "Sparsity": 0,
+                "Epochs": 90
+            }
+        },
+        {
+            "id": "resnet50trained",
+            "base": null,
+            "operation": {
+                "name": "train",
+                "parameters": {
+                    "epochs": 90
+                }
+            },
+            "tag": "",
+            "metrics": {
+                "Top-1 Accuracy": 0.8031923448054037,
+                "Top-5 Accuracy": 0.9512302991315535,
+                "Latency": 18155.1431640625,
+                "Model Size": 95246447,
+                "Sparsity": 0,
+                "Epochs": 90
+            }
+        },
+        {
+            "id": "resnet50trained-magnitudepruning50_compressed-recalibrated",
+            "base": "resnet50trained-magnitudepruning50_compressed",
+            "operation": {
+                "name": "calibrate",
+                "parameters": {
+                    "data": "train batch"
+                }
+            },
+            "tag": "Calibrate (data: train batch)",
+            "metrics": {
+                "Top-1 Accuracy": 0.7501809263428755,
+                "Top-5 Accuracy": 0.9235485686715986,
+                "Latency": 18481.93974609375,
+                "Model Size": 57076933,
+                "Sparsity": 0.5,
+                "Epochs": 90
+            }
+        },
+        {
+            "id": "resnet50trained-magnitudepruning50_compressed",
+            "base": "resnet50trained",
+            "operation": {
+                "name": "magnitude prune",
+                "parameters": {
+                    "amount": 0.5
+                }
+            },
+            "tag": "Pruning (amount: 0.5, method: magnitudepruning)",
+            "metrics": {
+                "Top-1 Accuracy": 0.727665648118366,
+                "Top-5 Accuracy": 0.9120697973624959,
+                "Latency": 18273.93193359375,
+                "Model Size": 57078653,
+                "Sparsity": 0.5,
+                "Epochs": 90
+            }
+        },
+        {
+            "id": "resnet50trained-magnitudepruning50_compressed-retrained",
+            "base": "resnet50trained-magnitudepruning50_compressed",
+            "operation": {
+                "name": "train",
+                "parameters": {
+                    "epochs": 30
+                }
+            },
+            "tag": "Train (epochs: 30)",
+            "metrics": {
+                "Top-1 Accuracy": 0.766283370858797,
+                "Top-5 Accuracy": 0.9308660340945641,
+                "Latency": 17321.52880859375,
+                "Model Size": 57139520,
+                "Sparsity": 0.5,
+                "Epochs": 120
+            }
+        }
+    ]
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 300 300" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Artboard</title>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M150.002101,66 C179.269822,82.699741 199,114.200346 199,150.309181 C199,186.418426 179.269373,217.919337 150.001101,234.618931 C120.730178,217.91862 101,186.418015 101,150.309181 C101,114.416195 120.494999,83.0765098 149.47406,66.301064 Z" id="Combined-Shape" fill-opacity="0.5" fill="#FFFFFF"></path>
+        <circle id="Oval" stroke="#FFFFFF" stroke-width="15" cx="102" cy="150" r="89.5"></circle>
+        <circle id="Oval-Copy" stroke="#FFFFFF" stroke-width="15" cx="198" cy="150" r="89.5"></circle>
+    </g>
+</svg>

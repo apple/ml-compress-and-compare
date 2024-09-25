@@ -1,0 +1,2734 @@
+{
+  "metrics": [
+    {
+      "max": 1.0,
+      "min": 0.0,
+      "name": "Top-1 Accuracy",
+      "primary": true,
+      "format": ".2~%"
+    },
+    {
+      "max": 1.0,
+      "min": 0.0,
+      "name": "Top-5 Accuracy",
+      "format": ".2~%"
+    },
+    {
+      "max": 33.59726409912109,
+      "min": 0.0,
+      "name": "Batch Latency Mean",
+      "primary": true,
+      "unit": "s"
+    },
+    {
+      "max": 35.297459530836115,
+      "min": 0.0,
+      "name": "Batch Latency STD",
+      "unit": "s",
+      "format": ".2~"
+    },
+    {
+      "max": 1017000,
+      "min": 0.0,
+      "name": "Model Size",
+      "primary": true,
+      "format": ".2~s"
+    },
+    {
+      "max": 1.0,
+      "min": 0.0,
+      "name": "Sparsity",
+      "primary": true,
+      "format": ".2~%"
+    },
+    {
+      "max": 1.0,
+      "min": 0.0,
+      "name": "Top-1 Plane Accuracy"
+    },
+    {
+      "max": 1.0,
+      "min": 0.0,
+      "name": "Top-5 Plane Accuracy"
+    },
+    {
+      "max": 1.0,
+      "min": 0.0,
+      "name": "Top-1 Car Accuracy"
+    },
+    {
+      "max": 1.0,
+      "min": 0.0,
+      "name": "Top-5 Car Accuracy"
+    },
+    {
+      "max": 1.0,
+      "min": 0.0,
+      "name": "Top-1 Bird Accuracy"
+    },
+    {
+      "max": 1.0,
+      "min": 0.0,
+      "name": "Top-5 Bird Accuracy"
+    },
+    {
+      "max": 1.0,
+      "min": 0.0,
+      "name": "Top-1 Cat Accuracy"
+    },
+    {
+      "max": 1.0,
+      "min": 0.0,
+      "name": "Top-5 Cat Accuracy"
+    },
+    {
+      "max": 1.0,
+      "min": 0.0,
+      "name": "Top-1 Deer Accuracy"
+    },
+    {
+      "max": 1.0,
+      "min": 0.0,
+      "name": "Top-5 Deer Accuracy"
+    },
+    {
+      "max": 1.0,
+      "min": 0.0,
+      "name": "Top-1 Dog Accuracy"
+    },
+    {
+      "max": 1.0,
+      "min": 0.0,
+      "name": "Top-5 Dog Accuracy"
+    },
+    {
+      "max": 1.0,
+      "min": 0.0,
+      "name": "Top-1 Frog Accuracy"
+    },
+    {
+      "max": 1.0,
+      "min": 0.0,
+      "name": "Top-5 Frog Accuracy"
+    },
+    {
+      "max": 1.0,
+      "min": 0.0,
+      "name": "Top-1 Horse Accuracy"
+    },
+    {
+      "max": 1.0,
+      "min": 0.0,
+      "name": "Top-5 Horse Accuracy"
+    },
+    {
+      "max": 1.0,
+      "min": 0.0,
+      "name": "Top-1 Ship Accuracy"
+    },
+    {
+      "max": 1.0,
+      "min": 0.0,
+      "name": "Top-5 Ship Accuracy"
+    },
+    {
+      "max": 1.0,
+      "min": 0.0,
+      "name": "Top-1 Truck Accuracy"
+    },
+    {
+      "max": 1.0,
+      "min": 0.0,
+      "name": "Top-5 Truck Accuracy"
+    }
+  ],
+  "models": [
+    {
+      "base": "resnet20trained",
+      "id": "resnet20trained-quantizeint8_compressed",
+      "metrics": {
+        "Batch Latency Mean": 17.914780807495116,
+        "Batch Latency STD": 4.514114884938665,
+        "Model Size": 225463,
+        "Sparsity": 0.0,
+        "Top-1 Accuracy": 0.9215964343598055,
+        "Top-1 Bird Accuracy": 0.8821138211382114,
+        "Top-1 Car Accuracy": 0.9604863221884499,
+        "Top-1 Cat Accuracy": 0.8356997971602435,
+        "Top-1 Deer Accuracy": 0.9494949494949495,
+        "Top-1 Dog Accuracy": 0.8711967545638946,
+        "Top-1 Frog Accuracy": 0.938508064516129,
+        "Top-1 Horse Accuracy": 0.9384460141271443,
+        "Top-1 Plane Accuracy": 0.9300911854103343,
+        "Top-1 Ship Accuracy": 0.9552845528455285,
+        "Top-1 Truck Accuracy": 0.9543147208121827,
+        "Top-5 Accuracy": 0.997467585089141,
+        "Top-5 Bird Accuracy": 0.9959349593495935,
+        "Top-5 Car Accuracy": 1.0,
+        "Top-5 Cat Accuracy": 0.9949290060851927,
+        "Top-5 Deer Accuracy": 0.997979797979798,
+        "Top-5 Dog Accuracy": 0.9929006085192698,
+        "Top-5 Frog Accuracy": 1.0,
+        "Top-5 Horse Accuracy": 0.9989909182643795,
+        "Top-5 Plane Accuracy": 0.9959473150962512,
+        "Top-5 Ship Accuracy": 0.9979674796747967,
+        "Top-5 Truck Accuracy": 1.0
+      },
+      "operation": {
+        "name": "Quantize",
+        "parameters": {
+          "amount": "int8"
+        }
+      },
+      "tag": "Quantize (int8)"
+    },
+    {
+      "base": "resnet20trained-magnitudepruning50_compressed-recalibrated-retrained",
+      "id": "resnet20trained-magnitudepruning50-quantizeint8_compressed",
+      "metrics": {
+        "Batch Latency Mean": 13.77699842453003,
+        "Batch Latency STD": 0.21677592407574098,
+        "Model Size": 172177,
+        "Sparsity": 0.5,
+        "Top-1 Accuracy": 0.9204821717990276,
+        "Top-1 Bird Accuracy": 0.8871951219512195,
+        "Top-1 Car Accuracy": 0.9665653495440729,
+        "Top-1 Cat Accuracy": 0.8275862068965517,
+        "Top-1 Deer Accuracy": 0.9444444444444444,
+        "Top-1 Dog Accuracy": 0.8762677484787018,
+        "Top-1 Frog Accuracy": 0.9354838709677419,
+        "Top-1 Horse Accuracy": 0.9283551967709385,
+        "Top-1 Plane Accuracy": 0.9402228976697061,
+        "Top-1 Ship Accuracy": 0.9532520325203252,
+        "Top-1 Truck Accuracy": 0.9451776649746193,
+        "Top-5 Accuracy": 0.9968598055105349,
+        "Top-5 Bird Accuracy": 0.9908536585365854,
+        "Top-5 Car Accuracy": 0.9989868287740629,
+        "Top-5 Cat Accuracy": 0.9929006085192698,
+        "Top-5 Deer Accuracy": 0.997979797979798,
+        "Top-5 Dog Accuracy": 0.9949290060851927,
+        "Top-5 Frog Accuracy": 1.0,
+        "Top-5 Horse Accuracy": 0.9989909182643795,
+        "Top-5 Plane Accuracy": 0.9969604863221885,
+        "Top-5 Ship Accuracy": 0.9979674796747967,
+        "Top-5 Truck Accuracy": 0.9989847715736041
+      },
+      "operation": {
+        "name": "Quantize",
+        "parameters": {
+          "amount": "int8"
+        }
+      },
+      "tag": "Quantize (int8)"
+    },
+    {
+      "base": "resnet20trained-magnitudepruning70-sensitivitypruning50_compressed",
+      "id": "resnet20trained-magnitudepruning70-sensitivitypruning50_compressed-recalibrated",
+      "metrics": {
+        "Batch Latency Mean": 20.861216163635255,
+        "Batch Latency STD": 1.6092175594631224,
+        "Model Size": 271031,
+        "Sparsity": 0.8500022302842869,
+        "Top-1 Accuracy": 0.1002836304700162,
+        "Top-1 Bird Accuracy": 0.0,
+        "Top-1 Car Accuracy": 0.0,
+        "Top-1 Cat Accuracy": 0.0,
+        "Top-1 Deer Accuracy": 1.0,
+        "Top-1 Dog Accuracy": 0.0,
+        "Top-1 Frog Accuracy": 0.0,
+        "Top-1 Horse Accuracy": 0.0,
+        "Top-1 Plane Accuracy": 0.0,
+        "Top-1 Ship Accuracy": 0.0,
+        "Top-1 Truck Accuracy": 0.0,
+        "Top-5 Accuracy": 0.4998987034035656,
+        "Top-5 Bird Accuracy": 1.0,
+        "Top-5 Car Accuracy": 0.0,
+        "Top-5 Cat Accuracy": 1.0,
+        "Top-5 Deer Accuracy": 1.0,
+        "Top-5 Dog Accuracy": 0.0,
+        "Top-5 Frog Accuracy": 0.0,
+        "Top-5 Horse Accuracy": 1.0,
+        "Top-5 Plane Accuracy": 0.0,
+        "Top-5 Ship Accuracy": 1.0,
+        "Top-5 Truck Accuracy": 0.0
+      },
+      "operation": {
+        "name": "Calibrate",
+        "parameters": {
+          "data": "train data"
+        }
+      },
+      "tag": "Calibrate (train data)"
+    },
+    {
+      "base": "resnet20trained-magnitudepruning50_compressed-recalibrated-retrained",
+      "id": "resnet20trained-magnitudepruning50-sensitivitypruning20_compressed",
+      "metrics": {
+        "Batch Latency Mean": 20.778959846496583,
+        "Batch Latency STD": 2.4898795448096465,
+        "Model Size": 526004,
+        "Sparsity": 0.5999985131438087,
+        "Top-1 Accuracy": 0.10869124797406807,
+        "Top-1 Bird Accuracy": 0.0,
+        "Top-1 Car Accuracy": 0.0,
+        "Top-1 Cat Accuracy": 0.0,
+        "Top-1 Deer Accuracy": 0.8929292929292929,
+        "Top-1 Dog Accuracy": 0.002028397565922921,
+        "Top-1 Frog Accuracy": 0.0030241935483870967,
+        "Top-1 Horse Accuracy": 0.1856710393541877,
+        "Top-1 Plane Accuracy": 0.0,
+        "Top-1 Ship Accuracy": 0.0,
+        "Top-1 Truck Accuracy": 0.0,
+        "Top-5 Accuracy": 0.5593598055105349,
+        "Top-5 Bird Accuracy": 0.758130081300813,
+        "Top-5 Car Accuracy": 0.569402228976697,
+        "Top-5 Cat Accuracy": 0.2413793103448276,
+        "Top-5 Deer Accuracy": 1.0,
+        "Top-5 Dog Accuracy": 0.7799188640973631,
+        "Top-5 Frog Accuracy": 0.9566532258064516,
+        "Top-5 Horse Accuracy": 0.9969727547931383,
+        "Top-5 Plane Accuracy": 0.03343465045592705,
+        "Top-5 Ship Accuracy": 0.0,
+        "Top-5 Truck Accuracy": 0.25076142131979695
+      },
+      "operation": {
+        "name": "Prune",
+        "parameters": {
+          "amount": 0.2,
+          "method": "Gradient"
+        }
+      },
+      "tag": "Prune (20.0%)"
+    },
+    {
+      "base": "resnet20trained-gradientpruning90_compressed",
+      "id": "resnet20trained-gradientpruning90_compressed-recalibrated-retrained",
+      "metrics": {
+        "Batch Latency Mean": 20.721760177612303,
+        "Batch Latency STD": 1.9449503912657928,
+        "Model Size": 213235,
+        "Sparsity": 0.9000014868561913,
+        "Top-1 Accuracy": 0.15670583468395463,
+        "Top-1 Bird Accuracy": 0.0,
+        "Top-1 Car Accuracy": 0.0,
+        "Top-1 Cat Accuracy": 0.4148073022312373,
+        "Top-1 Deer Accuracy": 0.3151515151515151,
+        "Top-1 Dog Accuracy": 0.0,
+        "Top-1 Frog Accuracy": 0.0,
+        "Top-1 Horse Accuracy": 0.0,
+        "Top-1 Plane Accuracy": 0.8368794326241135,
+        "Top-1 Ship Accuracy": 0.0,
+        "Top-1 Truck Accuracy": 0.0,
+        "Top-5 Accuracy": 0.545887358184765,
+        "Top-5 Bird Accuracy": 1.0,
+        "Top-5 Car Accuracy": 1.0,
+        "Top-5 Cat Accuracy": 0.4513184584178499,
+        "Top-5 Deer Accuracy": 1.0,
+        "Top-5 Dog Accuracy": 0.0,
+        "Top-5 Frog Accuracy": 0.9969758064516129,
+        "Top-5 Horse Accuracy": 0.0,
+        "Top-5 Plane Accuracy": 0.8419452887537994,
+        "Top-5 Ship Accuracy": 0.0,
+        "Top-5 Truck Accuracy": 0.16548223350253807
+      },
+      "operation": {
+        "name": "Train",
+        "parameters": {
+          "epochs": 50
+        }
+      },
+      "tag": "Train (50)"
+    },
+    {
+      "base": "resnet20trained",
+      "id": "resnet20trained-magnitudepruning70_compressed",
+      "metrics": {
+        "Batch Latency Mean": 20.86772804260254,
+        "Batch Latency STD": 1.9317269120847969,
+        "Model Size": 422752,
+        "Sparsity": 0.7000007434280956,
+        "Top-1 Accuracy": 0.5409238249594813,
+        "Top-1 Bird Accuracy": 0.17479674796747968,
+        "Top-1 Car Accuracy": 0.08814589665653495,
+        "Top-1 Cat Accuracy": 0.1328600405679513,
+        "Top-1 Deer Accuracy": 0.9464646464646465,
+        "Top-1 Dog Accuracy": 0.8427991886409736,
+        "Top-1 Frog Accuracy": 0.6048387096774194,
+        "Top-1 Horse Accuracy": 0.9182643794147326,
+        "Top-1 Plane Accuracy": 0.541033434650456,
+        "Top-1 Ship Accuracy": 0.49796747967479676,
+        "Top-1 Truck Accuracy": 0.6578680203045685,
+        "Top-5 Accuracy": 0.9114667747163695,
+        "Top-5 Bird Accuracy": 0.7896341463414634,
+        "Top-5 Car Accuracy": 0.5329280648429585,
+        "Top-5 Cat Accuracy": 0.8438133874239351,
+        "Top-5 Deer Accuracy": 1.0,
+        "Top-5 Dog Accuracy": 0.9969574036511156,
+        "Top-5 Frog Accuracy": 0.9868951612903226,
+        "Top-5 Horse Accuracy": 1.0,
+        "Top-5 Plane Accuracy": 0.9918946301925026,
+        "Top-5 Ship Accuracy": 0.9796747967479674,
+        "Top-5 Truck Accuracy": 0.9918781725888325
+      },
+      "operation": {
+        "name": "Prune",
+        "parameters": {
+          "amount": 0.7,
+          "method": "Magnitude"
+        }
+      },
+      "tag": "Prune (70.0%)"
+    },
+    {
+      "base": "resnet20trained",
+      "id": "resnet20trained-randompruning50_compressed",
+      "metrics": {
+        "Batch Latency Mean": 23.52620487213135,
+        "Batch Latency STD": 4.447166624142609,
+        "Model Size": 641347,
+        "Sparsity": 0.5,
+        "Top-1 Accuracy": 0.09764991896272285,
+        "Top-1 Bird Accuracy": 0.0,
+        "Top-1 Car Accuracy": 0.0,
+        "Top-1 Cat Accuracy": 0.018255578093306288,
+        "Top-1 Deer Accuracy": 0.0,
+        "Top-1 Dog Accuracy": 0.0,
+        "Top-1 Frog Accuracy": 0.0,
+        "Top-1 Horse Accuracy": 0.0,
+        "Top-1 Plane Accuracy": 0.0,
+        "Top-1 Ship Accuracy": 0.0,
+        "Top-1 Truck Accuracy": 0.9604060913705583,
+        "Top-5 Accuracy": 0.5036466774716369,
+        "Top-5 Bird Accuracy": 0.09857723577235772,
+        "Top-5 Car Accuracy": 1.0,
+        "Top-5 Cat Accuracy": 1.0,
+        "Top-5 Deer Accuracy": 0.0,
+        "Top-5 Dog Accuracy": 0.0,
+        "Top-5 Frog Accuracy": 0.9405241935483871,
+        "Top-5 Horse Accuracy": 0.0,
+        "Top-5 Plane Accuracy": 0.0,
+        "Top-5 Ship Accuracy": 1.0,
+        "Top-5 Truck Accuracy": 1.0
+      },
+      "operation": {
+        "name": "Prune",
+        "parameters": {
+          "amount": 0.5,
+          "method": "Random"
+        }
+      },
+      "tag": "Prune (50.0%)"
+    },
+    {
+      "base": "resnet20trained-magnitudepruning50-sensitivitypruning20_compressed",
+      "id": "resnet20trained-magnitudepruning50-sensitivitypruning20_compressed-recalibrated",
+      "metrics": {
+        "Batch Latency Mean": 19.9159294128418,
+        "Batch Latency STD": 3.0907212896981937,
+        "Model Size": 526015,
+        "Sparsity": 0.5999985131438087,
+        "Top-1 Accuracy": 0.2613452188006483,
+        "Top-1 Bird Accuracy": 0.1676829268292683,
+        "Top-1 Car Accuracy": 0.26443768996960487,
+        "Top-1 Cat Accuracy": 0.16734279918864098,
+        "Top-1 Deer Accuracy": 0.4070707070707071,
+        "Top-1 Dog Accuracy": 0.2231237322515213,
+        "Top-1 Frog Accuracy": 0.17943548387096775,
+        "Top-1 Horse Accuracy": 0.3340060544904137,
+        "Top-1 Plane Accuracy": 0.28976697061803447,
+        "Top-1 Ship Accuracy": 0.11788617886178862,
+        "Top-1 Truck Accuracy": 0.4619289340101523,
+        "Top-5 Accuracy": 0.7585089141004863,
+        "Top-5 Bird Accuracy": 0.6565040650406504,
+        "Top-5 Car Accuracy": 0.7933130699088146,
+        "Top-5 Cat Accuracy": 0.5821501014198783,
+        "Top-5 Deer Accuracy": 0.9474747474747475,
+        "Top-5 Dog Accuracy": 0.7860040567951319,
+        "Top-5 Frog Accuracy": 0.7026209677419355,
+        "Top-5 Horse Accuracy": 0.9515640766902119,
+        "Top-5 Plane Accuracy": 0.779128672745694,
+        "Top-5 Ship Accuracy": 0.5111788617886179,
+        "Top-5 Truck Accuracy": 0.8730964467005076
+      },
+      "operation": {
+        "name": "Calibrate",
+        "parameters": {
+          "data": "train data"
+        }
+      },
+      "tag": "Calibrate (train data)"
+    },
+    {
+      "base": "resnet20trained-randompruning50_compressed",
+      "id": "resnet20trained-randompruning50_compressed-recalibrated-retrained",
+      "metrics": {
+        "Batch Latency Mean": 24.554172706604003,
+        "Batch Latency STD": 3.252956314458304,
+        "Model Size": 641782,
+        "Sparsity": 0.5,
+        "Top-1 Accuracy": 0.8218192868719612,
+        "Top-1 Bird Accuracy": 0.7682926829268293,
+        "Top-1 Car Accuracy": 0.8855116514690983,
+        "Top-1 Cat Accuracy": 0.7515212981744422,
+        "Top-1 Deer Accuracy": 0.8747474747474747,
+        "Top-1 Dog Accuracy": 0.6947261663286004,
+        "Top-1 Frog Accuracy": 0.8377016129032258,
+        "Top-1 Horse Accuracy": 0.8143289606458123,
+        "Top-1 Plane Accuracy": 0.8855116514690983,
+        "Top-1 Ship Accuracy": 0.8485772357723578,
+        "Top-1 Truck Accuracy": 0.8568527918781725,
+        "Top-5 Accuracy": 0.9913897893030794,
+        "Top-5 Bird Accuracy": 0.9949186991869918,
+        "Top-5 Car Accuracy": 0.9949341438703141,
+        "Top-5 Cat Accuracy": 0.9939148073022313,
+        "Top-5 Deer Accuracy": 0.997979797979798,
+        "Top-5 Dog Accuracy": 0.9939148073022313,
+        "Top-5 Frog Accuracy": 0.9889112903225806,
+        "Top-5 Horse Accuracy": 0.9848637739656912,
+        "Top-5 Plane Accuracy": 0.9959473150962512,
+        "Top-5 Ship Accuracy": 0.9857723577235772,
+        "Top-5 Truck Accuracy": 0.9827411167512691
+      },
+      "operation": {
+        "name": "Train",
+        "parameters": {
+          "epochs": 50
+        }
+      },
+      "tag": "Train (50)"
+    },
+    {
+      "base": "resnet20trained-magnitudepruning50_compressed",
+      "id": "resnet20trained-magnitudepruning50_compressed-recalibrated-retrained",
+      "metrics": {
+        "Batch Latency Mean": 33.59726409912109,
+        "Batch Latency STD": 35.297459530836115,
+        "Model Size": 618071,
+        "Sparsity": 0.5,
+        "Top-1 Accuracy": 0.9225081037277147,
+        "Top-1 Bird Accuracy": 0.8790650406504065,
+        "Top-1 Car Accuracy": 0.9625126646403243,
+        "Top-1 Cat Accuracy": 0.8397565922920892,
+        "Top-1 Deer Accuracy": 0.9494949494949495,
+        "Top-1 Dog Accuracy": 0.8762677484787018,
+        "Top-1 Frog Accuracy": 0.9445564516129032,
+        "Top-1 Horse Accuracy": 0.9334006054490414,
+        "Top-1 Plane Accuracy": 0.9361702127659575,
+        "Top-1 Ship Accuracy": 0.959349593495935,
+        "Top-1 Truck Accuracy": 0.9441624365482234,
+        "Top-5 Accuracy": 0.9968598055105349,
+        "Top-5 Bird Accuracy": 0.9939024390243902,
+        "Top-5 Car Accuracy": 0.9989868287740629,
+        "Top-5 Cat Accuracy": 0.9939148073022313,
+        "Top-5 Deer Accuracy": 0.998989898989899,
+        "Top-5 Dog Accuracy": 0.9939148073022313,
+        "Top-5 Frog Accuracy": 1.0,
+        "Top-5 Horse Accuracy": 0.9969727547931383,
+        "Top-5 Plane Accuracy": 0.9949341438703141,
+        "Top-5 Ship Accuracy": 0.9979674796747967,
+        "Top-5 Truck Accuracy": 0.9989847715736041
+      },
+      "operation": {
+        "name": "Train",
+        "parameters": {
+          "epochs": 50
+        }
+      },
+      "tag": "Train (50)"
+    },
+    {
+      "base": "resnet20trained-magnitudepruning50-magnitudepruning50_compressed",
+      "id": "resnet20trained-magnitudepruning50-magnitudepruning50_compressed-recalibrated-retrained",
+      "metrics": {
+        "Batch Latency Mean": 21.088918495178223,
+        "Batch Latency STD": 2.3542687641011963,
+        "Model Size": 379044,
+        "Sparsity": 0.75,
+        "Top-1 Accuracy": 0.9165316045380876,
+        "Top-1 Bird Accuracy": 0.8780487804878049,
+        "Top-1 Car Accuracy": 0.955420466058764,
+        "Top-1 Cat Accuracy": 0.8144016227180527,
+        "Top-1 Deer Accuracy": 0.9272727272727272,
+        "Top-1 Dog Accuracy": 0.8793103448275862,
+        "Top-1 Frog Accuracy": 0.9405241935483871,
+        "Top-1 Horse Accuracy": 0.9323915237134208,
+        "Top-1 Plane Accuracy": 0.9412360688956434,
+        "Top-1 Ship Accuracy": 0.9522357723577236,
+        "Top-1 Truck Accuracy": 0.9441624365482234,
+        "Top-5 Accuracy": 0.9965559157212318,
+        "Top-5 Bird Accuracy": 0.9908536585365854,
+        "Top-5 Car Accuracy": 1.0,
+        "Top-5 Cat Accuracy": 0.9939148073022313,
+        "Top-5 Deer Accuracy": 0.996969696969697,
+        "Top-5 Dog Accuracy": 0.9949290060851927,
+        "Top-5 Frog Accuracy": 1.0,
+        "Top-5 Horse Accuracy": 0.9969727547931383,
+        "Top-5 Plane Accuracy": 0.9959473150962512,
+        "Top-5 Ship Accuracy": 0.9979674796747967,
+        "Top-5 Truck Accuracy": 0.9979695431472081
+      },
+      "operation": {
+        "name": "Train",
+        "parameters": {
+          "epochs": 50
+        }
+      },
+      "tag": "Train (50)"
+    },
+    {
+      "base": "resnet20trained-magnitudepruning50-sensitivitypruning20_compressed",
+      "id": "resnet20trained-magnitudepruning50-sensitivitypruning20_compressed-recalibrated-retrained",
+      "metrics": {
+        "Batch Latency Mean": 20.22577610015869,
+        "Batch Latency STD": 3.773506837919402,
+        "Model Size": 530878,
+        "Sparsity": 0.5999985131438087,
+        "Top-1 Accuracy": 0.8903970826580226,
+        "Top-1 Bird Accuracy": 0.8160569105691057,
+        "Top-1 Car Accuracy": 0.9716312056737588,
+        "Top-1 Cat Accuracy": 0.8286004056795132,
+        "Top-1 Deer Accuracy": 0.9,
+        "Top-1 Dog Accuracy": 0.8245436105476673,
+        "Top-1 Frog Accuracy": 0.9274193548387096,
+        "Top-1 Horse Accuracy": 0.8890010090817356,
+        "Top-1 Plane Accuracy": 0.9108409321175278,
+        "Top-1 Ship Accuracy": 0.9105691056910569,
+        "Top-1 Truck Accuracy": 0.9248730964467005,
+        "Top-5 Accuracy": 0.9961507293354943,
+        "Top-5 Bird Accuracy": 0.9908536585365854,
+        "Top-5 Car Accuracy": 0.9989868287740629,
+        "Top-5 Cat Accuracy": 0.9959432048681541,
+        "Top-5 Deer Accuracy": 0.997979797979798,
+        "Top-5 Dog Accuracy": 0.9959432048681541,
+        "Top-5 Frog Accuracy": 0.9949596774193549,
+        "Top-5 Horse Accuracy": 0.9959636730575177,
+        "Top-5 Plane Accuracy": 0.9979736575481256,
+        "Top-5 Ship Accuracy": 0.9959349593495935,
+        "Top-5 Truck Accuracy": 0.9969543147208122
+      },
+      "operation": {
+        "name": "Train",
+        "parameters": {
+          "epochs": 50
+        }
+      },
+      "tag": "Train (50)"
+    },
+    {
+      "base": "resnet20-quantizeint8_compressed",
+      "id": "resnet20-quantizeint8_compressed-recalibrated",
+      "metrics": {
+        "Batch Latency Mean": 14.661897468566895,
+        "Batch Latency STD": 0.8571344124086966,
+        "Model Size": 243070,
+        "Sparsity": 0.0,
+        "Top-1 Accuracy": 0.09967585089141005,
+        "Top-1 Bird Accuracy": 1.0,
+        "Top-1 Car Accuracy": 0.0,
+        "Top-1 Cat Accuracy": 0.0,
+        "Top-1 Deer Accuracy": 0.0,
+        "Top-1 Dog Accuracy": 0.0,
+        "Top-1 Frog Accuracy": 0.0,
+        "Top-1 Horse Accuracy": 0.0,
+        "Top-1 Plane Accuracy": 0.0,
+        "Top-1 Ship Accuracy": 0.0,
+        "Top-1 Truck Accuracy": 0.0,
+        "Top-5 Accuracy": 0.5063816855753647,
+        "Top-5 Bird Accuracy": 1.0,
+        "Top-5 Car Accuracy": 0.0,
+        "Top-5 Cat Accuracy": 1.0,
+        "Top-5 Deer Accuracy": 0.07676767676767676,
+        "Top-5 Dog Accuracy": 0.0,
+        "Top-5 Frog Accuracy": 1.0,
+        "Top-5 Horse Accuracy": 1.0,
+        "Top-5 Plane Accuracy": 0.0,
+        "Top-5 Ship Accuracy": 0.0,
+        "Top-5 Truck Accuracy": 0.9847715736040609
+      },
+      "operation": {
+        "name": "Calibrate",
+        "parameters": {
+          "data": "train data"
+        }
+      },
+      "tag": "Calibrate (train data)"
+    },
+    {
+      "base": "resnet20trained-randompruning90_compressed",
+      "id": "resnet20trained-randompruning90_compressed-recalibrated",
+      "metrics": {
+        "Batch Latency Mean": 21.325228881835937,
+        "Batch Latency STD": 2.027258747566597,
+        "Model Size": 223481,
+        "Sparsity": 0.9000014868561913,
+        "Top-1 Accuracy": 0.09967585089141005,
+        "Top-1 Bird Accuracy": 0.0,
+        "Top-1 Car Accuracy": 0.0,
+        "Top-1 Cat Accuracy": 0.0,
+        "Top-1 Deer Accuracy": 0.0,
+        "Top-1 Dog Accuracy": 0.0,
+        "Top-1 Frog Accuracy": 0.0,
+        "Top-1 Horse Accuracy": 0.0,
+        "Top-1 Plane Accuracy": 0.0,
+        "Top-1 Ship Accuracy": 1.0,
+        "Top-1 Truck Accuracy": 0.0,
+        "Top-5 Accuracy": 0.5,
+        "Top-5 Bird Accuracy": 1.0,
+        "Top-5 Car Accuracy": 0.0,
+        "Top-5 Cat Accuracy": 0.0,
+        "Top-5 Deer Accuracy": 1.0,
+        "Top-5 Dog Accuracy": 0.0,
+        "Top-5 Frog Accuracy": 0.0,
+        "Top-5 Horse Accuracy": 1.0,
+        "Top-5 Plane Accuracy": 1.0,
+        "Top-5 Ship Accuracy": 1.0,
+        "Top-5 Truck Accuracy": 0.0
+      },
+      "operation": {
+        "name": "Calibrate",
+        "parameters": {
+          "data": "train data"
+        }
+      },
+      "tag": "Calibrate (train data)"
+    },
+    {
+      "base": "resnet20trained-magnitudepruning70-sensitivitypruning20_compressed",
+      "id": "resnet20trained-magnitudepruning70-sensitivitypruning20_compressed-recalibrated-retrained",
+      "metrics": {
+        "Batch Latency Mean": 21.52680950164795,
+        "Batch Latency STD": 3.7978479378173873,
+        "Model Size": 370233,
+        "Sparsity": 0.7599991078862852,
+        "Top-1 Accuracy": 0.6624797406807131,
+        "Top-1 Bird Accuracy": 0.6798780487804879,
+        "Top-1 Car Accuracy": 0.8996960486322189,
+        "Top-1 Cat Accuracy": 0.4746450304259635,
+        "Top-1 Deer Accuracy": 0.5,
+        "Top-1 Dog Accuracy": 0.5567951318458418,
+        "Top-1 Frog Accuracy": 0.7671370967741935,
+        "Top-1 Horse Accuracy": 0.6518668012108981,
+        "Top-1 Plane Accuracy": 0.7335359675785208,
+        "Top-1 Ship Accuracy": 0.6270325203252033,
+        "Top-1 Truck Accuracy": 0.7340101522842639,
+        "Top-5 Accuracy": 0.9742706645056726,
+        "Top-5 Bird Accuracy": 0.9949186991869918,
+        "Top-5 Car Accuracy": 0.9898682877406282,
+        "Top-5 Cat Accuracy": 0.9888438133874239,
+        "Top-5 Deer Accuracy": 0.9808080808080808,
+        "Top-5 Dog Accuracy": 0.9756592292089249,
+        "Top-5 Frog Accuracy": 0.9657258064516129,
+        "Top-5 Horse Accuracy": 0.9495459132189707,
+        "Top-5 Plane Accuracy": 0.9675785207700102,
+        "Top-5 Ship Accuracy": 0.9613821138211383,
+        "Top-5 Truck Accuracy": 0.9685279187817258
+      },
+      "operation": {
+        "name": "Train",
+        "parameters": {
+          "epochs": 50
+        }
+      },
+      "tag": "Train (50)"
+    },
+    {
+      "base": "resnet20trained-magnitudepruning50_compressed",
+      "id": "resnet20trained-magnitudepruning50_compressed-recalibrated",
+      "metrics": {
+        "Batch Latency Mean": 21.11038417816162,
+        "Batch Latency STD": 2.9525722963587784,
+        "Model Size": 616233,
+        "Sparsity": 0.5,
+        "Top-1 Accuracy": 0.9148095623987034,
+        "Top-1 Bird Accuracy": 0.8882113821138211,
+        "Top-1 Car Accuracy": 0.9665653495440729,
+        "Top-1 Cat Accuracy": 0.8062880324543611,
+        "Top-1 Deer Accuracy": 0.9222222222222223,
+        "Top-1 Dog Accuracy": 0.8803245436105477,
+        "Top-1 Frog Accuracy": 0.9304435483870968,
+        "Top-1 Horse Accuracy": 0.9505549949545913,
+        "Top-1 Plane Accuracy": 0.9108409321175278,
+        "Top-1 Ship Accuracy": 0.9552845528455285,
+        "Top-1 Truck Accuracy": 0.9370558375634518,
+        "Top-5 Accuracy": 0.9962520259319287,
+        "Top-5 Bird Accuracy": 0.9939024390243902,
+        "Top-5 Car Accuracy": 0.9979736575481256,
+        "Top-5 Cat Accuracy": 0.9959432048681541,
+        "Top-5 Deer Accuracy": 0.997979797979798,
+        "Top-5 Dog Accuracy": 0.9908722109533469,
+        "Top-5 Frog Accuracy": 0.9979838709677419,
+        "Top-5 Horse Accuracy": 0.9989909182643795,
+        "Top-5 Plane Accuracy": 0.9969604863221885,
+        "Top-5 Ship Accuracy": 0.9939024390243902,
+        "Top-5 Truck Accuracy": 0.9979695431472081
+      },
+      "operation": {
+        "name": "Calibrate",
+        "parameters": {
+          "data": "train data"
+        }
+      },
+      "tag": "Calibrate (train data)"
+    },
+    {
+      "base": "resnet20",
+      "id": "resnet20trained",
+      "metrics": {
+        "Batch Latency Mean": 21.306175994873048,
+        "Batch Latency STD": 2.7379499490367194,
+        "Model Size": 1017000,
+        "Sparsity": 0.0,
+        "Top-1 Accuracy": 0.9217990275526742,
+        "Top-1 Bird Accuracy": 0.8790650406504065,
+        "Top-1 Car Accuracy": 0.9574468085106383,
+        "Top-1 Cat Accuracy": 0.8336713995943205,
+        "Top-1 Deer Accuracy": 0.9535353535353536,
+        "Top-1 Dog Accuracy": 0.8732251521298174,
+        "Top-1 Frog Accuracy": 0.9425403225806451,
+        "Top-1 Horse Accuracy": 0.9404641775983855,
+        "Top-1 Plane Accuracy": 0.9290780141843972,
+        "Top-1 Ship Accuracy": 0.9563008130081301,
+        "Top-1 Truck Accuracy": 0.9522842639593908,
+        "Top-5 Accuracy": 0.9972649918962723,
+        "Top-5 Bird Accuracy": 0.9959349593495935,
+        "Top-5 Car Accuracy": 0.9989868287740629,
+        "Top-5 Cat Accuracy": 0.9959432048681541,
+        "Top-5 Deer Accuracy": 0.997979797979798,
+        "Top-5 Dog Accuracy": 0.9929006085192698,
+        "Top-5 Frog Accuracy": 1.0,
+        "Top-5 Horse Accuracy": 0.9979818365287588,
+        "Top-5 Plane Accuracy": 0.9949341438703141,
+        "Top-5 Ship Accuracy": 0.9989837398373984,
+        "Top-5 Truck Accuracy": 0.9989847715736041
+      },
+      "operation": {
+        "name": "Train",
+        "parameters": {
+          "epochs": 200
+        }
+      },
+      "tag": "Train (200)"
+    },
+    {
+      "base": "resnet20trained-randompruning90_compressed",
+      "id": "resnet20trained-randompruning90_compressed-recalibrated-retrained",
+      "metrics": {
+        "Batch Latency Mean": 21.218389892578124,
+        "Batch Latency STD": 2.118331715384068,
+        "Model Size": 223580,
+        "Sparsity": 0.9000014868561913,
+        "Top-1 Accuracy": 0.3070299837925446,
+        "Top-1 Bird Accuracy": 0.0,
+        "Top-1 Car Accuracy": 0.7213779128672746,
+        "Top-1 Cat Accuracy": 0.2657200811359026,
+        "Top-1 Deer Accuracy": 0.6202020202020202,
+        "Top-1 Dog Accuracy": 0.460446247464503,
+        "Top-1 Frog Accuracy": 0.04133064516129032,
+        "Top-1 Horse Accuracy": 0.012108980827447022,
+        "Top-1 Plane Accuracy": 0.3789260385005066,
+        "Top-1 Ship Accuracy": 0.3556910569105691,
+        "Top-1 Truck Accuracy": 0.2152284263959391,
+        "Top-5 Accuracy": 0.8562601296596435,
+        "Top-5 Bird Accuracy": 0.8658536585365854,
+        "Top-5 Car Accuracy": 0.9108409321175278,
+        "Top-5 Cat Accuracy": 0.6673427991886409,
+        "Top-5 Deer Accuracy": 0.8383838383838383,
+        "Top-5 Dog Accuracy": 0.8164300202839757,
+        "Top-5 Frog Accuracy": 0.9042338709677419,
+        "Top-5 Horse Accuracy": 0.887991927346115,
+        "Top-5 Plane Accuracy": 0.8703140830800405,
+        "Top-5 Ship Accuracy": 0.9420731707317073,
+        "Top-5 Truck Accuracy": 0.8588832487309644
+      },
+      "operation": {
+        "name": "Train",
+        "parameters": {
+          "epochs": 50
+        }
+      },
+      "tag": "Train (50)"
+    },
+    {
+      "base": "resnet20trained",
+      "id": "resnet20trained-magnitudepruning90_compressed",
+      "metrics": {
+        "Batch Latency Mean": 21.23857898712158,
+        "Batch Latency STD": 3.8649224527446124,
+        "Model Size": 212895,
+        "Sparsity": 0.9000014868561913,
+        "Top-1 Accuracy": 0.11557941653160454,
+        "Top-1 Bird Accuracy": 0.0,
+        "Top-1 Car Accuracy": 0.0,
+        "Top-1 Cat Accuracy": 0.0,
+        "Top-1 Deer Accuracy": 0.15656565656565657,
+        "Top-1 Dog Accuracy": 0.0,
+        "Top-1 Frog Accuracy": 0.0,
+        "Top-1 Horse Accuracy": 0.9939455095862765,
+        "Top-1 Plane Accuracy": 0.0,
+        "Top-1 Ship Accuracy": 0.0,
+        "Top-1 Truck Accuracy": 0.0010152284263959391,
+        "Top-5 Accuracy": 0.5314019448946515,
+        "Top-5 Bird Accuracy": 0.0,
+        "Top-5 Car Accuracy": 0.0,
+        "Top-5 Cat Accuracy": 0.9300202839756593,
+        "Top-5 Deer Accuracy": 1.0,
+        "Top-5 Dog Accuracy": 1.0,
+        "Top-5 Frog Accuracy": 0.3780241935483871,
+        "Top-5 Horse Accuracy": 1.0,
+        "Top-5 Plane Accuracy": 0.002026342451874367,
+        "Top-5 Ship Accuracy": 0.0,
+        "Top-5 Truck Accuracy": 1.0
+      },
+      "operation": {
+        "name": "Prune",
+        "parameters": {
+          "amount": 0.9,
+          "method": "Magnitude"
+        }
+      },
+      "tag": "Prune (90.0%)"
+    },
+    {
+      "base": "resnet20trained-magnitudepruning70_compressed",
+      "id": "resnet20trained-magnitudepruning70_compressed-recalibrated-retrained",
+      "metrics": {
+        "Batch Latency Mean": 22.03116798400879,
+        "Batch Latency STD": 2.590590956291977,
+        "Model Size": 429109,
+        "Sparsity": 0.7000007434280956,
+        "Top-1 Accuracy": 0.9189627228525121,
+        "Top-1 Bird Accuracy": 0.8841463414634146,
+        "Top-1 Car Accuracy": 0.9655521783181358,
+        "Top-1 Cat Accuracy": 0.8255578093306288,
+        "Top-1 Deer Accuracy": 0.9353535353535354,
+        "Top-1 Dog Accuracy": 0.8904665314401623,
+        "Top-1 Frog Accuracy": 0.936491935483871,
+        "Top-1 Horse Accuracy": 0.9283551967709385,
+        "Top-1 Plane Accuracy": 0.9260385005065856,
+        "Top-1 Ship Accuracy": 0.9532520325203252,
+        "Top-1 Truck Accuracy": 0.9441624365482234,
+        "Top-5 Accuracy": 0.9969611021069692,
+        "Top-5 Bird Accuracy": 0.9939024390243902,
+        "Top-5 Car Accuracy": 1.0,
+        "Top-5 Cat Accuracy": 0.9939148073022313,
+        "Top-5 Deer Accuracy": 0.997979797979798,
+        "Top-5 Dog Accuracy": 0.9949290060851927,
+        "Top-5 Frog Accuracy": 1.0,
+        "Top-5 Horse Accuracy": 0.9979818365287588,
+        "Top-5 Plane Accuracy": 0.9959473150962512,
+        "Top-5 Ship Accuracy": 0.9969512195121951,
+        "Top-5 Truck Accuracy": 0.9979695431472081
+      },
+      "operation": {
+        "name": "Train",
+        "parameters": {
+          "epochs": 50
+        }
+      },
+      "tag": "Train (50)"
+    },
+    {
+      "base": "resnet20trained-magnitudepruning90-sensitivitypruning50_compressed",
+      "id": "resnet20trained-magnitudepruning90-sensitivitypruning50_compressed-recalibrated",
+      "metrics": {
+        "Batch Latency Mean": 20.99724178314209,
+        "Batch Latency STD": 3.1375140142575253,
+        "Model Size": 153726,
+        "Sparsity": 0.9500007434280956,
+        "Top-1 Accuracy": 0.10038492706645057,
+        "Top-1 Bird Accuracy": 0.0,
+        "Top-1 Car Accuracy": 0.0,
+        "Top-1 Cat Accuracy": 0.0,
+        "Top-1 Deer Accuracy": 0.0,
+        "Top-1 Dog Accuracy": 0.0,
+        "Top-1 Frog Accuracy": 0.0,
+        "Top-1 Horse Accuracy": 1.0,
+        "Top-1 Plane Accuracy": 0.0,
+        "Top-1 Ship Accuracy": 0.0,
+        "Top-1 Truck Accuracy": 0.0,
+        "Top-5 Accuracy": 0.5006077795786061,
+        "Top-5 Bird Accuracy": 1.0,
+        "Top-5 Car Accuracy": 0.0,
+        "Top-5 Cat Accuracy": 0.0,
+        "Top-5 Deer Accuracy": 1.0,
+        "Top-5 Dog Accuracy": 0.0,
+        "Top-5 Frog Accuracy": 1.0,
+        "Top-5 Horse Accuracy": 1.0,
+        "Top-5 Plane Accuracy": 0.0,
+        "Top-5 Ship Accuracy": 0.0,
+        "Top-5 Truck Accuracy": 1.0
+      },
+      "operation": {
+        "name": "Calibrate",
+        "parameters": {
+          "data": "train data"
+        }
+      },
+      "tag": "Calibrate (train data)"
+    },
+    {
+      "base": "resnet20trained-gradientpruning70_compressed",
+      "id": "resnet20trained-gradientpruning70_compressed-recalibrated-retrained",
+      "metrics": {
+        "Batch Latency Mean": 21.45024013519287,
+        "Batch Latency STD": 3.148076703967893,
+        "Model Size": 432987,
+        "Sparsity": 0.7000007434280956,
+        "Top-1 Accuracy": 0.7941653160453809,
+        "Top-1 Bird Accuracy": 0.8140243902439024,
+        "Top-1 Car Accuracy": 0.9098277608915907,
+        "Top-1 Cat Accuracy": 0.6115618661257607,
+        "Top-1 Deer Accuracy": 0.7474747474747475,
+        "Top-1 Dog Accuracy": 0.6186612576064908,
+        "Top-1 Frog Accuracy": 0.9092741935483871,
+        "Top-1 Horse Accuracy": 0.8486377396569122,
+        "Top-1 Plane Accuracy": 0.779128672745694,
+        "Top-1 Ship Accuracy": 0.8821138211382114,
+        "Top-1 Truck Accuracy": 0.8203045685279188,
+        "Top-5 Accuracy": 0.9891612641815235,
+        "Top-5 Bird Accuracy": 0.9979674796747967,
+        "Top-5 Car Accuracy": 0.993920972644377,
+        "Top-5 Cat Accuracy": 0.9908722109533469,
+        "Top-5 Deer Accuracy": 0.9868686868686869,
+        "Top-5 Dog Accuracy": 0.9898580121703854,
+        "Top-5 Frog Accuracy": 0.9939516129032258,
+        "Top-5 Horse Accuracy": 0.9838546922300706,
+        "Top-5 Plane Accuracy": 0.9878419452887538,
+        "Top-5 Ship Accuracy": 0.9867886178861789,
+        "Top-5 Truck Accuracy": 0.9796954314720813
+      },
+      "operation": {
+        "name": "Train",
+        "parameters": {
+          "epochs": 50
+        }
+      },
+      "tag": "Train (50)"
+    },
+    {
+      "base": "resnet20trained-randompruning50_compressed",
+      "id": "resnet20trained-randompruning50_compressed-recalibrated",
+      "metrics": {
+        "Batch Latency Mean": 20.024937438964844,
+        "Batch Latency STD": 1.9066983908697623,
+        "Model Size": 641361,
+        "Sparsity": 0.5,
+        "Top-1 Accuracy": 0.13442058346839547,
+        "Top-1 Bird Accuracy": 0.006097560975609756,
+        "Top-1 Car Accuracy": 0.0182370820668693,
+        "Top-1 Cat Accuracy": 0.10040567951318459,
+        "Top-1 Deer Accuracy": 0.0,
+        "Top-1 Dog Accuracy": 0.0030425963488843813,
+        "Top-1 Frog Accuracy": 0.0,
+        "Top-1 Horse Accuracy": 0.08779011099899092,
+        "Top-1 Plane Accuracy": 0.0,
+        "Top-1 Ship Accuracy": 0.625,
+        "Top-1 Truck Accuracy": 0.5065989847715736,
+        "Top-5 Accuracy": 0.5144854132901134,
+        "Top-5 Bird Accuracy": 0.6036585365853658,
+        "Top-5 Car Accuracy": 0.3789260385005066,
+        "Top-5 Cat Accuracy": 0.973630831643002,
+        "Top-5 Deer Accuracy": 0.08383838383838384,
+        "Top-5 Dog Accuracy": 0.11967545638945233,
+        "Top-5 Frog Accuracy": 0.3215725806451613,
+        "Top-5 Horse Accuracy": 0.7295660948536832,
+        "Top-5 Plane Accuracy": 0.02634245187436677,
+        "Top-5 Ship Accuracy": 0.9979674796747967,
+        "Top-5 Truck Accuracy": 0.9137055837563451
+      },
+      "operation": {
+        "name": "Calibrate",
+        "parameters": {
+          "data": "train data"
+        }
+      },
+      "tag": "Calibrate (train data)"
+    },
+    {
+      "base": "resnet20trained-magnitudepruning90-sensitivitypruning20_compressed",
+      "id": "resnet20trained-magnitudepruning90-sensitivitypruning20_compressed-recalibrated",
+      "metrics": {
+        "Batch Latency Mean": 21.26076469421387,
+        "Batch Latency STD": 3.4178402728131405,
+        "Model Size": 191708,
+        "Sparsity": 0.9199997026287617,
+        "Top-1 Accuracy": 0.09977714748784441,
+        "Top-1 Bird Accuracy": 0.0,
+        "Top-1 Car Accuracy": 0.9848024316109423,
+        "Top-1 Cat Accuracy": 0.0,
+        "Top-1 Deer Accuracy": 0.0,
+        "Top-1 Dog Accuracy": 0.0,
+        "Top-1 Frog Accuracy": 0.0,
+        "Top-1 Horse Accuracy": 0.013118062563067608,
+        "Top-1 Plane Accuracy": 0.0,
+        "Top-1 Ship Accuracy": 0.0,
+        "Top-1 Truck Accuracy": 0.0,
+        "Top-5 Accuracy": 0.5013168557536467,
+        "Top-5 Bird Accuracy": 0.00508130081300813,
+        "Top-5 Car Accuracy": 0.9979736575481256,
+        "Top-5 Cat Accuracy": 0.9756592292089249,
+        "Top-5 Deer Accuracy": 0.022222222222222223,
+        "Top-5 Dog Accuracy": 0.0030425963488843813,
+        "Top-5 Frog Accuracy": 0.9949596774193549,
+        "Top-5 Horse Accuracy": 0.018163471241170535,
+        "Top-5 Plane Accuracy": 0.0,
+        "Top-5 Ship Accuracy": 0.9979674796747967,
+        "Top-5 Truck Accuracy": 1.0
+      },
+      "operation": {
+        "name": "Calibrate",
+        "parameters": {
+          "data": "train data"
+        }
+      },
+      "tag": "Calibrate (train data)"
+    },
+    {
+      "base": "resnet20trained-magnitudepruning90_compressed-recalibrated-retrained",
+      "id": "resnet20trained-magnitudepruning90-sensitivitypruning20_compressed",
+      "metrics": {
+        "Batch Latency Mean": 20.00119686126709,
+        "Batch Latency STD": 3.2645341328090973,
+        "Model Size": 192469,
+        "Sparsity": 0.9199997026287617,
+        "Top-1 Accuracy": 0.10048622366288493,
+        "Top-1 Bird Accuracy": 0.0,
+        "Top-1 Car Accuracy": 0.0,
+        "Top-1 Cat Accuracy": 0.0,
+        "Top-1 Deer Accuracy": 0.0,
+        "Top-1 Dog Accuracy": 0.0,
+        "Top-1 Frog Accuracy": 1.0,
+        "Top-1 Horse Accuracy": 0.0,
+        "Top-1 Plane Accuracy": 0.0,
+        "Top-1 Ship Accuracy": 0.0,
+        "Top-1 Truck Accuracy": 0.0,
+        "Top-5 Accuracy": 0.5,
+        "Top-5 Bird Accuracy": 1.0,
+        "Top-5 Car Accuracy": 1.0,
+        "Top-5 Cat Accuracy": 1.0,
+        "Top-5 Deer Accuracy": 0.0,
+        "Top-5 Dog Accuracy": 0.0,
+        "Top-5 Frog Accuracy": 1.0,
+        "Top-5 Horse Accuracy": 0.0,
+        "Top-5 Plane Accuracy": 1.0,
+        "Top-5 Ship Accuracy": 0.0,
+        "Top-5 Truck Accuracy": 0.0
+      },
+      "operation": {
+        "name": "Prune",
+        "parameters": {
+          "amount": 0.2,
+          "method": "Gradient"
+        }
+      },
+      "tag": "Prune (20.0%)"
+    },
+    {
+      "base": "resnet20trained-magnitudepruning90-quantizeint8_compressed",
+      "id": "resnet20trained-magnitudepruning90-quantizeint8_compressed-recalibrated",
+      "metrics": {
+        "Batch Latency Mean": 14.232092761993409,
+        "Batch Latency STD": 0.547355274860418,
+        "Model Size": 63837,
+        "Sparsity": 0.9000014868561913,
+        "Top-1 Accuracy": 0.8854335494327391,
+        "Top-1 Bird Accuracy": 0.850609756097561,
+        "Top-1 Car Accuracy": 0.9432624113475178,
+        "Top-1 Cat Accuracy": 0.731237322515213,
+        "Top-1 Deer Accuracy": 0.8878787878787879,
+        "Top-1 Dog Accuracy": 0.8651115618661258,
+        "Top-1 Frog Accuracy": 0.9122983870967742,
+        "Top-1 Horse Accuracy": 0.9122098890010091,
+        "Top-1 Plane Accuracy": 0.8743667679837892,
+        "Top-1 Ship Accuracy": 0.9369918699186992,
+        "Top-1 Truck Accuracy": 0.9401015228426396,
+        "Top-5 Accuracy": 0.9962520259319287,
+        "Top-5 Bird Accuracy": 0.9878048780487805,
+        "Top-5 Car Accuracy": 1.0,
+        "Top-5 Cat Accuracy": 0.9959432048681541,
+        "Top-5 Deer Accuracy": 0.9949494949494949,
+        "Top-5 Dog Accuracy": 0.9959432048681541,
+        "Top-5 Frog Accuracy": 0.9979838709677419,
+        "Top-5 Horse Accuracy": 0.9969727547931383,
+        "Top-5 Plane Accuracy": 0.9969604863221885,
+        "Top-5 Ship Accuracy": 0.9969512195121951,
+        "Top-5 Truck Accuracy": 0.9989847715736041
+      },
+      "operation": {
+        "name": "Calibrate",
+        "parameters": {
+          "data": "train data"
+        }
+      },
+      "tag": "Calibrate (train data)"
+    },
+    {
+      "base": "resnet20trained-magnitudepruning50-quantizeint8_compressed",
+      "id": "resnet20trained-magnitudepruning50-quantizeint8_compressed-recalibrated",
+      "metrics": {
+        "Batch Latency Mean": 14.31710090637207,
+        "Batch Latency STD": 0.5467888901769096,
+        "Model Size": 172177,
+        "Sparsity": 0.5,
+        "Top-1 Accuracy": 0.9204821717990276,
+        "Top-1 Bird Accuracy": 0.8871951219512195,
+        "Top-1 Car Accuracy": 0.9665653495440729,
+        "Top-1 Cat Accuracy": 0.8275862068965517,
+        "Top-1 Deer Accuracy": 0.9444444444444444,
+        "Top-1 Dog Accuracy": 0.8762677484787018,
+        "Top-1 Frog Accuracy": 0.9354838709677419,
+        "Top-1 Horse Accuracy": 0.9283551967709385,
+        "Top-1 Plane Accuracy": 0.9402228976697061,
+        "Top-1 Ship Accuracy": 0.9532520325203252,
+        "Top-1 Truck Accuracy": 0.9451776649746193,
+        "Top-5 Accuracy": 0.9968598055105349,
+        "Top-5 Bird Accuracy": 0.9908536585365854,
+        "Top-5 Car Accuracy": 0.9989868287740629,
+        "Top-5 Cat Accuracy": 0.9929006085192698,
+        "Top-5 Deer Accuracy": 0.997979797979798,
+        "Top-5 Dog Accuracy": 0.9949290060851927,
+        "Top-5 Frog Accuracy": 1.0,
+        "Top-5 Horse Accuracy": 0.9989909182643795,
+        "Top-5 Plane Accuracy": 0.9969604863221885,
+        "Top-5 Ship Accuracy": 0.9979674796747967,
+        "Top-5 Truck Accuracy": 0.9989847715736041
+      },
+      "operation": {
+        "name": "Calibrate",
+        "parameters": {
+          "data": "train data"
+        }
+      },
+      "tag": "Calibrate (train data)"
+    },
+    {
+      "base": "resnet20trained-magnitudepruning70-sensitivitypruning50_compressed",
+      "id": "resnet20trained-magnitudepruning70-sensitivitypruning50_compressed-recalibrated-retrained",
+      "metrics": {
+        "Batch Latency Mean": 19.674582481384277,
+        "Batch Latency STD": 1.8606565697128645,
+        "Model Size": 271164,
+        "Sparsity": 0.8500022302842869,
+        "Top-1 Accuracy": 0.1002836304700162,
+        "Top-1 Bird Accuracy": 0.0,
+        "Top-1 Car Accuracy": 0.0,
+        "Top-1 Cat Accuracy": 0.0,
+        "Top-1 Deer Accuracy": 1.0,
+        "Top-1 Dog Accuracy": 0.0,
+        "Top-1 Frog Accuracy": 0.0,
+        "Top-1 Horse Accuracy": 0.0,
+        "Top-1 Plane Accuracy": 0.0,
+        "Top-1 Ship Accuracy": 0.0,
+        "Top-1 Truck Accuracy": 0.0,
+        "Top-5 Accuracy": 0.5003038897893031,
+        "Top-5 Bird Accuracy": 1.0,
+        "Top-5 Car Accuracy": 1.0,
+        "Top-5 Cat Accuracy": 1.0,
+        "Top-5 Deer Accuracy": 1.0,
+        "Top-5 Dog Accuracy": 0.0,
+        "Top-5 Frog Accuracy": 1.0,
+        "Top-5 Horse Accuracy": 0.0,
+        "Top-5 Plane Accuracy": 0.0,
+        "Top-5 Ship Accuracy": 0.0,
+        "Top-5 Truck Accuracy": 0.0
+      },
+      "operation": {
+        "name": "Train",
+        "parameters": {
+          "epochs": 50
+        }
+      },
+      "tag": "Train (50)"
+    },
+    {
+      "base": "resnet20trained-magnitudepruning50_compressed-recalibrated-retrained",
+      "id": "resnet20trained-magnitudepruning50-sensitivitypruning50_compressed",
+      "metrics": {
+        "Batch Latency Mean": 20.873014831542967,
+        "Batch Latency STD": 2.0271603414424795,
+        "Model Size": 380317,
+        "Sparsity": 0.75,
+        "Top-1 Accuracy": 0.10038492706645057,
+        "Top-1 Bird Accuracy": 0.0,
+        "Top-1 Car Accuracy": 0.0,
+        "Top-1 Cat Accuracy": 0.0,
+        "Top-1 Deer Accuracy": 0.0,
+        "Top-1 Dog Accuracy": 0.0,
+        "Top-1 Frog Accuracy": 0.0,
+        "Top-1 Horse Accuracy": 1.0,
+        "Top-1 Plane Accuracy": 0.0,
+        "Top-1 Ship Accuracy": 0.0,
+        "Top-1 Truck Accuracy": 0.0,
+        "Top-5 Accuracy": 0.5,
+        "Top-5 Bird Accuracy": 1.0,
+        "Top-5 Car Accuracy": 0.0,
+        "Top-5 Cat Accuracy": 0.0,
+        "Top-5 Deer Accuracy": 1.0,
+        "Top-5 Dog Accuracy": 0.0,
+        "Top-5 Frog Accuracy": 0.0,
+        "Top-5 Horse Accuracy": 1.0,
+        "Top-5 Plane Accuracy": 1.0,
+        "Top-5 Ship Accuracy": 1.0,
+        "Top-5 Truck Accuracy": 0.0
+      },
+      "operation": {
+        "name": "Prune",
+        "parameters": {
+          "amount": 0.5,
+          "method": "Gradient"
+        }
+      },
+      "tag": "Prune (50.0%)"
+    },
+    {
+      "base": "resnet20trained-magnitudepruning50-magnitudepruning50-magnitudepruning50-magnitudepruning20_compressed",
+      "id": "resnet20trained-magnitudepruning50-magnitudepruning50-magnitudepruning50-magnitudepruning20_compressed-recalibrated",
+      "metrics": {
+        "Batch Latency Mean": 21.303171157836914,
+        "Batch Latency STD": 3.344959093467583,
+        "Model Size": 214760,
+        "Sparsity": 0.9000014868561913,
+        "Top-1 Accuracy": 0.8715559157212318,
+        "Top-1 Bird Accuracy": 0.8465447154471545,
+        "Top-1 Car Accuracy": 0.9412360688956434,
+        "Top-1 Cat Accuracy": 0.742393509127789,
+        "Top-1 Deer Accuracy": 0.8727272727272727,
+        "Top-1 Dog Accuracy": 0.8103448275862069,
+        "Top-1 Frog Accuracy": 0.9294354838709677,
+        "Top-1 Horse Accuracy": 0.887991927346115,
+        "Top-1 Plane Accuracy": 0.867274569402229,
+        "Top-1 Ship Accuracy": 0.926829268292683,
+        "Top-1 Truck Accuracy": 0.8903553299492386,
+        "Top-5 Accuracy": 0.9952390599675851,
+        "Top-5 Bird Accuracy": 0.9898373983739838,
+        "Top-5 Car Accuracy": 0.9989868287740629,
+        "Top-5 Cat Accuracy": 0.9949290060851927,
+        "Top-5 Deer Accuracy": 0.9949494949494949,
+        "Top-5 Dog Accuracy": 0.9918864097363083,
+        "Top-5 Frog Accuracy": 0.9969758064516129,
+        "Top-5 Horse Accuracy": 0.9949545913218971,
+        "Top-5 Plane Accuracy": 0.9959473150962512,
+        "Top-5 Ship Accuracy": 0.9969512195121951,
+        "Top-5 Truck Accuracy": 0.9969543147208122
+      },
+      "operation": {
+        "name": "Calibrate",
+        "parameters": {
+          "data": "train data"
+        }
+      },
+      "tag": "Calibrate (train data)"
+    },
+    {
+      "base": "resnet20trained-magnitudepruning50-magnitudepruning50-magnitudepruning50_compressed-recalibrated-retrained",
+      "id": "resnet20trained-magnitudepruning50-magnitudepruning50-magnitudepruning50-magnitudepruning20_compressed",
+      "metrics": {
+        "Batch Latency Mean": 28.87223949432373,
+        "Batch Latency STD": 23.857233102100672,
+        "Model Size": 214747,
+        "Sparsity": 0.9000014868561913,
+        "Top-1 Accuracy": 0.7717787682333873,
+        "Top-1 Bird Accuracy": 0.5172764227642277,
+        "Top-1 Car Accuracy": 0.756838905775076,
+        "Top-1 Cat Accuracy": 0.550709939148073,
+        "Top-1 Deer Accuracy": 0.6424242424242425,
+        "Top-1 Dog Accuracy": 0.8397565922920892,
+        "Top-1 Frog Accuracy": 0.9173387096774194,
+        "Top-1 Horse Accuracy": 0.9071644803229062,
+        "Top-1 Plane Accuracy": 0.9159067882472138,
+        "Top-1 Ship Accuracy": 0.9359756097560976,
+        "Top-1 Truck Accuracy": 0.732994923857868,
+        "Top-5 Accuracy": 0.9817666126418152,
+        "Top-5 Bird Accuracy": 0.9186991869918699,
+        "Top-5 Car Accuracy": 0.9888551165146909,
+        "Top-5 Cat Accuracy": 0.9817444219066938,
+        "Top-5 Deer Accuracy": 0.9545454545454546,
+        "Top-5 Dog Accuracy": 0.9949290060851927,
+        "Top-5 Frog Accuracy": 0.9969758064516129,
+        "Top-5 Horse Accuracy": 0.9949545913218971,
+        "Top-5 Plane Accuracy": 1.0,
+        "Top-5 Ship Accuracy": 0.9979674796747967,
+        "Top-5 Truck Accuracy": 0.9888324873096447
+      },
+      "operation": {
+        "name": "Prune",
+        "parameters": {
+          "amount": 0.2,
+          "method": "Magnitude"
+        }
+      },
+      "tag": "Prune (20.0%)"
+    },
+    {
+      "base": "resnet20trained-gradientpruning70_compressed",
+      "id": "resnet20trained-gradientpruning70_compressed-recalibrated",
+      "metrics": {
+        "Batch Latency Mean": 21.01243190765381,
+        "Batch Latency STD": 3.4701409979068174,
+        "Model Size": 430426,
+        "Sparsity": 0.7000007434280956,
+        "Top-1 Accuracy": 0.12611426256077796,
+        "Top-1 Bird Accuracy": 0.18191056910569106,
+        "Top-1 Car Accuracy": 0.0070921985815602835,
+        "Top-1 Cat Accuracy": 0.5760649087221096,
+        "Top-1 Deer Accuracy": 0.11414141414141414,
+        "Top-1 Dog Accuracy": 0.033468559837728194,
+        "Top-1 Frog Accuracy": 0.12096774193548387,
+        "Top-1 Horse Accuracy": 0.09485368314833502,
+        "Top-1 Plane Accuracy": 0.019250253292806486,
+        "Top-1 Ship Accuracy": 0.01016260162601626,
+        "Top-1 Truck Accuracy": 0.10355329949238579,
+        "Top-5 Accuracy": 0.565032414910859,
+        "Top-5 Bird Accuracy": 0.3983739837398374,
+        "Top-5 Car Accuracy": 0.5977710233029382,
+        "Top-5 Cat Accuracy": 0.7799188640973631,
+        "Top-5 Deer Accuracy": 0.44545454545454544,
+        "Top-5 Dog Accuracy": 0.8884381338742393,
+        "Top-5 Frog Accuracy": 0.4314516129032258,
+        "Top-5 Horse Accuracy": 0.7850655903128153,
+        "Top-5 Plane Accuracy": 0.2259371833839919,
+        "Top-5 Ship Accuracy": 0.4054878048780488,
+        "Top-5 Truck Accuracy": 0.6923857868020304
+      },
+      "operation": {
+        "name": "Calibrate",
+        "parameters": {
+          "data": "train data"
+        }
+      },
+      "tag": "Calibrate (train data)"
+    },
+    {
+      "base": "resnet20trained-magnitudepruning50-magnitudepruning50-magnitudepruning50-magnitudepruning20_compressed",
+      "id": "resnet20trained-magnitudepruning50-magnitudepruning50-magnitudepruning50-magnitudepruning20_compressed-recalibrated-retrained",
+      "metrics": {
+        "Batch Latency Mean": 20.415235328674317,
+        "Batch Latency STD": 2.4533917757108785,
+        "Model Size": 215944,
+        "Sparsity": 0.9000014868561913,
+        "Top-1 Accuracy": 0.9014384116693679,
+        "Top-1 Bird Accuracy": 0.8709349593495935,
+        "Top-1 Car Accuracy": 0.9483282674772037,
+        "Top-1 Cat Accuracy": 0.7626774847870182,
+        "Top-1 Deer Accuracy": 0.9161616161616162,
+        "Top-1 Dog Accuracy": 0.8600405679513184,
+        "Top-1 Frog Accuracy": 0.9415322580645161,
+        "Top-1 Horse Accuracy": 0.9192734611503531,
+        "Top-1 Plane Accuracy": 0.9098277608915907,
+        "Top-1 Ship Accuracy": 0.9522357723577236,
+        "Top-1 Truck Accuracy": 0.932994923857868,
+        "Top-5 Accuracy": 0.9966572123176661,
+        "Top-5 Bird Accuracy": 0.9939024390243902,
+        "Top-5 Car Accuracy": 1.0,
+        "Top-5 Cat Accuracy": 0.9959432048681541,
+        "Top-5 Deer Accuracy": 0.996969696969697,
+        "Top-5 Dog Accuracy": 0.9929006085192698,
+        "Top-5 Frog Accuracy": 0.9969758064516129,
+        "Top-5 Horse Accuracy": 0.9969727547931383,
+        "Top-5 Plane Accuracy": 0.9969604863221885,
+        "Top-5 Ship Accuracy": 0.9979674796747967,
+        "Top-5 Truck Accuracy": 0.9979695431472081
+      },
+      "operation": {
+        "name": "Train",
+        "parameters": {
+          "epochs": 50
+        }
+      },
+      "tag": "Train (50)"
+    },
+    {
+      "base": "resnet20trained-randompruning70_compressed",
+      "id": "resnet20trained-randompruning70_compressed-recalibrated-retrained",
+      "metrics": {
+        "Batch Latency Mean": 19.977539253234863,
+        "Batch Latency STD": 3.4750377732360525,
+        "Model Size": 449902,
+        "Sparsity": 0.7000007434280956,
+        "Top-1 Accuracy": 0.7270056726094003,
+        "Top-1 Bird Accuracy": 0.616869918699187,
+        "Top-1 Car Accuracy": 0.8713272543059777,
+        "Top-1 Cat Accuracy": 0.6470588235294118,
+        "Top-1 Deer Accuracy": 0.5383838383838384,
+        "Top-1 Dog Accuracy": 0.6257606490872211,
+        "Top-1 Frog Accuracy": 0.7762096774193549,
+        "Top-1 Horse Accuracy": 0.7941473259334006,
+        "Top-1 Plane Accuracy": 0.7882472137791287,
+        "Top-1 Ship Accuracy": 0.8079268292682927,
+        "Top-1 Truck Accuracy": 0.8040609137055837,
+        "Top-5 Accuracy": 0.9830834683954619,
+        "Top-5 Bird Accuracy": 0.9847560975609756,
+        "Top-5 Car Accuracy": 0.9908814589665653,
+        "Top-5 Cat Accuracy": 0.9898580121703854,
+        "Top-5 Deer Accuracy": 0.9828282828282828,
+        "Top-5 Dog Accuracy": 0.9776876267748479,
+        "Top-5 Frog Accuracy": 0.9798387096774194,
+        "Top-5 Horse Accuracy": 0.9808274470232089,
+        "Top-5 Plane Accuracy": 0.983789260385005,
+        "Top-5 Ship Accuracy": 0.9735772357723578,
+        "Top-5 Truck Accuracy": 0.9868020304568528
+      },
+      "operation": {
+        "name": "Train",
+        "parameters": {
+          "epochs": 50
+        }
+      },
+      "tag": "Train (50)"
+    },
+    {
+      "base": "resnet20trained",
+      "id": "resnet20trained-gradientpruning70_compressed",
+      "metrics": {
+        "Batch Latency Mean": 20.91045436859131,
+        "Batch Latency STD": 3.542308243008184,
+        "Model Size": 430382,
+        "Sparsity": 0.7000007434280956,
+        "Top-1 Accuracy": 0.12104943273905996,
+        "Top-1 Bird Accuracy": 0.32926829268292684,
+        "Top-1 Car Accuracy": 0.0,
+        "Top-1 Cat Accuracy": 0.0,
+        "Top-1 Deer Accuracy": 0.0,
+        "Top-1 Dog Accuracy": 0.0,
+        "Top-1 Frog Accuracy": 0.0,
+        "Top-1 Horse Accuracy": 0.0,
+        "Top-1 Plane Accuracy": 0.8824721377912867,
+        "Top-1 Ship Accuracy": 0.0,
+        "Top-1 Truck Accuracy": 0.0,
+        "Top-5 Accuracy": 0.5315032414910859,
+        "Top-5 Bird Accuracy": 1.0,
+        "Top-5 Car Accuracy": 0.0,
+        "Top-5 Cat Accuracy": 0.0922920892494929,
+        "Top-5 Deer Accuracy": 0.9949494949494949,
+        "Top-5 Dog Accuracy": 0.3793103448275862,
+        "Top-5 Frog Accuracy": 0.2923387096774194,
+        "Top-5 Horse Accuracy": 1.0,
+        "Top-5 Plane Accuracy": 1.0,
+        "Top-5 Ship Accuracy": 0.0,
+        "Top-5 Truck Accuracy": 0.5532994923857868
+      },
+      "operation": {
+        "name": "Prune",
+        "parameters": {
+          "amount": 0.7,
+          "method": "Gradient"
+        }
+      },
+      "tag": "Prune (70.0%)"
+    },
+    {
+      "base": "resnet20trained-magnitudepruning90-sensitivitypruning20_compressed",
+      "id": "resnet20trained-magnitudepruning90-sensitivitypruning20_compressed-recalibrated-retrained",
+      "metrics": {
+        "Batch Latency Mean": 20.074844741821288,
+        "Batch Latency STD": 3.9449914121396166,
+        "Model Size": 191596,
+        "Sparsity": 0.9199997026287617,
+        "Top-1 Accuracy": 0.10160048622366288,
+        "Top-1 Bird Accuracy": 0.0,
+        "Top-1 Car Accuracy": 0.0,
+        "Top-1 Cat Accuracy": 0.016227180527383367,
+        "Top-1 Deer Accuracy": 0.9808080808080808,
+        "Top-1 Dog Accuracy": 0.0,
+        "Top-1 Frog Accuracy": 0.0,
+        "Top-1 Horse Accuracy": 0.016145307769929364,
+        "Top-1 Plane Accuracy": 0.0,
+        "Top-1 Ship Accuracy": 0.0,
+        "Top-1 Truck Accuracy": 0.0,
+        "Top-5 Accuracy": 0.5012155591572123,
+        "Top-5 Bird Accuracy": 1.0,
+        "Top-5 Car Accuracy": 0.9979736575481256,
+        "Top-5 Cat Accuracy": 0.05476673427991886,
+        "Top-5 Deer Accuracy": 0.9818181818181818,
+        "Top-5 Dog Accuracy": 0.9503042596348884,
+        "Top-5 Frog Accuracy": 1.0,
+        "Top-5 Horse Accuracy": 0.024217961654894045,
+        "Top-5 Plane Accuracy": 0.0,
+        "Top-5 Ship Accuracy": 0.0,
+        "Top-5 Truck Accuracy": 0.0
+      },
+      "operation": {
+        "name": "Train",
+        "parameters": {
+          "epochs": 50
+        }
+      },
+      "tag": "Train (50)"
+    },
+    {
+      "base": "resnet20trained-gradientpruning90_compressed",
+      "id": "resnet20trained-gradientpruning90_compressed-recalibrated",
+      "metrics": {
+        "Batch Latency Mean": 20.32688331604004,
+        "Batch Latency STD": 3.4985552222460665,
+        "Model Size": 213208,
+        "Sparsity": 0.9000014868561913,
+        "Top-1 Accuracy": 0.1002836304700162,
+        "Top-1 Bird Accuracy": 0.0,
+        "Top-1 Car Accuracy": 0.0,
+        "Top-1 Cat Accuracy": 0.0,
+        "Top-1 Deer Accuracy": 1.0,
+        "Top-1 Dog Accuracy": 0.0,
+        "Top-1 Frog Accuracy": 0.0,
+        "Top-1 Horse Accuracy": 0.0,
+        "Top-1 Plane Accuracy": 0.0,
+        "Top-1 Ship Accuracy": 0.0,
+        "Top-1 Truck Accuracy": 0.0,
+        "Top-5 Accuracy": 0.4994935170178282,
+        "Top-5 Bird Accuracy": 1.0,
+        "Top-5 Car Accuracy": 1.0,
+        "Top-5 Cat Accuracy": 1.0,
+        "Top-5 Deer Accuracy": 1.0,
+        "Top-5 Dog Accuracy": 0.0,
+        "Top-5 Frog Accuracy": 0.0,
+        "Top-5 Horse Accuracy": 0.0,
+        "Top-5 Plane Accuracy": 0.0,
+        "Top-5 Ship Accuracy": 1.0,
+        "Top-5 Truck Accuracy": 0.0
+      },
+      "operation": {
+        "name": "Calibrate",
+        "parameters": {
+          "data": "train data"
+        }
+      },
+      "tag": "Calibrate (train data)"
+    },
+    {
+      "base": "resnet20trained-magnitudepruning50-magnitudepruning50-magnitudepruning50_compressed",
+      "id": "resnet20trained-magnitudepruning50-magnitudepruning50-magnitudepruning50_compressed-recalibrated",
+      "metrics": {
+        "Batch Latency Mean": 20.322736167907713,
+        "Batch Latency STD": 3.834807614370441,
+        "Model Size": 242206,
+        "Sparsity": 0.875,
+        "Top-1 Accuracy": 0.7211304700162074,
+        "Top-1 Bird Accuracy": 0.7449186991869918,
+        "Top-1 Car Accuracy": 0.85612968591692,
+        "Top-1 Cat Accuracy": 0.6267748478701826,
+        "Top-1 Deer Accuracy": 0.5909090909090909,
+        "Top-1 Dog Accuracy": 0.5436105476673428,
+        "Top-1 Frog Accuracy": 0.7883064516129032,
+        "Top-1 Horse Accuracy": 0.8123107971745711,
+        "Top-1 Plane Accuracy": 0.5339412360688957,
+        "Top-1 Ship Accuracy": 0.8282520325203252,
+        "Top-1 Truck Accuracy": 0.8862944162436548,
+        "Top-5 Accuracy": 0.9766004862236629,
+        "Top-5 Bird Accuracy": 0.983739837398374,
+        "Top-5 Car Accuracy": 0.9959473150962512,
+        "Top-5 Cat Accuracy": 0.9584178498985801,
+        "Top-5 Deer Accuracy": 0.9595959595959596,
+        "Top-5 Dog Accuracy": 0.9675456389452333,
+        "Top-5 Frog Accuracy": 0.9879032258064516,
+        "Top-5 Horse Accuracy": 0.963673057517659,
+        "Top-5 Plane Accuracy": 0.9766970618034447,
+        "Top-5 Ship Accuracy": 0.991869918699187,
+        "Top-5 Truck Accuracy": 0.9807106598984772
+      },
+      "operation": {
+        "name": "Calibrate",
+        "parameters": {
+          "data": "train data"
+        }
+      },
+      "tag": "Calibrate (train data)"
+    },
+    {
+      "base": "resnet20trained",
+      "id": "resnet20trained-randompruning90_compressed",
+      "metrics": {
+        "Batch Latency Mean": 19.55473918914795,
+        "Batch Latency STD": 3.72457475755026,
+        "Model Size": 223384,
+        "Sparsity": 0.9000014868561913,
+        "Top-1 Accuracy": 0.09967585089141005,
+        "Top-1 Bird Accuracy": 0.0,
+        "Top-1 Car Accuracy": 0.0,
+        "Top-1 Cat Accuracy": 0.0,
+        "Top-1 Deer Accuracy": 0.0,
+        "Top-1 Dog Accuracy": 0.0,
+        "Top-1 Frog Accuracy": 0.0,
+        "Top-1 Horse Accuracy": 0.0,
+        "Top-1 Plane Accuracy": 0.0,
+        "Top-1 Ship Accuracy": 1.0,
+        "Top-1 Truck Accuracy": 0.0,
+        "Top-5 Accuracy": 0.4998987034035656,
+        "Top-5 Bird Accuracy": 1.0,
+        "Top-5 Car Accuracy": 0.0,
+        "Top-5 Cat Accuracy": 0.0,
+        "Top-5 Deer Accuracy": 1.0,
+        "Top-5 Dog Accuracy": 1.0,
+        "Top-5 Frog Accuracy": 0.0,
+        "Top-5 Horse Accuracy": 1.0,
+        "Top-5 Plane Accuracy": 0.0,
+        "Top-5 Ship Accuracy": 1.0,
+        "Top-5 Truck Accuracy": 0.0
+      },
+      "operation": {
+        "name": "Prune",
+        "parameters": {
+          "amount": 0.9,
+          "method": "Random"
+        }
+      },
+      "tag": "Prune (90.0%)"
+    },
+    {
+      "base": "resnet20",
+      "id": "resnet20-quantizeint8_compressed",
+      "metrics": {
+        "Batch Latency Mean": 18.427417945861816,
+        "Batch Latency STD": 5.594522381785148,
+        "Model Size": 243070,
+        "Sparsity": 0.0,
+        "Top-1 Accuracy": 0.09967585089141005,
+        "Top-1 Bird Accuracy": 1.0,
+        "Top-1 Car Accuracy": 0.0,
+        "Top-1 Cat Accuracy": 0.0,
+        "Top-1 Deer Accuracy": 0.0,
+        "Top-1 Dog Accuracy": 0.0,
+        "Top-1 Frog Accuracy": 0.0,
+        "Top-1 Horse Accuracy": 0.0,
+        "Top-1 Plane Accuracy": 0.0,
+        "Top-1 Ship Accuracy": 0.0,
+        "Top-1 Truck Accuracy": 0.0,
+        "Top-5 Accuracy": 0.5063816855753647,
+        "Top-5 Bird Accuracy": 1.0,
+        "Top-5 Car Accuracy": 0.0,
+        "Top-5 Cat Accuracy": 1.0,
+        "Top-5 Deer Accuracy": 0.07676767676767676,
+        "Top-5 Dog Accuracy": 0.0,
+        "Top-5 Frog Accuracy": 1.0,
+        "Top-5 Horse Accuracy": 1.0,
+        "Top-5 Plane Accuracy": 0.0,
+        "Top-5 Ship Accuracy": 0.0,
+        "Top-5 Truck Accuracy": 0.9847715736040609
+      },
+      "operation": {
+        "name": "Quantize",
+        "parameters": {
+          "amount": "int8"
+        }
+      },
+      "tag": "Quantize (int8)"
+    },
+    {
+      "base": "resnet20trained-magnitudepruning50-magnitudepruning50_compressed",
+      "id": "resnet20trained-magnitudepruning50-magnitudepruning50_compressed-recalibrated",
+      "metrics": {
+        "Batch Latency Mean": 19.54009265899658,
+        "Batch Latency STD": 2.8089020070216613,
+        "Model Size": 373412,
+        "Sparsity": 0.75,
+        "Top-1 Accuracy": 0.8637560777957861,
+        "Top-1 Bird Accuracy": 0.7947154471544715,
+        "Top-1 Car Accuracy": 0.9412360688956434,
+        "Top-1 Cat Accuracy": 0.8052738336713996,
+        "Top-1 Deer Accuracy": 0.8868686868686869,
+        "Top-1 Dog Accuracy": 0.7991886409736308,
+        "Top-1 Frog Accuracy": 0.8991935483870968,
+        "Top-1 Horse Accuracy": 0.8526740665993946,
+        "Top-1 Plane Accuracy": 0.8996960486322189,
+        "Top-1 Ship Accuracy": 0.8770325203252033,
+        "Top-1 Truck Accuracy": 0.8812182741116751,
+        "Top-5 Accuracy": 0.9923014586709886,
+        "Top-5 Bird Accuracy": 0.9908536585365854,
+        "Top-5 Car Accuracy": 0.9979736575481256,
+        "Top-5 Cat Accuracy": 0.9918864097363083,
+        "Top-5 Deer Accuracy": 0.998989898989899,
+        "Top-5 Dog Accuracy": 0.9898580121703854,
+        "Top-5 Frog Accuracy": 0.9889112903225806,
+        "Top-5 Horse Accuracy": 0.992936427850656,
+        "Top-5 Plane Accuracy": 0.9848024316109423,
+        "Top-5 Ship Accuracy": 0.991869918699187,
+        "Top-5 Truck Accuracy": 0.9949238578680203
+      },
+      "operation": {
+        "name": "Calibrate",
+        "parameters": {
+          "data": "train data"
+        }
+      },
+      "tag": "Calibrate (train data)"
+    },
+    {
+      "base": "resnet20trained-magnitudepruning70_compressed-recalibrated-retrained",
+      "id": "resnet20trained-magnitudepruning70-sensitivitypruning20_compressed",
+      "metrics": {
+        "Batch Latency Mean": 21.025027179718016,
+        "Batch Latency STD": 7.661683487819292,
+        "Model Size": 368500,
+        "Sparsity": 0.7599991078862852,
+        "Top-1 Accuracy": 0.09035656401944894,
+        "Top-1 Bird Accuracy": 0.8394308943089431,
+        "Top-1 Car Accuracy": 0.0,
+        "Top-1 Cat Accuracy": 0.0,
+        "Top-1 Deer Accuracy": 0.0,
+        "Top-1 Dog Accuracy": 0.0,
+        "Top-1 Frog Accuracy": 0.0,
+        "Top-1 Horse Accuracy": 0.0,
+        "Top-1 Plane Accuracy": 0.0668693009118541,
+        "Top-1 Ship Accuracy": 0.0,
+        "Top-1 Truck Accuracy": 0.0,
+        "Top-5 Accuracy": 0.5004051863857374,
+        "Top-5 Bird Accuracy": 1.0,
+        "Top-5 Car Accuracy": 0.0,
+        "Top-5 Cat Accuracy": 1.0,
+        "Top-5 Deer Accuracy": 1.0,
+        "Top-5 Dog Accuracy": 0.0,
+        "Top-5 Frog Accuracy": 0.0020161290322580645,
+        "Top-5 Horse Accuracy": 1.0,
+        "Top-5 Plane Accuracy": 1.0,
+        "Top-5 Ship Accuracy": 0.0,
+        "Top-5 Truck Accuracy": 0.0
+      },
+      "operation": {
+        "name": "Prune",
+        "parameters": {
+          "amount": 0.2,
+          "method": "Gradient"
+        }
+      },
+      "tag": "Prune (20.0%)"
+    },
+    {
+      "base": "resnet20trained",
+      "id": "resnet20trained-gradientpruning50_compressed",
+      "metrics": {
+        "Batch Latency Mean": 22.81056613922119,
+        "Batch Latency STD": 6.144692245141701,
+        "Model Size": 619690,
+        "Sparsity": 0.5,
+        "Top-1 Accuracy": 0.3133103727714749,
+        "Top-1 Bird Accuracy": 0.12398373983739837,
+        "Top-1 Car Accuracy": 0.020263424518743668,
+        "Top-1 Cat Accuracy": 0.009127789046653144,
+        "Top-1 Deer Accuracy": 0.051515151515151514,
+        "Top-1 Dog Accuracy": 0.48580121703853957,
+        "Top-1 Frog Accuracy": 0.8457661290322581,
+        "Top-1 Horse Accuracy": 0.9808274470232089,
+        "Top-1 Plane Accuracy": 0.3161094224924012,
+        "Top-1 Ship Accuracy": 0.1443089430894309,
+        "Top-1 Truck Accuracy": 0.14923857868020304,
+        "Top-5 Accuracy": 0.8401539708265803,
+        "Top-5 Bird Accuracy": 0.6453252032520326,
+        "Top-5 Car Accuracy": 0.7254305977710233,
+        "Top-5 Cat Accuracy": 0.35496957403651114,
+        "Top-5 Deer Accuracy": 0.8606060606060606,
+        "Top-5 Dog Accuracy": 0.9837728194726166,
+        "Top-5 Frog Accuracy": 1.0,
+        "Top-5 Horse Accuracy": 1.0,
+        "Top-5 Plane Accuracy": 0.9665653495440729,
+        "Top-5 Ship Accuracy": 0.9867886178861789,
+        "Top-5 Truck Accuracy": 0.8761421319796955
+      },
+      "operation": {
+        "name": "Prune",
+        "parameters": {
+          "amount": 0.5,
+          "method": "Gradient"
+        }
+      },
+      "tag": "Prune (50.0%)"
+    },
+    {
+      "base": "resnet20trained-magnitudepruning50-sensitivitypruning50_compressed",
+      "id": "resnet20trained-magnitudepruning50-sensitivitypruning50_compressed-recalibrated",
+      "metrics": {
+        "Batch Latency Mean": 20.039206314086915,
+        "Batch Latency STD": 3.2319915322655897,
+        "Model Size": 380445,
+        "Sparsity": 0.75,
+        "Top-1 Accuracy": 0.10575364667747164,
+        "Top-1 Bird Accuracy": 0.02540650406504065,
+        "Top-1 Car Accuracy": 0.0,
+        "Top-1 Cat Accuracy": 0.7565922920892495,
+        "Top-1 Deer Accuracy": 0.025252525252525252,
+        "Top-1 Dog Accuracy": 0.012170385395537525,
+        "Top-1 Frog Accuracy": 0.036290322580645164,
+        "Top-1 Horse Accuracy": 0.07063572149344097,
+        "Top-1 Plane Accuracy": 0.016210739614994935,
+        "Top-1 Ship Accuracy": 0.0,
+        "Top-1 Truck Accuracy": 0.11573604060913706,
+        "Top-5 Accuracy": 0.5200567260940032,
+        "Top-5 Bird Accuracy": 0.9959349593495935,
+        "Top-5 Car Accuracy": 0.10840932117527863,
+        "Top-5 Cat Accuracy": 0.8843813387423936,
+        "Top-5 Deer Accuracy": 0.9444444444444444,
+        "Top-5 Dog Accuracy": 0.038539553752535496,
+        "Top-5 Frog Accuracy": 0.21875,
+        "Top-5 Horse Accuracy": 0.3350151362260343,
+        "Top-5 Plane Accuracy": 0.8652482269503546,
+        "Top-5 Ship Accuracy": 0.014227642276422764,
+        "Top-5 Truck Accuracy": 0.7969543147208121
+      },
+      "operation": {
+        "name": "Calibrate",
+        "parameters": {
+          "data": "train data"
+        }
+      },
+      "tag": "Calibrate (train data)"
+    },
+    {
+      "base": "resnet20trained-magnitudepruning90_compressed-recalibrated-retrained",
+      "id": "resnet20trained-magnitudepruning90-sensitivitypruning50_compressed",
+      "metrics": {
+        "Batch Latency Mean": 21.40840015411377,
+        "Batch Latency STD": 4.607867433006426,
+        "Model Size": 155443,
+        "Sparsity": 0.9500007434280956,
+        "Top-1 Accuracy": 0.10038492706645057,
+        "Top-1 Bird Accuracy": 0.0,
+        "Top-1 Car Accuracy": 0.0,
+        "Top-1 Cat Accuracy": 0.0,
+        "Top-1 Deer Accuracy": 0.0,
+        "Top-1 Dog Accuracy": 0.0,
+        "Top-1 Frog Accuracy": 0.0,
+        "Top-1 Horse Accuracy": 1.0,
+        "Top-1 Plane Accuracy": 0.0,
+        "Top-1 Ship Accuracy": 0.0,
+        "Top-1 Truck Accuracy": 0.0,
+        "Top-5 Accuracy": 0.5006077795786061,
+        "Top-5 Bird Accuracy": 1.0,
+        "Top-5 Car Accuracy": 0.0,
+        "Top-5 Cat Accuracy": 0.0,
+        "Top-5 Deer Accuracy": 1.0,
+        "Top-5 Dog Accuracy": 0.0,
+        "Top-5 Frog Accuracy": 1.0,
+        "Top-5 Horse Accuracy": 1.0,
+        "Top-5 Plane Accuracy": 0.0,
+        "Top-5 Ship Accuracy": 0.0,
+        "Top-5 Truck Accuracy": 1.0
+      },
+      "operation": {
+        "name": "Prune",
+        "parameters": {
+          "amount": 0.5,
+          "method": "Gradient"
+        }
+      },
+      "tag": "Prune (50.0%)"
+    },
+    {
+      "base": "resnet20trained-magnitudepruning50-magnitudepruning50_compressed-recalibrated-retrained",
+      "id": "resnet20trained-magnitudepruning50-magnitudepruning50-magnitudepruning50_compressed",
+      "metrics": {
+        "Batch Latency Mean": 23.38390064239502,
+        "Batch Latency STD": 3.52738704771318,
+        "Model Size": 242173,
+        "Sparsity": 0.875,
+        "Top-1 Accuracy": 0.24240275526742303,
+        "Top-1 Bird Accuracy": 0.1910569105691057,
+        "Top-1 Car Accuracy": 0.00911854103343465,
+        "Top-1 Cat Accuracy": 0.38336713995943206,
+        "Top-1 Deer Accuracy": 0.00202020202020202,
+        "Top-1 Dog Accuracy": 0.06490872210953347,
+        "Top-1 Frog Accuracy": 0.26713709677419356,
+        "Top-1 Horse Accuracy": 0.4177598385469223,
+        "Top-1 Plane Accuracy": 0.09625126646403243,
+        "Top-1 Ship Accuracy": 0.0,
+        "Top-1 Truck Accuracy": 0.9928934010152284,
+        "Top-5 Accuracy": 0.7510129659643436,
+        "Top-5 Bird Accuracy": 0.8140243902439024,
+        "Top-5 Car Accuracy": 0.9969604863221885,
+        "Top-5 Cat Accuracy": 0.9787018255578094,
+        "Top-5 Deer Accuracy": 0.3101010101010101,
+        "Top-5 Dog Accuracy": 0.4746450304259635,
+        "Top-5 Frog Accuracy": 0.9969758064516129,
+        "Top-5 Horse Accuracy": 0.9576185671039354,
+        "Top-5 Plane Accuracy": 0.7051671732522796,
+        "Top-5 Ship Accuracy": 0.27540650406504064,
+        "Top-5 Truck Accuracy": 0.9989847715736041
+      },
+      "operation": {
+        "name": "Prune",
+        "parameters": {
+          "amount": 0.5,
+          "method": "Magnitude"
+        }
+      },
+      "tag": "Prune (50.0%)"
+    },
+    {
+      "id": "resnet20",
+      "metrics": {
+        "Batch Latency Mean": 18.8915678024292,
+        "Batch Latency STD": 3.309450020200771,
+        "Model Size": 1001580,
+        "Sparsity": 0.0,
+        "Top-1 Accuracy": 0.09967585089141005,
+        "Top-1 Bird Accuracy": 0.0,
+        "Top-1 Car Accuracy": 0.0,
+        "Top-1 Cat Accuracy": 0.0,
+        "Top-1 Deer Accuracy": 0.0,
+        "Top-1 Dog Accuracy": 0.0,
+        "Top-1 Frog Accuracy": 0.0,
+        "Top-1 Horse Accuracy": 0.0,
+        "Top-1 Plane Accuracy": 0.0,
+        "Top-1 Ship Accuracy": 1.0,
+        "Top-1 Truck Accuracy": 0.0,
+        "Top-5 Accuracy": 0.5155996758508914,
+        "Top-5 Bird Accuracy": 0.0508130081300813,
+        "Top-5 Car Accuracy": 1.0,
+        "Top-5 Cat Accuracy": 0.5689655172413793,
+        "Top-5 Deer Accuracy": 1.0,
+        "Top-5 Dog Accuracy": 0.0,
+        "Top-5 Frog Accuracy": 0.5372983870967742,
+        "Top-5 Horse Accuracy": 0.0,
+        "Top-5 Plane Accuracy": 0.0,
+        "Top-5 Ship Accuracy": 1.0,
+        "Top-5 Truck Accuracy": 1.0
+      },
+      "tag": "resnet20"
+    },
+    {
+      "base": "resnet20trained-magnitudepruning50-sensitivitypruning50_compressed",
+      "id": "resnet20trained-magnitudepruning50-sensitivitypruning50_compressed-recalibrated-retrained",
+      "metrics": {
+        "Batch Latency Mean": 20.065926551818848,
+        "Batch Latency STD": 3.0752240739137364,
+        "Model Size": 381373,
+        "Sparsity": 0.75,
+        "Top-1 Accuracy": 0.5872163695299838,
+        "Top-1 Bird Accuracy": 0.5030487804878049,
+        "Top-1 Car Accuracy": 0.5491388044579534,
+        "Top-1 Cat Accuracy": 0.30425963488843816,
+        "Top-1 Deer Accuracy": 0.5909090909090909,
+        "Top-1 Dog Accuracy": 0.4949290060851927,
+        "Top-1 Frog Accuracy": 0.7147177419354839,
+        "Top-1 Horse Accuracy": 0.5903128153380424,
+        "Top-1 Plane Accuracy": 0.5197568389057751,
+        "Top-1 Ship Accuracy": 0.8191056910569106,
+        "Top-1 Truck Accuracy": 0.7857868020304568,
+        "Top-5 Accuracy": 0.9520867098865479,
+        "Top-5 Bird Accuracy": 0.9695121951219512,
+        "Top-5 Car Accuracy": 0.92806484295846,
+        "Top-5 Cat Accuracy": 0.9563894523326572,
+        "Top-5 Deer Accuracy": 0.9717171717171718,
+        "Top-5 Dog Accuracy": 0.9655172413793104,
+        "Top-5 Frog Accuracy": 0.9445564516129032,
+        "Top-5 Horse Accuracy": 0.9071644803229062,
+        "Top-5 Plane Accuracy": 0.939209726443769,
+        "Top-5 Ship Accuracy": 0.9735772357723578,
+        "Top-5 Truck Accuracy": 0.965482233502538
+      },
+      "operation": {
+        "name": "Train",
+        "parameters": {
+          "epochs": 50
+        }
+      },
+      "tag": "Train (50)"
+    },
+    {
+      "base": "resnet20trained-magnitudepruning70_compressed-recalibrated-retrained",
+      "id": "resnet20trained-magnitudepruning70-sensitivitypruning50_compressed",
+      "metrics": {
+        "Batch Latency Mean": 21.150397109985352,
+        "Batch Latency STD": 4.398886950896504,
+        "Model Size": 272230,
+        "Sparsity": 0.8500022302842869,
+        "Top-1 Accuracy": 0.09987844408427876,
+        "Top-1 Bird Accuracy": 0.0,
+        "Top-1 Car Accuracy": 0.0,
+        "Top-1 Cat Accuracy": 1.0,
+        "Top-1 Deer Accuracy": 0.0,
+        "Top-1 Dog Accuracy": 0.0,
+        "Top-1 Frog Accuracy": 0.0,
+        "Top-1 Horse Accuracy": 0.0,
+        "Top-1 Plane Accuracy": 0.0,
+        "Top-1 Ship Accuracy": 0.0,
+        "Top-1 Truck Accuracy": 0.0,
+        "Top-5 Accuracy": 0.4994935170178282,
+        "Top-5 Bird Accuracy": 1.0,
+        "Top-5 Car Accuracy": 0.0,
+        "Top-5 Cat Accuracy": 1.0,
+        "Top-5 Deer Accuracy": 1.0,
+        "Top-5 Dog Accuracy": 0.0,
+        "Top-5 Frog Accuracy": 0.0,
+        "Top-5 Horse Accuracy": 0.0,
+        "Top-5 Plane Accuracy": 1.0,
+        "Top-5 Ship Accuracy": 1.0,
+        "Top-5 Truck Accuracy": 0.0
+      },
+      "operation": {
+        "name": "Prune",
+        "parameters": {
+          "amount": 0.5,
+          "method": "Gradient"
+        }
+      },
+      "tag": "Prune (50.0%)"
+    },
+    {
+      "base": "resnet20trained-gradientpruning50_compressed",
+      "id": "resnet20trained-gradientpruning50_compressed-recalibrated",
+      "metrics": {
+        "Batch Latency Mean": 22.086777877807616,
+        "Batch Latency STD": 4.2970093078850455,
+        "Model Size": 619679,
+        "Sparsity": 0.5,
+        "Top-1 Accuracy": 0.7019854132901134,
+        "Top-1 Bird Accuracy": 0.6615853658536586,
+        "Top-1 Car Accuracy": 0.7659574468085106,
+        "Top-1 Cat Accuracy": 0.48884381338742394,
+        "Top-1 Deer Accuracy": 0.6636363636363637,
+        "Top-1 Dog Accuracy": 0.652129817444219,
+        "Top-1 Frog Accuracy": 0.8356854838709677,
+        "Top-1 Horse Accuracy": 0.8486377396569122,
+        "Top-1 Plane Accuracy": 0.585612968591692,
+        "Top-1 Ship Accuracy": 0.6890243902439024,
+        "Top-1 Truck Accuracy": 0.8274111675126904,
+        "Top-5 Accuracy": 0.958063209076175,
+        "Top-5 Bird Accuracy": 0.9359756097560976,
+        "Top-5 Car Accuracy": 0.9898682877406282,
+        "Top-5 Cat Accuracy": 0.8742393509127789,
+        "Top-5 Deer Accuracy": 0.9686868686868687,
+        "Top-5 Dog Accuracy": 0.9462474645030426,
+        "Top-5 Frog Accuracy": 0.9818548387096774,
+        "Top-5 Horse Accuracy": 0.9959636730575177,
+        "Top-5 Plane Accuracy": 0.9635258358662614,
+        "Top-5 Ship Accuracy": 0.9491869918699187,
+        "Top-5 Truck Accuracy": 0.9746192893401016
+      },
+      "operation": {
+        "name": "Calibrate",
+        "parameters": {
+          "data": "train data"
+        }
+      },
+      "tag": "Calibrate (train data)"
+    },
+    {
+      "base": "resnet20trained-magnitudepruning70_compressed",
+      "id": "resnet20trained-magnitudepruning70_compressed-recalibrated",
+      "metrics": {
+        "Batch Latency Mean": 19.75162544250488,
+        "Batch Latency STD": 2.3209740890839643,
+        "Model Size": 422741,
+        "Sparsity": 0.7000007434280956,
+        "Top-1 Accuracy": 0.8754051863857374,
+        "Top-1 Bird Accuracy": 0.8241869918699187,
+        "Top-1 Car Accuracy": 0.9371833839918946,
+        "Top-1 Cat Accuracy": 0.7728194726166329,
+        "Top-1 Deer Accuracy": 0.907070707070707,
+        "Top-1 Dog Accuracy": 0.8549695740365112,
+        "Top-1 Frog Accuracy": 0.8870967741935484,
+        "Top-1 Horse Accuracy": 0.8910191725529768,
+        "Top-1 Plane Accuracy": 0.8703140830800405,
+        "Top-1 Ship Accuracy": 0.8932926829268293,
+        "Top-1 Truck Accuracy": 0.915736040609137,
+        "Top-5 Accuracy": 0.994631280388979,
+        "Top-5 Bird Accuracy": 0.9928861788617886,
+        "Top-5 Car Accuracy": 0.993920972644377,
+        "Top-5 Cat Accuracy": 0.9969574036511156,
+        "Top-5 Deer Accuracy": 1.0,
+        "Top-5 Dog Accuracy": 0.9908722109533469,
+        "Top-5 Frog Accuracy": 0.9929435483870968,
+        "Top-5 Horse Accuracy": 0.9979818365287588,
+        "Top-5 Plane Accuracy": 0.9888551165146909,
+        "Top-5 Ship Accuracy": 0.9949186991869918,
+        "Top-5 Truck Accuracy": 0.9969543147208122
+      },
+      "operation": {
+        "name": "Calibrate",
+        "parameters": {
+          "data": "train data"
+        }
+      },
+      "tag": "Calibrate (train data)"
+    },
+    {
+      "base": "resnet20trained-magnitudepruning90_compressed",
+      "id": "resnet20trained-magnitudepruning90_compressed-recalibrated-retrained",
+      "metrics": {
+        "Batch Latency Mean": 20.733059310913085,
+        "Batch Latency STD": 4.287337919364263,
+        "Model Size": 215900,
+        "Sparsity": 0.9000014868561913,
+        "Top-1 Accuracy": 0.8925243111831442,
+        "Top-1 Bird Accuracy": 0.8465447154471545,
+        "Top-1 Car Accuracy": 0.9533941236068896,
+        "Top-1 Cat Accuracy": 0.7596348884381339,
+        "Top-1 Deer Accuracy": 0.8929292929292929,
+        "Top-1 Dog Accuracy": 0.8610547667342799,
+        "Top-1 Frog Accuracy": 0.9264112903225806,
+        "Top-1 Horse Accuracy": 0.9233097880928355,
+        "Top-1 Plane Accuracy": 0.8743667679837892,
+        "Top-1 Ship Accuracy": 0.9400406504065041,
+        "Top-1 Truck Accuracy": 0.9472081218274112,
+        "Top-5 Accuracy": 0.9973662884927067,
+        "Top-5 Bird Accuracy": 0.9939024390243902,
+        "Top-5 Car Accuracy": 1.0,
+        "Top-5 Cat Accuracy": 0.9979716024340771,
+        "Top-5 Deer Accuracy": 0.996969696969697,
+        "Top-5 Dog Accuracy": 0.9939148073022313,
+        "Top-5 Frog Accuracy": 0.998991935483871,
+        "Top-5 Horse Accuracy": 0.9969727547931383,
+        "Top-5 Plane Accuracy": 0.9979736575481256,
+        "Top-5 Ship Accuracy": 0.9979674796747967,
+        "Top-5 Truck Accuracy": 0.9989847715736041
+      },
+      "operation": {
+        "name": "Train",
+        "parameters": {
+          "epochs": 50
+        }
+      },
+      "tag": "Train (50)"
+    },
+    {
+      "base": "resnet20trained-magnitudepruning90_compressed",
+      "id": "resnet20trained-magnitudepruning90_compressed-recalibrated",
+      "metrics": {
+        "Batch Latency Mean": 19.35790386199951,
+        "Batch Latency STD": 3.2584139895492643,
+        "Model Size": 212687,
+        "Sparsity": 0.9000014868561913,
+        "Top-1 Accuracy": 0.4198743922204214,
+        "Top-1 Bird Accuracy": 0.4481707317073171,
+        "Top-1 Car Accuracy": 0.23505572441742653,
+        "Top-1 Cat Accuracy": 0.550709939148073,
+        "Top-1 Deer Accuracy": 0.6141414141414141,
+        "Top-1 Dog Accuracy": 0.4239350912778905,
+        "Top-1 Frog Accuracy": 0.1975806451612903,
+        "Top-1 Horse Accuracy": 0.644803229061554,
+        "Top-1 Plane Accuracy": 0.2857142857142857,
+        "Top-1 Ship Accuracy": 0.11686991869918699,
+        "Top-1 Truck Accuracy": 0.6812182741116751,
+        "Top-5 Accuracy": 0.8774311183144247,
+        "Top-5 Bird Accuracy": 0.9197154471544715,
+        "Top-5 Car Accuracy": 0.851063829787234,
+        "Top-5 Cat Accuracy": 0.9705882352941176,
+        "Top-5 Deer Accuracy": 0.9515151515151515,
+        "Top-5 Dog Accuracy": 0.8509127789046653,
+        "Top-5 Frog Accuracy": 0.813508064516129,
+        "Top-5 Horse Accuracy": 0.941473259334006,
+        "Top-5 Plane Accuracy": 0.8358662613981763,
+        "Top-5 Ship Accuracy": 0.6961382113821138,
+        "Top-5 Truck Accuracy": 0.9431472081218274
+      },
+      "operation": {
+        "name": "Calibrate",
+        "parameters": {
+          "data": "train data"
+        }
+      },
+      "tag": "Calibrate (train data)"
+    },
+    {
+      "base": "resnet20trained",
+      "id": "resnet20trained-gradientpruning90_compressed",
+      "metrics": {
+        "Batch Latency Mean": 19.764489364624023,
+        "Batch Latency STD": 2.612660286025357,
+        "Model Size": 214275,
+        "Sparsity": 0.9000014868561913,
+        "Top-1 Accuracy": 0.10038492706645057,
+        "Top-1 Bird Accuracy": 0.0,
+        "Top-1 Car Accuracy": 0.0,
+        "Top-1 Cat Accuracy": 0.0,
+        "Top-1 Deer Accuracy": 0.0,
+        "Top-1 Dog Accuracy": 0.0,
+        "Top-1 Frog Accuracy": 0.0,
+        "Top-1 Horse Accuracy": 1.0,
+        "Top-1 Plane Accuracy": 0.0,
+        "Top-1 Ship Accuracy": 0.0,
+        "Top-1 Truck Accuracy": 0.0,
+        "Top-5 Accuracy": 0.5003038897893031,
+        "Top-5 Bird Accuracy": 0.0,
+        "Top-5 Car Accuracy": 1.0,
+        "Top-5 Cat Accuracy": 1.0,
+        "Top-5 Deer Accuracy": 1.0,
+        "Top-5 Dog Accuracy": 0.0,
+        "Top-5 Frog Accuracy": 0.0,
+        "Top-5 Horse Accuracy": 1.0,
+        "Top-5 Plane Accuracy": 0.0,
+        "Top-5 Ship Accuracy": 0.0,
+        "Top-5 Truck Accuracy": 1.0
+      },
+      "operation": {
+        "name": "Prune",
+        "parameters": {
+          "amount": 0.9,
+          "method": "Gradient"
+        }
+      },
+      "tag": "Prune (90.0%)"
+    },
+    {
+      "base": "resnet20trained-magnitudepruning70-sensitivitypruning20_compressed",
+      "id": "resnet20trained-magnitudepruning70-sensitivitypruning20_compressed-recalibrated",
+      "metrics": {
+        "Batch Latency Mean": 21.56793270111084,
+        "Batch Latency STD": 3.8162601220280585,
+        "Model Size": 368566,
+        "Sparsity": 0.7599991078862852,
+        "Top-1 Accuracy": 0.09177471636952998,
+        "Top-1 Bird Accuracy": 0.524390243902439,
+        "Top-1 Car Accuracy": 0.002026342451874367,
+        "Top-1 Cat Accuracy": 0.1511156186612576,
+        "Top-1 Deer Accuracy": 0.006060606060606061,
+        "Top-1 Dog Accuracy": 0.006085192697768763,
+        "Top-1 Frog Accuracy": 0.006048387096774193,
+        "Top-1 Horse Accuracy": 0.12108980827447023,
+        "Top-1 Plane Accuracy": 0.002026342451874367,
+        "Top-1 Ship Accuracy": 0.003048780487804878,
+        "Top-1 Truck Accuracy": 0.09746192893401015,
+        "Top-5 Accuracy": 0.5122568881685575,
+        "Top-5 Bird Accuracy": 0.9705284552845529,
+        "Top-5 Car Accuracy": 0.3080040526849038,
+        "Top-5 Cat Accuracy": 0.9574036511156186,
+        "Top-5 Deer Accuracy": 0.7282828282828283,
+        "Top-5 Dog Accuracy": 0.03144016227180527,
+        "Top-5 Frog Accuracy": 0.18649193548387097,
+        "Top-5 Horse Accuracy": 0.3562058526740666,
+        "Top-5 Plane Accuracy": 0.47011144883485306,
+        "Top-5 Ship Accuracy": 0.8363821138211383,
+        "Top-5 Truck Accuracy": 0.2812182741116751
+      },
+      "operation": {
+        "name": "Calibrate",
+        "parameters": {
+          "data": "train data"
+        }
+      },
+      "tag": "Calibrate (train data)"
+    },
+    {
+      "base": "resnet20trained-gradientpruning50_compressed",
+      "id": "resnet20trained-gradientpruning50_compressed-recalibrated-retrained",
+      "metrics": {
+        "Batch Latency Mean": 21.513587188720702,
+        "Batch Latency STD": 5.603057361920788,
+        "Model Size": 623626,
+        "Sparsity": 0.5,
+        "Top-1 Accuracy": 0.9097447325769854,
+        "Top-1 Bird Accuracy": 0.8800813008130082,
+        "Top-1 Car Accuracy": 0.9685916919959473,
+        "Top-1 Cat Accuracy": 0.7971602434077079,
+        "Top-1 Deer Accuracy": 0.9171717171717172,
+        "Top-1 Dog Accuracy": 0.8853955375253549,
+        "Top-1 Frog Accuracy": 0.9183467741935484,
+        "Top-1 Horse Accuracy": 0.9323915237134208,
+        "Top-1 Plane Accuracy": 0.9240121580547113,
+        "Top-1 Ship Accuracy": 0.9522357723577236,
+        "Top-1 Truck Accuracy": 0.9218274111675127,
+        "Top-5 Accuracy": 0.9959481361426256,
+        "Top-5 Bird Accuracy": 0.9908536585365854,
+        "Top-5 Car Accuracy": 1.0,
+        "Top-5 Cat Accuracy": 0.9898580121703854,
+        "Top-5 Deer Accuracy": 0.9959595959595959,
+        "Top-5 Dog Accuracy": 0.9949290060851927,
+        "Top-5 Frog Accuracy": 0.9979838709677419,
+        "Top-5 Horse Accuracy": 0.9979818365287588,
+        "Top-5 Plane Accuracy": 0.9979736575481256,
+        "Top-5 Ship Accuracy": 0.9979674796747967,
+        "Top-5 Truck Accuracy": 0.9959390862944163
+      },
+      "operation": {
+        "name": "Train",
+        "parameters": {
+          "epochs": 50
+        }
+      },
+      "tag": "Train (50)"
+    },
+    {
+      "base": "resnet20trained",
+      "id": "resnet20trained-randompruning70_compressed",
+      "metrics": {
+        "Batch Latency Mean": 21.05844497680664,
+        "Batch Latency STD": 6.00372107697438,
+        "Model Size": 449242,
+        "Sparsity": 0.7000007434280956,
+        "Top-1 Accuracy": 0.09987844408427876,
+        "Top-1 Bird Accuracy": 0.0,
+        "Top-1 Car Accuracy": 0.0,
+        "Top-1 Cat Accuracy": 1.0,
+        "Top-1 Deer Accuracy": 0.0,
+        "Top-1 Dog Accuracy": 0.0,
+        "Top-1 Frog Accuracy": 0.0,
+        "Top-1 Horse Accuracy": 0.0,
+        "Top-1 Plane Accuracy": 0.0,
+        "Top-1 Ship Accuracy": 0.0,
+        "Top-1 Truck Accuracy": 0.0,
+        "Top-5 Accuracy": 0.49939222042139386,
+        "Top-5 Bird Accuracy": 1.0,
+        "Top-5 Car Accuracy": 0.0,
+        "Top-5 Cat Accuracy": 1.0,
+        "Top-5 Deer Accuracy": 0.0,
+        "Top-5 Dog Accuracy": 0.0,
+        "Top-5 Frog Accuracy": 0.0,
+        "Top-5 Horse Accuracy": 1.0,
+        "Top-5 Plane Accuracy": 0.0,
+        "Top-5 Ship Accuracy": 1.0,
+        "Top-5 Truck Accuracy": 1.0
+      },
+      "operation": {
+        "name": "Prune",
+        "parameters": {
+          "amount": 0.7,
+          "method": "Random"
+        }
+      },
+      "tag": "Prune (70.0%)"
+    },
+    {
+      "base": "resnet20trained-magnitudepruning70-quantizeint8_compressed",
+      "id": "resnet20trained-magnitudepruning70-quantizeint8_compressed-recalibrated",
+      "metrics": {
+        "Batch Latency Mean": 14.189209461212158,
+        "Batch Latency STD": 0.4563637679479746,
+        "Model Size": 127370,
+        "Sparsity": 0.7000007434280956,
+        "Top-1 Accuracy": 0.9157212317666127,
+        "Top-1 Bird Accuracy": 0.8790650406504065,
+        "Top-1 Car Accuracy": 0.9655521783181358,
+        "Top-1 Cat Accuracy": 0.8184584178498986,
+        "Top-1 Deer Accuracy": 0.9353535353535354,
+        "Top-1 Dog Accuracy": 0.8793103448275862,
+        "Top-1 Frog Accuracy": 0.9334677419354839,
+        "Top-1 Horse Accuracy": 0.9243188698284561,
+        "Top-1 Plane Accuracy": 0.9240121580547113,
+        "Top-1 Ship Accuracy": 0.9502032520325203,
+        "Top-1 Truck Accuracy": 0.9472081218274112,
+        "Top-5 Accuracy": 0.9972649918962723,
+        "Top-5 Bird Accuracy": 0.9939024390243902,
+        "Top-5 Car Accuracy": 1.0,
+        "Top-5 Cat Accuracy": 0.9949290060851927,
+        "Top-5 Deer Accuracy": 0.997979797979798,
+        "Top-5 Dog Accuracy": 0.9949290060851927,
+        "Top-5 Frog Accuracy": 1.0,
+        "Top-5 Horse Accuracy": 0.9989909182643795,
+        "Top-5 Plane Accuracy": 0.9959473150962512,
+        "Top-5 Ship Accuracy": 0.9969512195121951,
+        "Top-5 Truck Accuracy": 0.9989847715736041
+      },
+      "operation": {
+        "name": "Calibrate",
+        "parameters": {
+          "data": "train data"
+        }
+      },
+      "tag": "Calibrate (train data)"
+    },
+    {
+      "base": "resnet20trained-magnitudepruning50_compressed-recalibrated-retrained",
+      "id": "resnet20trained-magnitudepruning50-magnitudepruning50_compressed",
+      "metrics": {
+        "Batch Latency Mean": 25.659324836730956,
+        "Batch Latency STD": 3.021245401899833,
+        "Model Size": 373371,
+        "Sparsity": 0.75,
+        "Top-1 Accuracy": 0.5964343598055105,
+        "Top-1 Bird Accuracy": 0.2459349593495935,
+        "Top-1 Car Accuracy": 0.48125633232016213,
+        "Top-1 Cat Accuracy": 0.2697768762677485,
+        "Top-1 Deer Accuracy": 0.8939393939393939,
+        "Top-1 Dog Accuracy": 0.90973630831643,
+        "Top-1 Frog Accuracy": 0.8780241935483871,
+        "Top-1 Horse Accuracy": 0.6316851664984864,
+        "Top-1 Plane Accuracy": 0.8875379939209727,
+        "Top-1 Ship Accuracy": 0.4136178861788618,
+        "Top-1 Truck Accuracy": 0.34822335025380713,
+        "Top-5 Accuracy": 0.9267625607779578,
+        "Top-5 Bird Accuracy": 0.8302845528455285,
+        "Top-5 Car Accuracy": 0.8429584599797366,
+        "Top-5 Cat Accuracy": 0.960446247464503,
+        "Top-5 Deer Accuracy": 1.0,
+        "Top-5 Dog Accuracy": 0.9989858012170385,
+        "Top-5 Frog Accuracy": 0.9909274193548387,
+        "Top-5 Horse Accuracy": 0.9959636730575177,
+        "Top-5 Plane Accuracy": 0.9918946301925026,
+        "Top-5 Ship Accuracy": 0.8617886178861789,
+        "Top-5 Truck Accuracy": 0.7928934010152284
+      },
+      "operation": {
+        "name": "Prune",
+        "parameters": {
+          "amount": 0.5,
+          "method": "Magnitude"
+        }
+      },
+      "tag": "Prune (50.0%)"
+    },
+    {
+      "base": "resnet20trained-magnitudepruning90_compressed-recalibrated-retrained",
+      "id": "resnet20trained-magnitudepruning90-quantizeint8_compressed",
+      "metrics": {
+        "Batch Latency Mean": 13.61790714263916,
+        "Batch Latency STD": 0.7617739559309223,
+        "Model Size": 63837,
+        "Sparsity": 0.9000014868561913,
+        "Top-1 Accuracy": 0.8854335494327391,
+        "Top-1 Bird Accuracy": 0.850609756097561,
+        "Top-1 Car Accuracy": 0.9432624113475178,
+        "Top-1 Cat Accuracy": 0.731237322515213,
+        "Top-1 Deer Accuracy": 0.8878787878787879,
+        "Top-1 Dog Accuracy": 0.8651115618661258,
+        "Top-1 Frog Accuracy": 0.9122983870967742,
+        "Top-1 Horse Accuracy": 0.9122098890010091,
+        "Top-1 Plane Accuracy": 0.8743667679837892,
+        "Top-1 Ship Accuracy": 0.9369918699186992,
+        "Top-1 Truck Accuracy": 0.9401015228426396,
+        "Top-5 Accuracy": 0.9962520259319287,
+        "Top-5 Bird Accuracy": 0.9878048780487805,
+        "Top-5 Car Accuracy": 1.0,
+        "Top-5 Cat Accuracy": 0.9959432048681541,
+        "Top-5 Deer Accuracy": 0.9949494949494949,
+        "Top-5 Dog Accuracy": 0.9959432048681541,
+        "Top-5 Frog Accuracy": 0.9979838709677419,
+        "Top-5 Horse Accuracy": 0.9969727547931383,
+        "Top-5 Plane Accuracy": 0.9969604863221885,
+        "Top-5 Ship Accuracy": 0.9969512195121951,
+        "Top-5 Truck Accuracy": 0.9989847715736041
+      },
+      "operation": {
+        "name": "Quantize",
+        "parameters": {
+          "amount": "int8"
+        }
+      },
+      "tag": "Quantize (int8)"
+    },
+    {
+      "base": "resnet20trained",
+      "id": "resnet20trained-magnitudepruning50_compressed",
+      "metrics": {
+        "Batch Latency Mean": 25.457478523254395,
+        "Batch Latency STD": 16.782591319299385,
+        "Model Size": 616246,
+        "Sparsity": 0.5,
+        "Top-1 Accuracy": 0.8736831442463533,
+        "Top-1 Bird Accuracy": 0.7967479674796748,
+        "Top-1 Car Accuracy": 0.8966565349544073,
+        "Top-1 Cat Accuracy": 0.6673427991886409,
+        "Top-1 Deer Accuracy": 0.895959595959596,
+        "Top-1 Dog Accuracy": 0.9127789046653144,
+        "Top-1 Frog Accuracy": 0.8729838709677419,
+        "Top-1 Horse Accuracy": 0.9788092835519677,
+        "Top-1 Plane Accuracy": 0.8875379939209727,
+        "Top-1 Ship Accuracy": 0.9014227642276422,
+        "Top-1 Truck Accuracy": 0.9258883248730965,
+        "Top-5 Accuracy": 0.9942260940032415,
+        "Top-5 Bird Accuracy": 0.9867886178861789,
+        "Top-5 Car Accuracy": 0.9929078014184397,
+        "Top-5 Cat Accuracy": 0.9908722109533469,
+        "Top-5 Deer Accuracy": 0.998989898989899,
+        "Top-5 Dog Accuracy": 0.9989858012170385,
+        "Top-5 Frog Accuracy": 0.9919354838709677,
+        "Top-5 Horse Accuracy": 0.9989909182643795,
+        "Top-5 Plane Accuracy": 0.9929078014184397,
+        "Top-5 Ship Accuracy": 0.991869918699187,
+        "Top-5 Truck Accuracy": 0.9979695431472081
+      },
+      "operation": {
+        "name": "Prune",
+        "parameters": {
+          "amount": 0.5,
+          "method": "Magnitude"
+        }
+      },
+      "tag": "Prune (50.0%)"
+    },
+    {
+      "base": "resnet20trained-magnitudepruning90-sensitivitypruning50_compressed",
+      "id": "resnet20trained-magnitudepruning90-sensitivitypruning50_compressed-recalibrated-retrained",
+      "metrics": {
+        "Batch Latency Mean": 19.179065704345703,
+        "Batch Latency STD": 3.6780759141591837,
+        "Model Size": 153719,
+        "Sparsity": 0.9500007434280956,
+        "Top-1 Accuracy": 0.1002836304700162,
+        "Top-1 Bird Accuracy": 0.0,
+        "Top-1 Car Accuracy": 0.0,
+        "Top-1 Cat Accuracy": 0.0,
+        "Top-1 Deer Accuracy": 1.0,
+        "Top-1 Dog Accuracy": 0.0,
+        "Top-1 Frog Accuracy": 0.0,
+        "Top-1 Horse Accuracy": 0.0,
+        "Top-1 Plane Accuracy": 0.0,
+        "Top-1 Ship Accuracy": 0.0,
+        "Top-1 Truck Accuracy": 0.0,
+        "Top-5 Accuracy": 0.5003038897893031,
+        "Top-5 Bird Accuracy": 1.0,
+        "Top-5 Car Accuracy": 1.0,
+        "Top-5 Cat Accuracy": 1.0,
+        "Top-5 Deer Accuracy": 1.0,
+        "Top-5 Dog Accuracy": 0.0,
+        "Top-5 Frog Accuracy": 1.0,
+        "Top-5 Horse Accuracy": 0.0,
+        "Top-5 Plane Accuracy": 0.0,
+        "Top-5 Ship Accuracy": 0.0,
+        "Top-5 Truck Accuracy": 0.0
+      },
+      "operation": {
+        "name": "Train",
+        "parameters": {
+          "epochs": 50
+        }
+      },
+      "tag": "Train (50)"
+    },
+    {
+      "base": "resnet20trained-magnitudepruning70_compressed-recalibrated-retrained",
+      "id": "resnet20trained-magnitudepruning70-quantizeint8_compressed",
+      "metrics": {
+        "Batch Latency Mean": 14.374371242523193,
+        "Batch Latency STD": 0.5286653745925722,
+        "Model Size": 127370,
+        "Sparsity": 0.7000007434280956,
+        "Top-1 Accuracy": 0.9157212317666127,
+        "Top-1 Bird Accuracy": 0.8790650406504065,
+        "Top-1 Car Accuracy": 0.9655521783181358,
+        "Top-1 Cat Accuracy": 0.8184584178498986,
+        "Top-1 Deer Accuracy": 0.9353535353535354,
+        "Top-1 Dog Accuracy": 0.8793103448275862,
+        "Top-1 Frog Accuracy": 0.9334677419354839,
+        "Top-1 Horse Accuracy": 0.9243188698284561,
+        "Top-1 Plane Accuracy": 0.9240121580547113,
+        "Top-1 Ship Accuracy": 0.9502032520325203,
+        "Top-1 Truck Accuracy": 0.9472081218274112,
+        "Top-5 Accuracy": 0.9972649918962723,
+        "Top-5 Bird Accuracy": 0.9939024390243902,
+        "Top-5 Car Accuracy": 1.0,
+        "Top-5 Cat Accuracy": 0.9949290060851927,
+        "Top-5 Deer Accuracy": 0.997979797979798,
+        "Top-5 Dog Accuracy": 0.9949290060851927,
+        "Top-5 Frog Accuracy": 1.0,
+        "Top-5 Horse Accuracy": 0.9989909182643795,
+        "Top-5 Plane Accuracy": 0.9959473150962512,
+        "Top-5 Ship Accuracy": 0.9969512195121951,
+        "Top-5 Truck Accuracy": 0.9989847715736041
+      },
+      "operation": {
+        "name": "Quantize",
+        "parameters": {
+          "amount": "int8"
+        }
+      },
+      "tag": "Quantize (int8)"
+    },
+    {
+      "base": "resnet20trained-magnitudepruning50-magnitudepruning50-magnitudepruning50_compressed",
+      "id": "resnet20trained-magnitudepruning50-magnitudepruning50-magnitudepruning50_compressed-recalibrated-retrained",
+      "metrics": {
+        "Batch Latency Mean": 20.819404792785644,
+        "Batch Latency STD": 3.028561922388138,
+        "Model Size": 245361,
+        "Sparsity": 0.875,
+        "Top-1 Accuracy": 0.9024513776337115,
+        "Top-1 Bird Accuracy": 0.8780487804878049,
+        "Top-1 Car Accuracy": 0.950354609929078,
+        "Top-1 Cat Accuracy": 0.7626774847870182,
+        "Top-1 Deer Accuracy": 0.9202020202020202,
+        "Top-1 Dog Accuracy": 0.8742393509127789,
+        "Top-1 Frog Accuracy": 0.9435483870967742,
+        "Top-1 Horse Accuracy": 0.9081735620585267,
+        "Top-1 Plane Accuracy": 0.8936170212765957,
+        "Top-1 Ship Accuracy": 0.9583333333333334,
+        "Top-1 Truck Accuracy": 0.9350253807106599,
+        "Top-5 Accuracy": 0.9967585089141004,
+        "Top-5 Bird Accuracy": 0.9949186991869918,
+        "Top-5 Car Accuracy": 0.9989868287740629,
+        "Top-5 Cat Accuracy": 0.9949290060851927,
+        "Top-5 Deer Accuracy": 0.998989898989899,
+        "Top-5 Dog Accuracy": 0.9939148073022313,
+        "Top-5 Frog Accuracy": 0.9969758064516129,
+        "Top-5 Horse Accuracy": 0.9969727547931383,
+        "Top-5 Plane Accuracy": 0.9969604863221885,
+        "Top-5 Ship Accuracy": 0.9979674796747967,
+        "Top-5 Truck Accuracy": 0.9969543147208122
+      },
+      "operation": {
+        "name": "Train",
+        "parameters": {
+          "epochs": 50
+        }
+      },
+      "tag": "Train (50)"
+    },
+    {
+      "base": "resnet20trained-randompruning70_compressed",
+      "id": "resnet20trained-randompruning70_compressed-recalibrated",
+      "metrics": {
+        "Batch Latency Mean": 19.161331176757812,
+        "Batch Latency STD": 3.2729933489043925,
+        "Model Size": 449358,
+        "Sparsity": 0.7000007434280956,
+        "Top-1 Accuracy": 0.12662074554294975,
+        "Top-1 Bird Accuracy": 0.0,
+        "Top-1 Car Accuracy": 0.0,
+        "Top-1 Cat Accuracy": 0.07606490872210954,
+        "Top-1 Deer Accuracy": 0.0,
+        "Top-1 Dog Accuracy": 0.0,
+        "Top-1 Frog Accuracy": 0.0010080645161290322,
+        "Top-1 Horse Accuracy": 0.0,
+        "Top-1 Plane Accuracy": 0.0,
+        "Top-1 Ship Accuracy": 0.7073170731707317,
+        "Top-1 Truck Accuracy": 0.4852791878172589,
+        "Top-5 Accuracy": 0.47619529983792547,
+        "Top-5 Bird Accuracy": 0.009146341463414634,
+        "Top-5 Car Accuracy": 0.03546099290780142,
+        "Top-5 Cat Accuracy": 1.0,
+        "Top-5 Deer Accuracy": 0.14545454545454545,
+        "Top-5 Dog Accuracy": 0.016227180527383367,
+        "Top-5 Frog Accuracy": 0.6280241935483871,
+        "Top-5 Horse Accuracy": 0.9313824419778002,
+        "Top-5 Plane Accuracy": 0.0,
+        "Top-5 Ship Accuracy": 1.0,
+        "Top-5 Truck Accuracy": 0.9959390862944163
+      },
+      "operation": {
+        "name": "Calibrate",
+        "parameters": {
+          "data": "train data"
+        }
+      },
+      "tag": "Calibrate (train data)"
+    }
+  ],
+  "operations": [
+    {
+      "name": "Prune",
+      "parameters": {
+        "method": {
+          "method": ["Magnitude", "Gradient", "Random"],
+          "type": "nominal"
+        },
+        "sparsity": {
+          "max": 1.0,
+          "min": 0.0,
+          "type": "continuous"
+        }
+      }
+    },
+    {
+      "name": "Quantize",
+      "parameters": {
+        "precision": {
+          "options": ["int8", "float16"],
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "name": "Calibrate",
+      "parameters": {
+        "data": {
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "name": "Train",
+      "parameters": {
+        "epochs": {
+          "type": "quantitative"
+        }
+      }
+    }
+  ]
+}

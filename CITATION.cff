@@ -1,0 +1,35 @@
+citation-file-format: 1.2.0
+creator:
+  - family-names: Boggust
+    given-names: Angie
+  - family-names: Sivaraman
+    given-names: Venkatesh
+  - family-names: Assogba
+    given-names: Yannick
+  - family-names: Ren
+    given-names: Donghao
+  - family-names: Moritz
+    given-names: Dominik
+  - family-names: Hohman
+    given-names: Fred
+title: Compress and Compare
+version: 1.0.0
+url: https://github.com/apple/ml-compress-and-compare
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Boggust
+      given-names: Angie
+    - family-names: Sivaraman 
+      given-names: Venkatesh
+    - family-names: Assogba
+      given-names: Yannick
+    - family-names: Ren
+      given-names: Donghao
+    - family-names: Moritz
+      given-names: Dominik
+    - family-names: Hohman
+      given-names: Fred
+  title: "Compress and Compare: Interactively Evaluating Efficiency and Behavior Across ML Model Compression Experiments"
+  year: 2024
+  journal: IEEE Transactions on Visualization and Computer Graphics

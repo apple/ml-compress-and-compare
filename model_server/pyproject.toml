@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "interactive_compression"
+version = "0.1"
+description = "Train and visualize compressed models"
+readme = "README.md"
+dependencies = [
+    "torch >= 1.11",
+    "flask >= 2.0.0",
+    "flask-cors",
+    "flask-socketio",
+    "flask-apscheduler",
+    "tqdm",
+    "pyarrow",
+    "h5py",
+    "traitlets",
+    "eventlet"
+]
+requires-python = ">=3.7"

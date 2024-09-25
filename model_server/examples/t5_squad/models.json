@@ -1,0 +1,772 @@
+{
+  "operations": [
+    {
+      "name": "Pruning",
+      "parameters": {
+        "sparsity": {
+          "type": "continuous",
+          "min": 0,
+          "max": 1
+        }
+      }
+    },
+    {
+      "name": "Selective Pruning",
+      "parameters": {
+        "sparsity": {
+          "type": "continuous",
+          "min": 0,
+          "max": 1
+        },
+        "layers": {
+          "type": "ordinal",
+          "options": [
+            "attention",
+            "feedforward"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Restore",
+      "parameters": {
+        "layers": {
+          "type": "ordinal",
+          "options": [
+            "layernorms",
+            "query",
+            "decoder"
+          ]
+        }
+      }
+    }
+  ],
+  "metrics": [
+    {
+      "name": "F1",
+      "min": 0.0,
+      "max": 100.0,
+      "primary": true,
+      "format": ".2",
+      "unit": "%"
+    },
+    {
+      "name": "ExactMatch",
+      "min": 0.0,
+      "max": 100.0,
+      "primary": true,
+      "format": ".2",
+      "unit": "%"
+    },
+    {
+      "name": "Latency",
+      "min": 0.0,
+      "max": null,
+      "primary": true,
+      "unit": "ms"
+    },
+    {
+      "name": "Model Size",
+      "min": 0.0,
+      "max": null,
+      "primary": true,
+      "format": ".2~s"
+    },
+    {
+      "name": "Sparsity",
+      "min": 0.0,
+      "max": 1.0,
+      "primary": true,
+      "format": ".2%"
+    }
+  ],
+  "models": [
+    {
+      "id": "base",
+      "base": null,
+      "operation": null,
+      "metrics": {
+        "F1": 90.50212214901522,
+        "ExactMatch": 82.56385998107852,
+        "Latency": 4859.02421875,
+        "Model Size": 1384839463,
+        "Sparsity": 0.0
+      }
+    },
+    {
+      "id": "pruning0.1",
+      "base": "base",
+      "operation": {
+        "name": "Pruning",
+        "parameters": {
+          "sparsity": 0.1
+        }
+      },
+      "metrics": {
+        "F1": 4.035092605640649,
+        "ExactMatch": 1.5799432355723746,
+        "Latency": 5136.824658203125,
+        "Model Size": 1309496435,
+        "Sparsity": 0.0917067971938301
+      }
+    },
+    {
+      "id": "pruning0.3",
+      "base": "base",
+      "operation": {
+        "name": "Pruning",
+        "parameters": {
+          "sparsity": 0.3
+        }
+      },
+      "metrics": {
+        "F1": 0.1730669486987434,
+        "ExactMatch": 0.0,
+        "Latency": 5144.93603515625,
+        "Model Size": 1133515938,
+        "Sparsity": 0.2750506286818594
+      }
+    },
+    {
+      "id": "pruning0.5",
+      "base": "base",
+      "operation": {
+        "name": "Pruning",
+        "parameters": {
+          "sparsity": 0.5
+        }
+      },
+      "metrics": {
+        "F1": 0.07973026657984084,
+        "ExactMatch": 0.01892147587511826,
+        "Latency": 4565.979638671875,
+        "Model Size": 932185783,
+        "Sparsity": 0.4584406326535833
+      }
+    },
+    {
+      "id": "pruning0.7",
+      "base": "base",
+      "operation": {
+        "name": "Pruning",
+        "parameters": {
+          "sparsity": 0.7
+        }
+      },
+      "metrics": {
+        "F1": 0.0,
+        "ExactMatch": 0.02838221381267739,
+        "Latency": 5042.518896484375,
+        "Model Size": 701431695,
+        "Sparsity": 0.6413751811964041
+      }
+    },
+    {
+      "id": "pruning0.9",
+      "base": "base",
+      "operation": {
+        "name": "Pruning",
+        "parameters": {
+          "sparsity": 0.9
+        }
+      },
+      "metrics": {
+        "F1": 0.0,
+        "ExactMatch": 0.02838221381267739,
+        "Latency": 4944.721826171875,
+        "Model Size": 432875352,
+        "Sparsity": 0.8239242383604903
+      }
+    },
+    {
+      "id": "pruning0.1_restorelayernorms",
+      "base": "pruning0.1",
+      "operation": {
+        "name": "Restore",
+        "parameters": {
+          "layers": "layernorms"
+        }
+      },
+      "metrics": {
+        "F1": 90.3405903621207,
+        "ExactMatch": 82.36518448438979,
+        "Latency": 5377.508056640625,
+        "Model Size": 1309508346,
+        "Sparsity": 0.09169033269790182
+      }
+    },
+    {
+      "id": "pruning0.1_restorequery",
+      "base": "pruning0.1",
+      "operation": {
+        "name": "Restore",
+        "parameters": {
+          "layers": "query"
+        }
+      },
+      "metrics": {
+        "F1": 4.0945037154799815,
+        "ExactMatch": 1.598864711447493,
+        "Latency": 5434.75546875,
+        "Model Size": 1317635168,
+        "Sparsity": 0.08188063626401482
+      }
+    },
+    {
+      "id": "pruning0.1_restoredecoder",
+      "base": "pruning0.1",
+      "operation": {
+        "name": "Restore",
+        "parameters": {
+          "layers": "decoder"
+        }
+      },
+      "metrics": {
+        "F1": 29.601408386896672,
+        "ExactMatch": 20.586565752128667,
+        "Latency": 2995.1061767578126,
+        "Model Size": 1352617970,
+        "Sparsity": 0.03930382484191177
+      }
+    },
+    {
+      "id": "pruning0.3_restorelayernorms",
+      "base": "pruning0.3",
+      "operation": {
+        "name": "Restore",
+        "parameters": {
+          "layers": "layernorms"
+        }
+      },
+      "metrics": {
+        "F1": 89.89174623504232,
+        "ExactMatch": 81.11636707663197,
+        "Latency": 4226.54306640625,
+        "Model Size": 1133562053,
+        "Sparsity": 0.2750008925892882
+      }
+    },
+    {
+      "id": "pruning0.3_restorequery",
+      "base": "pruning0.3",
+      "operation": {
+        "name": "Restore",
+        "parameters": {
+          "layers": "query"
+        }
+      },
+      "metrics": {
+        "F1": 0.15783481575424724,
+        "ExactMatch": 0.0,
+        "Latency": 4186.861181640625,
+        "Model Size": 1160654484,
+        "Sparsity": 0.24557978831509208
+      }
+    },
+    {
+      "id": "pruning0.3_restoredecoder",
+      "base": "pruning0.3",
+      "operation": {
+        "name": "Restore",
+        "parameters": {
+          "layers": "decoder"
+        }
+      },
+      "metrics": {
+        "F1": 0.8980046669871968,
+        "ExactMatch": 0.03784295175023652,
+        "Latency": 4332.862744140625,
+        "Model Size": 1277254222,
+        "Sparsity": 0.11788546381462232
+      }
+    },
+    {
+      "id": "pruning0.5_restorelayernorms",
+      "base": "pruning0.5",
+      "operation": {
+        "name": "Restore",
+        "parameters": {
+          "layers": "layernorms"
+        }
+      },
+      "metrics": {
+        "F1": 8.461997683524704,
+        "ExactMatch": 0.1608325449385052,
+        "Latency": 4162.761889648437,
+        "Model Size": 932277427,
+        "Sparsity": 0.4583577067223295
+      }
+    },
+    {
+      "id": "pruning0.5_restorequery",
+      "base": "pruning0.5",
+      "operation": {
+        "name": "Restore",
+        "parameters": {
+          "layers": "query"
+        }
+      },
+      "metrics": {
+        "F1": 0.07735689098035362,
+        "ExactMatch": 0.01892147587511826,
+        "Latency": 4196.075146484375,
+        "Model Size": 980878012,
+        "Sparsity": 0.40933490174343895
+      }
+    },
+    {
+      "id": "pruning0.5_restoredecoder",
+      "base": "pruning0.5",
+      "operation": {
+        "name": "Restore",
+        "parameters": {
+          "layers": "decoder"
+        }
+      },
+      "metrics": {
+        "F1": 0.12084625800440463,
+        "ExactMatch": 0.00946073793755913,
+        "Latency": 4561.24013671875,
+        "Model Size": 1191012489,
+        "Sparsity": 0.19644343191118155
+      }
+    },
+    {
+      "id": "pruning0.1_restoredecoder_retrain",
+      "base": "pruning0.1_restoredecoder",
+      "operation": {
+        "name": "Retrain",
+        "parameters": {
+          "layers": "layernorms"
+        }
+      },
+      "metrics": {
+        "F1": 72.49270936036405,
+        "ExactMatch": 62.69631031220435,
+        "Latency": 3940.0481689453127,
+        "Model Size": 1352971660,
+        "Sparsity": 0.03930382484191177
+      }
+    },
+    {
+      "id": "pruning0.3_retrain",
+      "base": "pruning0.3",
+      "operation": {
+        "name": "Retrain",
+        "parameters": {
+          "layers": "layernorms"
+        }
+      },
+      "metrics": {
+        "F1": 0.1730669486987434,
+        "ExactMatch": 0.0,
+        "Latency": 4124.469653320312,
+        "Model Size": 1133515938,
+        "Sparsity": 0.30677670338114754
+      }
+    },
+    {
+      "id": "pruning0.3_restorelayernorms_retrain",
+      "base": "pruning0.3_restorelayernorms",
+      "operation": {
+        "name": "Retrain",
+        "parameters": {
+          "layers": "layernorms"
+        }
+      },
+      "metrics": {
+        "F1": 89.89174623504232,
+        "ExactMatch": 81.11636707663197,
+        "Latency": 4235.859521484375,
+        "Model Size": 1133562053,
+        "Sparsity": 0.2750008925892882
+      }
+    },
+    {
+      "id": "pruning0.1_retrain",
+      "base": "pruning0.1",
+      "operation": {
+        "name": "Retrain",
+        "parameters": {
+          "layers": "layernorms"
+        }
+      },
+      "metrics": {
+        "F1": 89.19300573311749,
+        "ExactMatch": 81.23935666982024,
+        "Latency": 5335.4474609375,
+        "Model Size": 1309873042,
+        "Sparsity": null
+      }
+    },
+    {
+      "id": "pruning0.1_restorelayernorms_retrain",
+      "base": "pruning0.1_restorelayernorms",
+      "operation": {
+        "name": "Retrain",
+        "parameters": {
+          "layers": "layernorms"
+        }
+      },
+      "metrics": {
+        "F1": 90.3405903621207,
+        "ExactMatch": 82.36518448438979,
+        "Latency": 5118.37822265625,
+        "Model Size": 1309508346,
+        "Sparsity": null
+      }
+    },
+    {
+      "id": "pruning0.5_retrain",
+      "base": "pruning0.5",
+      "operation": {
+        "name": "Retrain",
+        "parameters": {
+          "layers": "layernorms"
+        }
+      },
+      "metrics": {
+        "F1": 0.0,
+        "ExactMatch": 0.02838221381267739,
+        "Latency": 5215.42978515625,
+        "Model Size": 932067937,
+        "Sparsity": null
+      }
+    },
+    {
+      "id": "pruning0.5_restorelayernorms_retrain",
+      "base": "pruning0.5_restorelayernorms",
+      "operation": {
+        "name": "Retrain",
+        "parameters": {
+          "layers": "layernorms"
+        }
+      },
+      "metrics": {
+        "F1": 0.0,
+        "ExactMatch": 0.02838221381267739,
+        "Latency": 5394.546240234375,
+        "Model Size": 932067937,
+        "Sparsity": null
+      }
+    },
+    {
+      "id": "pruning0.7_restorelayernorms",
+      "base": "pruning0.7",
+      "operation": {
+        "name": "Restore",
+        "parameters": {
+          "layers": "layernorms"
+        }
+      },
+      "metrics": {
+        "F1": 0.09864110975747686,
+        "ExactMatch": 0.02838221381267739,
+        "Latency": 4612.677587890625,
+        "Model Size": 701554964,
+        "Sparsity": 0.6412599582753051
+      }
+    },
+    {
+      "id": "pruning0.7_retrain",
+      "base": "pruning0.7",
+      "operation": {
+        "name": "Retrain",
+        "parameters": {
+          "layers": "layernorms"
+        }
+      },
+      "metrics": {
+        "F1": 0.0,
+        "ExactMatch": 0.02838221381267739,
+        "Latency": 3601.8513671875,
+        "Model Size": 701921110,
+        "Sparsity": null
+      }
+    },
+    {
+      "id": "pruning0.7_restorelayernorms_retrain",
+      "base": "pruning0.7_restorelayernorms",
+      "operation": {
+        "name": "Retrain",
+        "parameters": {
+          "layers": "layernorms"
+        }
+      },
+      "metrics": {
+        "F1": 10.148693807814453,
+        "ExactMatch": 3.91674550614948,
+        "Latency": 3641.51044921875,
+        "Model Size": 701900868,
+        "Sparsity": null
+      }
+    },
+    {
+      "id": "pruning0.9_restorelayernorms",
+      "base": "pruning0.9",
+      "operation": {
+        "name": "Restore",
+        "parameters": {
+          "layers": "layernorms"
+        }
+      },
+      "metrics": {
+        "F1": 0.009771036650662672,
+        "ExactMatch": 0.01892147587511826,
+        "Latency": 5023.082958984375,
+        "Model Size": 433061837,
+        "Sparsity": 0.8237775593885671
+      }
+    },
+    {
+      "id": "pruning0.9_retrain",
+      "base": "pruning0.9",
+      "operation": {
+        "name": "Retrain",
+        "parameters": {
+          "layers": "layernorms"
+        }
+      },
+      "metrics": {
+        "F1": 0.0,
+        "ExactMatch": 0.02838221381267739,
+        "Latency": 5326.865087890625,
+        "Model Size": 432828314,
+        "Sparsity": null
+      }
+    },
+    {
+      "id": "pruning0.9_restorelayernorms_retrain",
+      "base": "pruning0.9_restorelayernorms",
+      "operation": {
+        "name": "Retrain",
+        "parameters": {
+          "layers": "layernorms"
+        }
+      },
+      "metrics": {
+        "F1": 0.0,
+        "ExactMatch": 0.02838221381267739,
+        "Latency": 3630.11298828125,
+        "Model Size": 433401811,
+        "Sparsity": null
+      }
+    },
+    {
+      "id": "pruning0.1_restorelayernorms_pruning0.3-feedforward",
+      "base": "pruning0.1_restorelayernorms",
+      "operation": {
+        "name": "Selective Pruning",
+        "parameters": {
+          "sparsity": 0.3,
+          "layers": "feedforward"
+        }
+      },
+      "metrics": {
+        "F1": 90.49142273953552,
+        "ExactMatch": 82.52601702932829,
+        "Latency": 5113.603955078125,
+        "Model Size": 1209259188,
+        "Sparsity": 0.1964023647579026
+      }
+    },
+    {
+      "id": "pruning0.1_restorelayernorms_pruning0.3-attention",
+      "base": "pruning0.1_restorelayernorms",
+      "operation": {
+        "name": "Selective Pruning",
+        "parameters": {
+          "sparsity": 0.3,
+          "layers": "attention"
+        }
+      },
+      "metrics": {
+        "F1": 89.93255976842367,
+        "ExactMatch": 81.21097445600756,
+        "Latency": 4244.531982421875,
+        "Model Size": 1233842892,
+        "Sparsity": 0.17028886052928743
+      }
+    },
+    {
+      "id": "pruning0.1_restorelayernorms_pruning0.4-feedforward",
+      "base": "pruning0.1_restorelayernorms",
+      "operation": {
+        "name": "Selective Pruning",
+        "parameters": {
+          "sparsity": 0.4,
+          "layers": "feedforward"
+        }
+      },
+      "metrics": {
+        "F1": 89.14958200503926,
+        "ExactMatch": 80.69063386944181,
+        "Latency": 4255.027661132813,
+        "Model Size": 1152723751,
+        "Sparsity": 0.24881760729260657
+      }
+    },
+    {
+      "id": "pruning0.1_restorelayernorms_pruning0.5-feedforward",
+      "base": "pruning0.1_restorelayernorms",
+      "operation": {
+        "name": "Selective Pruning",
+        "parameters": {
+          "sparsity": 0.5,
+          "layers": "feedforward"
+        }
+      },
+      "metrics": {
+        "F1": 19.591983438120288,
+        "ExactMatch": 0.6717123935666982,
+        "Latency": 5109.9021484375,
+        "Model Size": 1094313404,
+        "Sparsity": 0.3012206717844485
+      }
+    },
+    {
+      "id": "pruning0.1_restorelayernorms_pruning0.5-attention",
+      "base": "pruning0.1_restorelayernorms",
+      "operation": {
+        "name": "Selective Pruning",
+        "parameters": {
+          "sparsity": 0.5,
+          "layers": "attention"
+        }
+      },
+      "metrics": {
+        "F1": 85.04048310757294,
+        "ExactMatch": 74.61684011352885,
+        "Latency": 3854.74404296875,
+        "Model Size": 1147575401,
+        "Sparsity": 0.24882736763578278
+      }
+    },
+    {
+      "id": "pruning0.1_restorelayernorms_pruning0.7-feedforward",
+      "base": "pruning0.1_restorelayernorms",
+      "operation": {
+        "name": "Selective Pruning",
+        "parameters": {
+          "sparsity": 0.7,
+          "layers": "feedforward"
+        }
+      },
+      "metrics": {
+        "F1": 1.0401740900407594,
+        "ExactMatch": 0.05676442762535478,
+        "Latency": 4601.76943359375,
+        "Model Size": 962303731,
+        "Sparsity": 0.40573558669969184
+      }
+    },
+    {
+      "id": "pruning0.1_restorelayernorms_pruning0.7-attention",
+      "base": "pruning0.1_restorelayernorms",
+      "operation": {
+        "name": "Selective Pruning",
+        "parameters": {
+          "sparsity": 0.7,
+          "layers": "attention"
+        }
+      },
+      "metrics": {
+        "F1": 10.906546827521211,
+        "ExactMatch": 0.7284768211920529,
+        "Latency": 5110.8921875,
+        "Model Size": 1048988681,
+        "Sparsity": 0.32721470427351507
+      }
+    },
+    {
+      "id": "pruning0.3_restorelayernorms_pruning0.4-attention",
+      "base": "pruning0.3_restorelayernorms",
+      "operation": {
+        "name": "Selective Pruning",
+        "parameters": {
+          "sparsity": 0.4,
+          "layers": "attention"
+        }
+      },
+      "metrics": {
+        "F1": 88.65015740378928,
+        "ExactMatch": 79.45127719962157,
+        "Latency": 5064.278271484375,
+        "Model Size": 1091640615,
+        "Sparsity": 0.3142642926618955
+      }
+    },
+    {
+      "id": "pruning0.3_restorelayernorms_pruning0.5-attention",
+      "base": "pruning0.3_restorelayernorms",
+      "operation": {
+        "name": "Selective Pruning",
+        "parameters": {
+          "sparsity": 0.5,
+          "layers": "attention"
+        }
+      },
+      "metrics": {
+        "F1": 83.27073031423677,
+        "ExactMatch": 72.19489120151371,
+        "Latency": 4869.356689453125,
+        "Model Size": 1047277710,
+        "Sparsity": 0.3535393996957836
+      }
+    },
+    {
+      "id": "pruning0.3_restorelayernorms_pruning0.6-attention",
+      "base": "pruning0.3_restorelayernorms",
+      "operation": {
+        "name": "Selective Pruning",
+        "parameters": {
+          "sparsity": 0.6,
+          "layers": "attention"
+        }
+      },
+      "metrics": {
+        "F1": 54.16742475462048,
+        "ExactMatch": 37.852412488174075,
+        "Latency": 4684.007275390625,
+        "Model Size": 999291018,
+        "Sparsity": 0.3927354545684459
+      }
+    },
+    {
+      "id": "pruning0.3_restorelayernorms_pruning0.4-attention_pruning0.6-lateattention",
+      "base": "pruning0.3_restorelayernorms_pruning0.4-attention",
+      "operation": {
+        "name": "Selective Pruning",
+        "parameters": {
+          "sparsity": 0.6000000000000001,
+          "layers": "lateattention"
+        }
+      },
+      "metrics": {
+        "F1": 82.6699013546019,
+        "ExactMatch": 71.35288552507096,
+        "Latency": 5357.45986328125,
+        "Model Size": 1053145500,
+        "Sparsity": 0.34696316830358387
+      }
+    },
+    {
+      "id": "pruning0.3_restorelayernorms_pruning0.5-attention_pruning0.7-lateattention",
+      "base": "pruning0.3_restorelayernorms_pruning0.5-attention",
+      "operation": {
+        "name": "Selective Pruning",
+        "parameters": {
+          "sparsity": 0.7,
+          "layers": "lateattention"
+        }
+      },
+      "metrics": {
+        "F1": 54.78291391845052,
+        "ExactMatch": 40.54872280037843,
+        "Latency": 4072.6628173828126,
+        "Model Size": 1006107686,
+        "Sparsity": 0.38621817845216055
+      }
+    }
+  ]
+}

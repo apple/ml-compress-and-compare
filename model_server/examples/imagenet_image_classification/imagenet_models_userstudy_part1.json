@@ -1,0 +1,462 @@
+{
+    "metrics": [
+        {
+            "name": "Top-1 Accuracy",
+            "min": 0.0,
+            "max": 1.0,
+            "primary": true,
+            "format": ".2%"
+        },
+        {
+            "name": "Top-5 Accuracy",
+            "min": 0.0,
+            "max": 1.0,
+            "primary": true,
+            "format": ".2%"
+        },
+        {
+            "name": "Latency",
+            "min": 0.0,
+            "max": null,
+            "primary": true,
+            "unit": "ms"
+        },
+        {
+            "name": "Model Size",
+            "min": 0.0,
+            "max": null,
+            "primary": true,
+            "format": ".2~s"
+        },
+        {
+            "name": "Sparsity",
+            "min": 0.0,
+            "max": 1.0,
+            "primary": true,
+            "format": ".2%"
+        },
+        {
+            "name": "Epochs",
+            "min": 0,
+            "max": null,
+            "primary": true,
+            "format": "00"
+        }
+    ],
+    "operations": [
+        {
+            "name": "quantize",
+            "parameters": [
+                "amount",
+                "method"
+            ]
+        },
+        {
+            "name": "gradient prune",
+            "parameters": [
+                "amount"
+            ]
+        },
+        {
+            "name": "magnitude prune",
+            "parameters": [
+                "amount"
+            ]
+        },
+        {
+            "name": "calibrate",
+            "parameters": [
+                "data"
+            ]
+        },
+        {
+            "name": "train",
+            "parameters": [
+                "epochs"
+            ]
+        }
+    ],
+    "models": [
+        {
+            "id": "resnet50trained-gradientpruning75_compressed",
+            "base": "resnet50trained",
+            "operation": {
+                "name": "gradient prune",
+                "parameters": {
+                    "amount": 0.75
+                }
+            },
+            "tag": "Pruning (amount: 0.75, method: gradientpruning)",
+            "metrics": {
+                "Top-1 Accuracy": 0.00098504342232229,
+                "Top-5 Accuracy": 0.004925217111611451,
+                "Latency": 17792.3576171875,
+                "Model Size": 34892567,
+                "Sparsity": 0.75,
+                "Epochs": 90
+            }
+        },
+        {
+            "id": "resnet50trained-magnitudepruning75_compressed-recalibrated",
+            "base": "resnet50trained-magnitudepruning75_compressed",
+            "operation": {
+                "name": "calibrate",
+                "parameters": {
+                    "data": "train batch"
+                }
+            },
+            "tag": "Calibrate (data: train batch)",
+            "metrics": {
+                "Top-1 Accuracy": 0.6423287230620779,
+                "Top-5 Accuracy": 0.8599429076873593,
+                "Latency": 17980.90234375,
+                "Model Size": 34441501,
+                "Sparsity": 0.75,
+                "Epochs": 90
+            }
+        },
+        {
+            "id": "resnet50trained-gradientpruning75_compressed-retrained",
+            "base": "resnet50trained-gradientpruning75_compressed",
+            "operation": {
+                "name": "train",
+                "parameters": {
+                    "epochs": 30
+                }
+            },
+            "tag": "Train (epochs: 30)",
+            "metrics": {
+                "Top-1 Accuracy": 0.052247507237053716,
+                "Top-5 Accuracy": 0.10986249597941461,
+                "Latency": 18633.0208984375,
+                "Model Size": 34905762,
+                "Sparsity": 0.75,
+                "Epochs": 120
+            }
+        },
+        {
+            "id": "resnet50trained-gradientpruning90_compressed-recalibrated",
+            "base": "resnet50trained-gradientpruning90_compressed",
+            "operation": {
+                "name": "calibrate",
+                "parameters": {
+                    "data": "train batch"
+                }
+            },
+            "tag": "Calibrate (data: train batch)",
+            "metrics": {
+                "Top-1 Accuracy": 0.0012061756191701512,
+                "Top-5 Accuracy": 0.005206658089417819,
+                "Latency": 20925.1908203125,
+                "Model Size": 19309407,
+                "Sparsity": 0.9,
+                "Epochs": 90
+            }
+        },
+        {
+            "id": "resnet50trained_quantizeint8",
+            "base": "resnet50trained",
+            "operation": {
+                "name": "quantize",
+                "parameters": {
+                    "amount": "int8",
+                    "method": "quantize"
+                }
+            },
+            "tag": "Quantize (amount: int8, method: quantize)",
+            "metrics": {
+                "Top-1 Accuracy": 0.7885775168864587,
+                "Top-5 Accuracy": 0.9440133483435188,
+                "Latency": 2041.1813110351563,
+                "Model Size": 15526322,
+                "Sparsity": 0,
+                "Epochs": 90
+            }
+        },
+        {
+            "id": "resnet50trained",
+            "base": null,
+            "operation": {
+                "name": "train",
+                "parameters": {
+                    "epochs": 90
+                }
+            },
+            "tag": "",
+            "metrics": {
+                "Top-1 Accuracy": 0.8031923448054037,
+                "Top-5 Accuracy": 0.9512302991315535,
+                "Latency": 18155.1431640625,
+                "Model Size": 95246447,
+                "Sparsity": 0,
+                "Epochs": 90
+            }
+        },
+        {
+            "id": "resnet50trained-magnitudepruning75_compressed",
+            "base": "resnet50trained",
+            "operation": {
+                "name": "magnitude prune",
+                "parameters": {
+                    "amount": 0.75
+                }
+            },
+            "tag": "Pruning (amount: 0.75, method: magnitudepruning)",
+            "metrics": {
+                "Top-1 Accuracy": 0.1351720810550016,
+                "Top-5 Accuracy": 0.28142087487938244,
+                "Latency": 19056.1884765625,
+                "Model Size": 34442455,
+                "Sparsity": 0.75,
+                "Epochs": 90
+            }
+        },
+        {
+            "id": "resnet50trained-gradientpruning75_compressed-recalibrated",
+            "base": "resnet50trained-gradientpruning75_compressed",
+            "operation": {
+                "name": "calibrate",
+                "parameters": {
+                    "data": "train batch"
+                }
+            },
+            "tag": "Calibrate (data: train batch)",
+            "metrics": {
+                "Top-1 Accuracy": 0.0011257639112254745,
+                "Top-5 Accuracy": 0.0068148922483113545,
+                "Latency": 16511.13046875,
+                "Model Size": 34889270,
+                "Sparsity": 0.75,
+                "Epochs": 90
+            }
+        },
+        {
+            "id": "resnet50trained-gradientpruning90_compressed-retrained",
+            "base": "resnet50trained-gradientpruning90_compressed",
+            "operation": {
+                "name": "train",
+                "parameters": {
+                    "epochs": 30
+                }
+            },
+            "tag": "Train (epochs: 30)",
+            "metrics": {
+                "Top-1 Accuracy": 0.004060791251206176,
+                "Top-5 Accuracy": 0.015238018655516243,
+                "Latency": 16871.7716796875,
+                "Model Size": 19320457,
+                "Sparsity": 0.9,
+                "Epochs": 120
+            }
+        },
+        {
+            "id": "resnet50trained-magnitudepruning50_compressed-recalibrated",
+            "base": "resnet50trained-magnitudepruning50_compressed",
+            "operation": {
+                "name": "calibrate",
+                "parameters": {
+                    "data": "train batch"
+                }
+            },
+            "tag": "Calibrate (data: train batch)",
+            "metrics": {
+                "Top-1 Accuracy": 0.7501809263428755,
+                "Top-5 Accuracy": 0.9235485686715986,
+                "Latency": 18481.93974609375,
+                "Model Size": 57076933,
+                "Sparsity": 0.5,
+                "Epochs": 90
+            }
+        },
+        {
+            "id": "resnet50trained-gradientpruning90_compressed",
+            "base": "resnet50trained",
+            "operation": {
+                "name": "gradient prune",
+                "parameters": {
+                    "amount": 0.9
+                }
+            },
+            "tag": "Pruning (amount: 0.9, method: gradientpruning)",
+            "metrics": {
+                "Top-1 Accuracy": 0.00098504342232229,
+                "Top-5 Accuracy": 0.004925217111611451,
+                "Latency": 16439.70556640625,
+                "Model Size": 19329452,
+                "Sparsity": 0.9,
+                "Epochs": 90
+            }
+        },
+        {
+            "id": "resnet50trained-magnitudepruning50_compressed",
+            "base": "resnet50trained",
+            "operation": {
+                "name": "magnitude prune",
+                "parameters": {
+                    "amount": 0.5
+                }
+            },
+            "tag": "Pruning (amount: 0.5, method: magnitudepruning)",
+            "metrics": {
+                "Top-1 Accuracy": 0.727665648118366,
+                "Top-5 Accuracy": 0.9120697973624959,
+                "Latency": 18273.93193359375,
+                "Model Size": 57078653,
+                "Sparsity": 0.5,
+                "Epochs": 90
+            }
+        },
+        {
+            "id": "resnet50trained-magnitudepruning50_compressed-retrained",
+            "base": "resnet50trained-magnitudepruning50_compressed",
+            "operation": {
+                "name": "train",
+                "parameters": {
+                    "epochs": 30
+                }
+            },
+            "tag": "Train (epochs: 30)",
+            "metrics": {
+                "Top-1 Accuracy": 0.766283370858797,
+                "Top-5 Accuracy": 0.9308660340945641,
+                "Latency": 17321.52880859375,
+                "Model Size": 57139520,
+                "Sparsity": 0.5,
+                "Epochs": 120
+            }
+        },
+        {
+            "id": "resnet50trained-magnitudepruning75_compressed-retrained",
+            "base": "resnet50trained-magnitudepruning75_compressed",
+            "operation": {
+                "name": "train",
+                "parameters": {
+                    "epochs": 30
+                }
+            },
+            "tag": "Train (epochs: 30)",
+            "metrics": {
+                "Top-1 Accuracy": 0.7492561917015117,
+                "Top-5 Accuracy": 0.9235686715985848,
+                "Latency": 16850.0517578125,
+                "Model Size": 34554348,
+                "Sparsity": 0.75,
+                "Epochs": 120
+            }
+        },
+        {
+            "id": "resnet50trained-gradientpruning50_compressed",
+            "base": "resnet50trained",
+            "operation": {
+                "name": "gradient prune",
+                "parameters": {
+                    "amount": 0.5
+                }
+            },
+            "tag": "Pruning (amount: 0.5, method: gradientpruning)",
+            "metrics": {
+                "Top-1 Accuracy": 0.012865873271148279,
+                "Top-5 Accuracy": 0.037632679318108715,
+                "Latency": 19660.6455078125,
+                "Model Size": 57404672,
+                "Sparsity": 0.5,
+                "Epochs": 90
+            }
+        },
+        {
+            "id": "resnet50trained-gradientpruning50_compressed-recalibrated",
+            "base": "resnet50trained-gradientpruning50_compressed",
+            "operation": {
+                "name": "calibrate",
+                "parameters": {
+                    "data": "train batch"
+                }
+            },
+            "tag": "Calibrate (data: train batch)",
+            "metrics": {
+                "Top-1 Accuracy": 0.13247828883885493,
+                "Top-5 Accuracy": 0.17847378578321005,
+                "Latency": 17362.36494140625,
+                "Model Size": 57401513,
+                "Sparsity": 0.5,
+                "Epochs": 90
+            }
+        },
+        {
+            "id": "resnet50trained-gradientpruning50_compressed-retrained",
+            "base": "resnet50trained-gradientpruning50_compressed",
+            "operation": {
+                "name": "train",
+                "parameters": {
+                    "epochs": 30
+                }
+            },
+            "tag": "Train (epochs: 30)",
+            "metrics": {
+                "Top-1 Accuracy": 0.19109842393052429,
+                "Top-5 Accuracy": 0.21134207140559666,
+                "Latency": 19540.7287109375,
+                "Model Size": 57447006,
+                "Sparsity": 0.5,
+                "Epochs": 120
+            }
+        },
+        {
+            "id": "resnet50trained-magnitudepruning90_compressed",
+            "base": "resnet50trained",
+            "operation": {
+                "name": "magnitude prune",
+                "parameters": {
+                    "amount": 0.9
+                }
+            },
+            "tag": "Pruning (amount: 0.9, method: magnitudepruning)",
+            "metrics": {
+                "Top-1 Accuracy": 0.00098504342232229,
+                "Top-5 Accuracy": 0.004965422965583789,
+                "Latency": 16863.40517578125,
+                "Model Size": 18962198,
+                "Sparsity": 0.9,
+                "Epochs": 90
+            }
+        },
+        {
+            "id": "resnet50trained-magnitudepruning90_compressed-recalibrated",
+            "base": "resnet50trained-magnitudepruning90_compressed",
+            "operation": {
+                "name": "calibrate",
+                "parameters": {
+                    "data": "train batch"
+                }
+            },
+            "tag": "Calibrate (data: train batch)",
+            "metrics": {
+                "Top-1 Accuracy": 0.14154470890961723,
+                "Top-5 Accuracy": 0.3057655194596333,
+                "Latency": 15857.0728515625,
+                "Model Size": 18960611,
+                "Sparsity": 0.9,
+                "Epochs": 90
+            }
+        },
+        {
+            "id": "resnet50trained-magnitudepruning90_compressed-retrained",
+            "base": "resnet50trained-magnitudepruning90_compressed",
+            "operation": {
+                "name": "train",
+                "parameters": {
+                    "epochs": 30
+                }
+            },
+            "tag": "Train (epochs: 30)",
+            "metrics": {
+                "Top-1 Accuracy": 0.6732470247668061,
+                "Top-5 Accuracy": 0.8851720810550016,
+                "Latency": 14656.17998046875,
+                "Model Size": 19050239,
+                "Sparsity": 0.9,
+                "Epochs": 120
+            }
+        }
+    ]
+}

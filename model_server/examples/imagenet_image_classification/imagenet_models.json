@@ -1,0 +1,1094 @@
+{
+    "metrics": [
+        {
+            "name": "Top-1 Accuracy",
+            "min": 0.0,
+            "max": 1.0,
+            "primary": true,
+            "format": ".2%"
+        },
+        {
+            "name": "Top-5 Accuracy",
+            "min": 0.0,
+            "max": 1.0,
+            "primary": true,
+            "format": ".2%"
+        },
+        {
+            "name": "Latency",
+            "min": 0.0,
+            "max": null,
+            "primary": true,
+            "unit": "ms"
+        },
+        {
+            "name": "Model Size",
+            "min": 0.0,
+            "max": null,
+            "primary": true,
+            "format": ".2~s"
+        },
+        {
+            "name": "Sparsity",
+            "min": 0.0,
+            "max": 1.0,
+            "primary": true,
+            "format": ".2%"
+        },
+        {
+            "name": "Epochs",
+            "min": 0.0,
+            "max": null,
+            "primary": true
+        }
+    ],
+    "operations": [
+        {
+            "name": "magnitude prune",
+            "parameters": [
+                "amount"
+            ]
+        },
+        {
+            "name": "quantize",
+            "parameters": [
+                "amount",
+                "method"
+            ]
+        },
+        {
+            "name": "calibrate",
+            "parameters": [
+                "data"
+            ]
+        },
+        {
+            "name": "train",
+            "parameters": [
+                "epochs"
+            ]
+        },
+        {
+            "name": "gradient prune",
+            "parameters": [
+                "amount"
+            ]
+        }
+    ],
+    "models": [
+        {
+            "id": "resnet50trained-magnitudepruning50_compressed",
+            "base": "resnet50trained",
+            "operation": {
+                "name": "magnitude prune",
+                "parameters": {
+                    "amount": 0.5
+                }
+            },
+            "tag": "Magnitude Prune (amount: 0.5)",
+            "metrics": {
+                "Top-1 Accuracy": 0.72772,
+                "Top-5 Accuracy": 0.91208,
+                "Latency": 18771.16875,
+                "Model Size": 57078653,
+                "Sparsity": 0.5,
+                "Epochs": 90
+            }
+        },
+        {
+            "id": "resnet50trained-magnitudepruning50_compressed_quantizeint8",
+            "base": "resnet50trained-magnitudepruning50_compressed",
+            "operation": {
+                "name": "quantize",
+                "parameters": {
+                    "amount": "int8",
+                    "method": "quantize"
+                }
+            },
+            "tag": "Quantize (amount: int8, method: quantize)",
+            "metrics": {
+                "Top-1 Accuracy": 0.70048,
+                "Top-5 Accuracy": 0.89554,
+                "Latency": 2302.8529052734375,
+                "Model Size": 12728265,
+                "Sparsity": 0.5,
+                "Epochs": 90
+            }
+        },
+        {
+            "id": "resnet50trained-magnitudepruning75_compressed-recalibrated_quantizeint8",
+            "base": "resnet50trained-magnitudepruning75_compressed-recalibrated",
+            "operation": {
+                "name": "quantize",
+                "parameters": {
+                    "amount": "int8",
+                    "method": "quantize"
+                }
+            },
+            "tag": "Quantize (amount: int8, method: quantize)",
+            "metrics": {
+                "Top-1 Accuracy": 0.60852,
+                "Top-5 Accuracy": 0.83506,
+                "Latency": 2292.0232421875,
+                "Model Size": 8278005,
+                "Sparsity": 0.75,
+                "Epochs": 90
+            }
+        },
+        {
+            "id": "resnet50trained-magnitudepruning90_compressed_quantizeint8",
+            "base": "resnet50trained-magnitudepruning90_compressed",
+            "operation": {
+                "name": "quantize",
+                "parameters": {
+                    "amount": "int8",
+                    "method": "quantize"
+                }
+            },
+            "tag": "Quantize (amount: int8, method: quantize)",
+            "metrics": {
+                "Top-1 Accuracy": 0.001,
+                "Top-5 Accuracy": 0.005,
+                "Latency": 2434.079150390625,
+                "Model Size": 4185974,
+                "Sparsity": 0.9000000078340828,
+                "Epochs": 90
+            }
+        },
+        {
+            "id": "resnet50trained-magnitudepruning90_compressed-recalibrated_quantizeint8",
+            "base": "resnet50trained-magnitudepruning90_compressed-recalibrated",
+            "operation": {
+                "name": "quantize",
+                "parameters": {
+                    "amount": "int8",
+                    "method": "quantize"
+                }
+            },
+            "tag": "Quantize (amount: int8, method: quantize)",
+            "metrics": {
+                "Top-1 Accuracy": 0.11354,
+                "Top-5 Accuracy": 0.2585,
+                "Latency": 2341.6157958984377,
+                "Model Size": 4303951,
+                "Sparsity": 0.9000000078340828,
+                "Epochs": 90
+            }
+        },
+        {
+            "id": "resnet50trained-magnitudepruning90_compressed-retrained_quantizeint8",
+            "base": "resnet50trained-magnitudepruning90_compressed-retrained",
+            "operation": {
+                "name": "quantize",
+                "parameters": {
+                    "amount": "int8",
+                    "method": "quantize"
+                }
+            },
+            "tag": "Quantize (amount: int8, method: quantize)",
+            "metrics": {
+                "Top-1 Accuracy": 0.64202,
+                "Top-5 Accuracy": 0.86554,
+                "Latency": 2531.3167724609375,
+                "Model Size": 4471550,
+                "Sparsity": 0.9000000078340828,
+                "Epochs": 120
+            }
+        },
+        {
+            "id": "mobilenetv2trained-magnitudepruning25_compressed-recalibrated",
+            "base": "mobilenetv2trained-magnitudepruning25_compressed",
+            "operation": {
+                "name": "calibrate",
+                "parameters": {
+                    "data": "train batch"
+                }
+            },
+            "tag": "Calibrate (data: train batch)",
+            "metrics": {
+                "Top-1 Accuracy": 0.70254,
+                "Top-5 Accuracy": 0.89424,
+                "Latency": 8680.7375,
+                "Model Size": 10851309,
+                "Sparsity": 0.25,
+                "Epochs": 300
+            }
+        },
+        {
+            "id": "mobilenetv2trained-magnitudepruning25_compressed-recalibrated_quantizeint8",
+            "base": "mobilenetv2trained-magnitudepruning25_compressed-recalibrated",
+            "operation": {
+                "name": "quantize",
+                "parameters": {
+                    "amount": "int8",
+                    "method": "quantize"
+                }
+            },
+            "tag": "Quantize (amount: int8, method: quantize)",
+            "metrics": {
+                "Top-1 Accuracy": 0.57166,
+                "Top-5 Accuracy": 0.80296,
+                "Latency": 774.3695617675781,
+                "Model Size": 2677541,
+                "Sparsity": 0.25,
+                "Epochs": 300
+            }
+        },
+        {
+            "id": "mobilenetv2trained-magnitudepruning25_compressed-retrained",
+            "base": "mobilenetv2trained-magnitudepruning25_compressed",
+            "operation": {
+                "name": "train",
+                "parameters": {
+                    "epochs": 30
+                }
+            },
+            "tag": "Train (epochs: 30)",
+            "metrics": {
+                "Top-1 Accuracy": 0.71718,
+                "Top-5 Accuracy": 0.90266,
+                "Latency": 8445.279248046874,
+                "Model Size": 10854754,
+                "Sparsity": 0.25,
+                "Epochs": 330
+            }
+        },
+        {
+            "id": "mobilenetv2trained-magnitudepruning25_compressed-retrained_quantizeint8",
+            "base": "mobilenetv2trained-magnitudepruning25_compressed-retrained",
+            "operation": {
+                "name": "quantize",
+                "parameters": {
+                    "amount": "int8",
+                    "method": "quantize"
+                }
+            },
+            "tag": "Quantize (amount: int8, method: quantize)",
+            "metrics": {
+                "Top-1 Accuracy": 0.6109,
+                "Top-5 Accuracy": 0.82962,
+                "Latency": 984.1987182617188,
+                "Model Size": 2680330,
+                "Sparsity": 0.25,
+                "Epochs": 330
+            }
+        },
+        {
+            "id": "mobilenetv2trained-magnitudepruning25_compressed",
+            "base": "mobilenetv2trained",
+            "operation": {
+                "name": "magnitude prune",
+                "parameters": {
+                    "amount": 0.25
+                }
+            },
+            "tag": "Magnitude Prune (amount: 0.25)",
+            "metrics": {
+                "Top-1 Accuracy": 0.64614,
+                "Top-5 Accuracy": 0.86192,
+                "Latency": 9160.544775390625,
+                "Model Size": 10851604,
+                "Sparsity": 0.25,
+                "Epochs": 300
+            }
+        },
+        {
+            "id": "mobilenetv2trained-magnitudepruning25_compressed_quantizeint8",
+            "base": "mobilenetv2trained-magnitudepruning25_compressed",
+            "operation": {
+                "name": "quantize",
+                "parameters": {
+                    "amount": "int8",
+                    "method": "quantize"
+                }
+            },
+            "tag": "Quantize (amount: int8, method: quantize)",
+            "metrics": {
+                "Top-1 Accuracy": 0.53706,
+                "Top-5 Accuracy": 0.776,
+                "Latency": 641.8074890136719,
+                "Model Size": 2676459,
+                "Sparsity": 0.25,
+                "Epochs": 300
+            }
+        },
+        {
+            "id": "mobilenetv2trained",
+            "base": null,
+            "operation": {
+                "name": "train",
+                "parameters": {
+                    "epochs": 300
+                }
+            },
+            "tag": "Train (epochs: 300)",
+            "metrics": {
+                "Top-1 Accuracy": 0.7187,
+                "Top-5 Accuracy": 0.90294,
+                "Latency": 7830.56025390625,
+                "Model Size": 13131063,
+                "Sparsity": 0.0,
+                "Epochs": 300
+            }
+        },
+        {
+            "id": "mobilenetv2trained_quantizeint8",
+            "base": "mobilenetv2trained",
+            "operation": {
+                "name": "quantize",
+                "parameters": {
+                    "amount": "int8",
+                    "method": "quantize"
+                }
+            },
+            "tag": "Quantize (amount: int8, method: quantize)",
+            "metrics": {
+                "Top-1 Accuracy": 0.63508,
+                "Top-5 Accuracy": 0.84778,
+                "Latency": 643.0048400878907,
+                "Model Size": 2910130,
+                "Sparsity": 0.0,
+                "Epochs": 300
+            }
+        },
+        {
+            "id": "resnet50trained-gradientpruning50_compressed-recalibrated",
+            "base": "resnet50trained-gradientpruning50_compressed",
+            "operation": {
+                "name": "calibrate",
+                "parameters": {
+                    "data": "train batch"
+                }
+            },
+            "tag": "Calibrate (data: train batch)",
+            "metrics": {
+                "Top-1 Accuracy": 0.13438,
+                "Top-5 Accuracy": 0.18112,
+                "Latency": 17608.0943359375,
+                "Model Size": 57401513,
+                "Sparsity": 0.5,
+                "Epochs": 90
+            }
+        },
+        {
+            "id": "resnet50trained-gradientpruning50_compressed-recalibrated_quantizeint8",
+            "base": "resnet50trained-gradientpruning50_compressed-recalibrated",
+            "operation": {
+                "name": "quantize",
+                "parameters": {
+                    "amount": "int8",
+                    "method": "quantize"
+                }
+            },
+            "tag": "Quantize (amount: int8, method: quantize)",
+            "metrics": {
+                "Top-1 Accuracy": 0.1241,
+                "Top-5 Accuracy": 0.17208,
+                "Latency": 2450.1904296875,
+                "Model Size": 11266729,
+                "Sparsity": 0.5,
+                "Epochs": 90
+            }
+        },
+        {
+            "id": "resnet50trained-gradientpruning50_compressed-retrained",
+            "base": "resnet50trained-gradientpruning50_compressed",
+            "operation": {
+                "name": "train",
+                "parameters": {
+                    "epochs": 30
+                }
+            },
+            "tag": "Train (epochs: 30)",
+            "metrics": {
+                "Top-1 Accuracy": 0.19414,
+                "Top-5 Accuracy": 0.21444,
+                "Latency": 16962.18447265625,
+                "Model Size": 57447006,
+                "Sparsity": 0.5,
+                "Epochs": 120
+            }
+        },
+        {
+            "id": "resnet50trained-gradientpruning50_compressed-retrained_quantizeint8",
+            "base": "resnet50trained-gradientpruning50_compressed-retrained",
+            "operation": {
+                "name": "quantize",
+                "parameters": {
+                    "amount": "int8",
+                    "method": "quantize"
+                }
+            },
+            "tag": "Quantize (amount: int8, method: quantize)",
+            "metrics": {
+                "Top-1 Accuracy": 0.19032,
+                "Top-5 Accuracy": 0.21394,
+                "Latency": 2323.6254638671876,
+                "Model Size": 11257500,
+                "Sparsity": 0.5,
+                "Epochs": 120
+            }
+        },
+        {
+            "id": "resnet50trained-gradientpruning50_compressed",
+            "base": "resnet50trained",
+            "operation": {
+                "name": "gradient prune",
+                "parameters": {
+                    "amount": 0.5
+                }
+            },
+            "tag": "Gradient Prune (amount: 0.5)",
+            "metrics": {
+                "Top-1 Accuracy": 0.0131,
+                "Top-5 Accuracy": 0.03818,
+                "Latency": 18396.858984375,
+                "Model Size": 57404672,
+                "Sparsity": 0.5,
+                "Epochs": 90
+            }
+        },
+        {
+            "id": "resnet50trained-gradientpruning50_compressed_quantizeint8",
+            "base": "resnet50trained-gradientpruning50_compressed",
+            "operation": {
+                "name": "quantize",
+                "parameters": {
+                    "amount": "int8",
+                    "method": "quantize"
+                }
+            },
+            "tag": "Quantize (amount: int8, method: quantize)",
+            "metrics": {
+                "Top-1 Accuracy": 0.01156,
+                "Top-5 Accuracy": 0.0365,
+                "Latency": 2338.922021484375,
+                "Model Size": 11177861,
+                "Sparsity": 0.5,
+                "Epochs": 90
+            }
+        },
+        {
+            "id": "resnet50trained-gradientpruning75_compressed-recalibrated",
+            "base": "resnet50trained-gradientpruning75_compressed",
+            "operation": {
+                "name": "calibrate",
+                "parameters": {
+                    "data": "train batch"
+                }
+            },
+            "tag": "Calibrate (data: train batch)",
+            "metrics": {
+                "Top-1 Accuracy": 0.00114,
+                "Top-5 Accuracy": 0.0069,
+                "Latency": 18849.4595703125,
+                "Model Size": 34889270,
+                "Sparsity": 0.75,
+                "Epochs": 90
+            }
+        },
+        {
+            "id": "resnet50trained-gradientpruning75_compressed-recalibrated_quantizeint8",
+            "base": "resnet50trained-gradientpruning75_compressed-recalibrated",
+            "operation": {
+                "name": "quantize",
+                "parameters": {
+                    "amount": "int8",
+                    "method": "quantize"
+                }
+            },
+            "tag": "Quantize (amount: int8, method: quantize)",
+            "metrics": {
+                "Top-1 Accuracy": 0.00084,
+                "Top-5 Accuracy": 0.00576,
+                "Latency": 2283.1376220703123,
+                "Model Size": 3074316,
+                "Sparsity": 0.75,
+                "Epochs": 90
+            }
+        },
+        {
+            "id": "resnet50trained-gradientpruning75_compressed-retrained",
+            "base": "resnet50trained-gradientpruning75_compressed",
+            "operation": {
+                "name": "train",
+                "parameters": {
+                    "epochs": 30
+                }
+            },
+            "tag": "Train (epochs: 30)",
+            "metrics": {
+                "Top-1 Accuracy": 0.05312,
+                "Top-5 Accuracy": 0.11138,
+                "Latency": 18476.6041015625,
+                "Model Size": 34905762,
+                "Sparsity": 0.75,
+                "Epochs": 120
+            }
+        },
+        {
+            "id": "resnet50trained-gradientpruning75_compressed-retrained_quantizeint8",
+            "base": "resnet50trained-gradientpruning75_compressed-retrained",
+            "operation": {
+                "name": "quantize",
+                "parameters": {
+                    "amount": "int8",
+                    "method": "quantize"
+                }
+            },
+            "tag": "Quantize (amount: int8, method: quantize)",
+            "metrics": {
+                "Top-1 Accuracy": 0.00672,
+                "Top-5 Accuracy": 0.0214,
+                "Latency": 2270.663232421875,
+                "Model Size": 3090893,
+                "Sparsity": 0.75,
+                "Epochs": 120
+            }
+        },
+        {
+            "id": "resnet50trained-gradientpruning75_compressed",
+            "base": "resnet50trained",
+            "operation": {
+                "name": "gradient prune",
+                "parameters": {
+                    "amount": 0.75
+                }
+            },
+            "tag": "Gradient Prune (amount: 0.75)",
+            "metrics": {
+                "Top-1 Accuracy": 0.001,
+                "Top-5 Accuracy": 0.005,
+                "Latency": 18053.4431640625,
+                "Model Size": 34892567,
+                "Sparsity": 0.75,
+                "Epochs": 90
+            }
+        },
+        {
+            "id": "resnet50trained-gradientpruning75_compressed_quantizeint8",
+            "base": "resnet50trained-gradientpruning75_compressed",
+            "operation": {
+                "name": "quantize",
+                "parameters": {
+                    "amount": "int8",
+                    "method": "quantize"
+                }
+            },
+            "tag": "Quantize (amount: int8, method: quantize)",
+            "metrics": {
+                "Top-1 Accuracy": 0.001,
+                "Top-5 Accuracy": 0.005,
+                "Latency": 2272.552197265625,
+                "Model Size": 3144768,
+                "Sparsity": 0.75,
+                "Epochs": 90
+            }
+        },
+        {
+            "id": "resnet50trained-gradientpruning90_compressed-recalibrated",
+            "base": "resnet50trained-gradientpruning90_compressed",
+            "operation": {
+                "name": "calibrate",
+                "parameters": {
+                    "data": "train batch"
+                }
+            },
+            "tag": "Calibrate (data: train batch)",
+            "metrics": {
+                "Top-1 Accuracy": 0.00124,
+                "Top-5 Accuracy": 0.00526,
+                "Latency": 18286.6853515625,
+                "Model Size": 19309407,
+                "Sparsity": 0.9000000078340828,
+                "Epochs": 90
+            }
+        },
+        {
+            "id": "resnet50trained-gradientpruning90_compressed-recalibrated_quantizeint8",
+            "base": "resnet50trained-gradientpruning90_compressed-recalibrated",
+            "operation": {
+                "name": "quantize",
+                "parameters": {
+                    "amount": "int8",
+                    "method": "quantize"
+                }
+            },
+            "tag": "Quantize (amount: int8, method: quantize)",
+            "metrics": {
+                "Top-1 Accuracy": 0.001,
+                "Top-5 Accuracy": 0.00478,
+                "Latency": 2351.3748046875,
+                "Model Size": 738885,
+                "Sparsity": 0.9000000078340828,
+                "Epochs": 90
+            }
+        },
+        {
+            "id": "resnet50trained-gradientpruning90_compressed-retrained",
+            "base": "resnet50trained-gradientpruning90_compressed",
+            "operation": {
+                "name": "train",
+                "parameters": {
+                    "epochs": 30
+                }
+            },
+            "tag": "Train (epochs: 30)",
+            "metrics": {
+                "Top-1 Accuracy": 0.00414,
+                "Top-5 Accuracy": 0.01544,
+                "Latency": 18473.061328125,
+                "Model Size": 19320457,
+                "Sparsity": 0.9000000078340828,
+                "Epochs": 120
+            }
+        },
+        {
+            "id": "resnet50trained-gradientpruning90_compressed-retrained_quantizeint8",
+            "base": "resnet50trained-gradientpruning90_compressed-retrained",
+            "operation": {
+                "name": "quantize",
+                "parameters": {
+                    "amount": "int8",
+                    "method": "quantize"
+                }
+            },
+            "tag": "Quantize (amount: int8, method: quantize)",
+            "metrics": {
+                "Top-1 Accuracy": 0.001,
+                "Top-5 Accuracy": 0.00488,
+                "Latency": 2198.456506347656,
+                "Model Size": 754888,
+                "Sparsity": 0.9000000078340828,
+                "Epochs": 120
+            }
+        },
+        {
+            "id": "resnet50trained-gradientpruning90_compressed",
+            "base": "resnet50trained",
+            "operation": {
+                "name": "gradient prune",
+                "parameters": {
+                    "amount": 0.9
+                }
+            },
+            "tag": "Gradient Prune (amount: 0.9)",
+            "metrics": {
+                "Top-1 Accuracy": 0.001,
+                "Top-5 Accuracy": 0.005,
+                "Latency": 17725.6771484375,
+                "Model Size": 19329452,
+                "Sparsity": 0.9000000078340828,
+                "Epochs": 90
+            }
+        },
+        {
+            "id": "resnet50trained-gradientpruning90_compressed_quantizeint8",
+            "base": "resnet50trained-gradientpruning90_compressed",
+            "operation": {
+                "name": "quantize",
+                "parameters": {
+                    "amount": "int8",
+                    "method": "quantize"
+                }
+            },
+            "tag": "Quantize (amount: int8, method: quantize)",
+            "metrics": {
+                "Top-1 Accuracy": 0.001,
+                "Top-5 Accuracy": 0.005,
+                "Latency": 2220.368505859375,
+                "Model Size": 762602,
+                "Sparsity": 0.9000000078340828,
+                "Epochs": 90
+            }
+        },
+        {
+            "id": "resnet50trained-magnitudepruning50-magnitudepruning50_compressed-recalibrated",
+            "base": "resnet50trained-magnitudepruning50-magnitudepruning50_compressed",
+            "operation": {
+                "name": "calibrate",
+                "parameters": {
+                    "data": "train batch"
+                }
+            },
+            "tag": "Calibrate (data: train batch)",
+            "metrics": {
+                "Top-1 Accuracy": 0.66918,
+                "Top-5 Accuracy": 0.8759,
+                "Latency": 17805.4919921875,
+                "Model Size": 34477943,
+                "Sparsity": 0.75,
+                "Epochs": 120
+            }
+        },
+        {
+            "id": "resnet50trained-magnitudepruning50-magnitudepruning50_compressed-recalibrated_quantizeint8",
+            "base": "resnet50trained-magnitudepruning50-magnitudepruning50_compressed-recalibrated",
+            "operation": {
+                "name": "quantize",
+                "parameters": {
+                    "amount": "int8",
+                    "method": "quantize"
+                }
+            },
+            "tag": "Quantize (amount: int8, method: quantize)",
+            "metrics": {
+                "Top-1 Accuracy": 0.63532,
+                "Top-5 Accuracy": 0.85326,
+                "Latency": 2292.8422607421876,
+                "Model Size": 8307611,
+                "Sparsity": 0.75,
+                "Epochs": 120
+            }
+        },
+        {
+            "id": "resnet50trained-magnitudepruning50-magnitudepruning50_compressed-retrained",
+            "base": "resnet50trained-magnitudepruning50-magnitudepruning50_compressed",
+            "operation": {
+                "name": "train",
+                "parameters": {
+                    "epochs": 30
+                }
+            },
+            "tag": "Train (epochs: 30)",
+            "metrics": {
+                "Top-1 Accuracy": 0.73546,
+                "Top-5 Accuracy": 0.917,
+                "Latency": 17654.3173828125,
+                "Model Size": 34494805,
+                "Sparsity": 0.75,
+                "Epochs": 150
+            }
+        },
+        {
+            "id": "resnet50trained-magnitudepruning50-magnitudepruning50_compressed-retrained_quantizeint8",
+            "base": "resnet50trained-magnitudepruning50-magnitudepruning50_compressed-retrained",
+            "operation": {
+                "name": "quantize",
+                "parameters": {
+                    "amount": "int8",
+                    "method": "quantize"
+                }
+            },
+            "tag": "Quantize (amount: int8, method: quantize)",
+            "metrics": {
+                "Top-1 Accuracy": 0.71544,
+                "Top-5 Accuracy": 0.90646,
+                "Latency": 2251.033935546875,
+                "Model Size": 8349990,
+                "Sparsity": 0.75,
+                "Epochs": 150
+            }
+        },
+        {
+            "id": "resnet50trained-magnitudepruning50-magnitudepruning50_compressed",
+            "base": "resnet50trained-magnitudepruning50_compressed-retrained",
+            "operation": {
+                "name": "magnitude prune",
+                "parameters": {
+                    "amount": 0.5
+                }
+            },
+            "tag": "Magnitude Prune (amount: 0.5)",
+            "metrics": {
+                "Top-1 Accuracy": 0.2873,
+                "Top-5 Accuracy": 0.50112,
+                "Latency": 17601.3744140625,
+                "Model Size": 34477682,
+                "Sparsity": 0.75,
+                "Epochs": 120
+            }
+        },
+        {
+            "id": "resnet50trained-magnitudepruning50-magnitudepruning50_compressed_quantizeint8",
+            "base": "resnet50trained-magnitudepruning50-magnitudepruning50_compressed",
+            "operation": {
+                "name": "quantize",
+                "parameters": {
+                    "amount": "int8",
+                    "method": "quantize"
+                }
+            },
+            "tag": "Quantize (amount: int8, method: quantize)",
+            "metrics": {
+                "Top-1 Accuracy": 0.23254,
+                "Top-5 Accuracy": 0.42866,
+                "Latency": 2199.8767578125,
+                "Model Size": 8207052,
+                "Sparsity": 0.75,
+                "Epochs": 120
+            }
+        },
+        {
+            "id": "resnet50trained-magnitudepruning50_compressed-recalibrated",
+            "base": "resnet50trained-magnitudepruning50_compressed",
+            "operation": {
+                "name": "calibrate",
+                "parameters": {
+                    "data": "train batch"
+                }
+            },
+            "tag": "Calibrate (data: train batch)",
+            "metrics": {
+                "Top-1 Accuracy": 0.75032,
+                "Top-5 Accuracy": 0.92364,
+                "Latency": 17935.76875,
+                "Model Size": 57076933,
+                "Sparsity": 0.5,
+                "Epochs": 90
+            }
+        },
+        {
+            "id": "resnet50trained-magnitudepruning50_compressed-recalibrated_quantizeint8",
+            "base": "resnet50trained-magnitudepruning50_compressed-recalibrated",
+            "operation": {
+                "name": "quantize",
+                "parameters": {
+                    "amount": "int8",
+                    "method": "quantize"
+                }
+            },
+            "tag": "Quantize (amount: int8, method: quantize)",
+            "metrics": {
+                "Top-1 Accuracy": 0.73078,
+                "Top-5 Accuracy": 0.91338,
+                "Latency": 2224.7343505859376,
+                "Model Size": 12785707,
+                "Sparsity": 0.5,
+                "Epochs": 90
+            }
+        },
+        {
+            "id": "resnet50trained-magnitudepruning50_compressed-retrained",
+            "base": "resnet50trained-magnitudepruning50_compressed",
+            "operation": {
+                "name": "train",
+                "parameters": {
+                    "epochs": 30
+                }
+            },
+            "tag": "Train (epochs: 30)",
+            "metrics": {
+                "Top-1 Accuracy": 0.76654,
+                "Top-5 Accuracy": 0.93094,
+                "Latency": 18342.2380859375,
+                "Model Size": 57139520,
+                "Sparsity": 0.5,
+                "Epochs": 120
+            }
+        },
+        {
+            "id": "resnet50trained-magnitudepruning50_compressed-retrained_quantizeint8",
+            "base": "resnet50trained-magnitudepruning50_compressed-retrained",
+            "operation": {
+                "name": "quantize",
+                "parameters": {
+                    "amount": "int8",
+                    "method": "quantize"
+                }
+            },
+            "tag": "Quantize (amount: int8, method: quantize)",
+            "metrics": {
+                "Top-1 Accuracy": 0.74462,
+                "Top-5 Accuracy": 0.92162,
+                "Latency": 2262.014453125,
+                "Model Size": 12865889,
+                "Sparsity": 0.5,
+                "Epochs": 120
+            }
+        },
+        {
+            "id": "resnet50trained-magnitudepruning75_compressed-recalibrated",
+            "base": "resnet50trained-magnitudepruning75_compressed",
+            "operation": {
+                "name": "calibrate",
+                "parameters": {
+                    "data": "train batch"
+                }
+            },
+            "tag": "Calibrate (data: train batch)",
+            "metrics": {
+                "Top-1 Accuracy": 0.64244,
+                "Top-5 Accuracy": 0.86008,
+                "Latency": 15889.10556640625,
+                "Model Size": 34441501,
+                "Sparsity": 0.75,
+                "Epochs": 90
+            }
+        },
+        {
+            "id": "resnet50trained-magnitudepruning75_compressed-retrained",
+            "base": "resnet50trained-magnitudepruning75_compressed",
+            "operation": {
+                "name": "train",
+                "parameters": {
+                    "epochs": 30
+                }
+            },
+            "tag": "Train (epochs: 30)",
+            "metrics": {
+                "Top-1 Accuracy": 0.74938,
+                "Top-5 Accuracy": 0.92366,
+                "Latency": 17145.2560546875,
+                "Model Size": 34554348,
+                "Sparsity": 0.75,
+                "Epochs": 120
+            }
+        },
+        {
+            "id": "resnet50trained-magnitudepruning75_compressed-retrained_quantizeint8",
+            "base": "resnet50trained-magnitudepruning75_compressed-retrained",
+            "operation": {
+                "name": "quantize",
+                "parameters": {
+                    "amount": "int8",
+                    "method": "quantize"
+                }
+            },
+            "tag": "Quantize (amount: int8, method: quantize)",
+            "metrics": {
+                "Top-1 Accuracy": 0.72876,
+                "Top-5 Accuracy": 0.91182,
+                "Latency": 2404.4370849609377,
+                "Model Size": 8404454,
+                "Sparsity": 0.75,
+                "Epochs": 120
+            }
+        },
+        {
+            "id": "resnet50trained-magnitudepruning75_compressed",
+            "base": "resnet50trained",
+            "operation": {
+                "name": "magnitude prune",
+                "parameters": {
+                    "amount": 0.75
+                }
+            },
+            "tag": "Magnitude Prune (amount: 0.75)",
+            "metrics": {
+                "Top-1 Accuracy": 0.13512,
+                "Top-5 Accuracy": 0.2813,
+                "Latency": 17857.54375,
+                "Model Size": 34442455,
+                "Sparsity": 0.75,
+                "Epochs": 90
+            }
+        },
+        {
+            "id": "resnet50trained-magnitudepruning75_compressed_quantizeint8",
+            "base": "resnet50trained-magnitudepruning75_compressed",
+            "operation": {
+                "name": "quantize",
+                "parameters": {
+                    "amount": "int8",
+                    "method": "quantize"
+                }
+            },
+            "tag": "Quantize (amount: int8, method: quantize)",
+            "metrics": {
+                "Top-1 Accuracy": 0.11902,
+                "Top-5 Accuracy": 0.25176,
+                "Latency": 2420.164892578125,
+                "Model Size": 8152776,
+                "Sparsity": 0.75,
+                "Epochs": 90
+            }
+        },
+        {
+            "id": "resnet50trained-magnitudepruning90_compressed-recalibrated",
+            "base": "resnet50trained-magnitudepruning90_compressed",
+            "operation": {
+                "name": "calibrate",
+                "parameters": {
+                    "data": "train batch"
+                }
+            },
+            "tag": "Calibrate (data: train batch)",
+            "metrics": {
+                "Top-1 Accuracy": 0.14164,
+                "Top-5 Accuracy": 0.30586,
+                "Latency": 17295.26865234375,
+                "Model Size": 18960611,
+                "Sparsity": 0.9000000078340828,
+                "Epochs": 90
+            }
+        },
+        {
+            "id": "resnet50trained-magnitudepruning90_compressed-retrained",
+            "base": "resnet50trained-magnitudepruning90_compressed",
+            "operation": {
+                "name": "train",
+                "parameters": {
+                    "epochs": 30
+                }
+            },
+            "tag": "Train (epochs: 30)",
+            "metrics": {
+                "Top-1 Accuracy": 0.67366,
+                "Top-5 Accuracy": 0.88526,
+                "Latency": 17794.7369140625,
+                "Model Size": 19050239,
+                "Sparsity": 0.9000000078340828,
+                "Epochs": 120
+            }
+        },
+        {
+            "id": "resnet50trained-magnitudepruning90_compressed",
+            "base": "resnet50trained",
+            "operation": {
+                "name": "magnitude prune",
+                "parameters": {
+                    "amount": 0.9
+                }
+            },
+            "tag": "Magnitude Prune (amount: 0.9)",
+            "metrics": {
+                "Top-1 Accuracy": 0.001,
+                "Top-5 Accuracy": 0.005,
+                "Latency": 17698.33505859375,
+                "Model Size": 18962198,
+                "Sparsity": 0.9000000078340828,
+                "Epochs": 90
+            }
+        },
+        {
+            "id": "resnet50trained",
+            "base": null,
+            "operation": {
+                "name": "train",
+                "parameters": {
+                    "epochs": 90
+                }
+            },
+            "tag": "Train (epochs: 90)",
+            "metrics": {
+                "Top-1 Accuracy": 0.80346,
+                "Top-5 Accuracy": 0.95128,
+                "Latency": 17320.4017578125,
+                "Model Size": 95246447,
+                "Sparsity": 0.0,
+                "Epochs": 90
+            }
+        },
+        {
+            "id": "resnet50trained_quantizeint8",
+            "base": "resnet50trained",
+            "operation": {
+                "name": "quantize",
+                "parameters": {
+                    "amount": "int8",
+                    "method": "quantize"
+                }
+            },
+            "tag": "Quantize (amount: int8, method: quantize)",
+            "metrics": {
+                "Top-1 Accuracy": 0.78892,
+                "Top-5 Accuracy": 0.944,
+                "Latency": 2310.3682373046877,
+                "Model Size": 15526322,
+                "Sparsity": 0.0,
+                "Epochs": 90
+            }
+        }
+    ]
+}
