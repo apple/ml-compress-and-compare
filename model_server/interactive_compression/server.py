@@ -9,6 +9,7 @@ from flask_cors import CORS
 from flask_apscheduler import APScheduler
 from engineio.payload import Payload
 import pyarrow as pa
+import os
 from .sockets import SocketConnector
 from .components import LayerDetailComponent, InstanceDetailComponent, ModelMapComponent
 from .monitors import LocalModelMonitor
@@ -29,7 +30,7 @@ class SchedulerConfig:
     }
 
 
-def start_flask_server(model_info, task_runner=None, port=5001, debug=True):
+def start_flask_server(model_info, task_runner=None, port=5001, debug=True, secret_key=None):
     """
     Starts a server on localhost at the given port, which can provide information
     about the given models. This method will run continuously once called.
@@ -64,6 +65,10 @@ def start_flask_server(model_info, task_runner=None, port=5001, debug=True):
         task progress.
     :param port: Port on localhost at which to serve the model server.
     :param debug: Debug flag passed to socket.io.
+    :param secret_key: A secret key string to use for the Flask server. If not
+        provided, this method will check for a file in the current directory
+        called secret.txt and use it; if it doesn't exist, a random string will
+        be generated and saved at secret.txt.
     """
     if not debug:
         import eventlet
@@ -77,7 +82,15 @@ def start_flask_server(model_info, task_runner=None, port=5001, debug=True):
 
     app = Flask(__name__)
     app.config.from_object(SchedulerConfig())
-    app.config["SECRET_KEY"] = "b2c23fc5d6f62449cebbf60d6ebd1ccec31ea6e9"
+    if secret_key is None:
+        import secrets
+        if os.path.exists("secret.txt"):
+            with open("secret.txt", "r") as file: secret_key = file.read().strip()
+        else:
+            secret_key = secrets.token_urlsafe(32)
+            with open("secret.txt", "w") as file: file.write(secret_key)
+            
+    app.config["SECRET_KEY"] = secret_key
     socketio = SocketIO(
         app,
         cors_allowed_origins="*",

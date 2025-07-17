@@ -29,5 +29,7 @@ dist-ssr
 
 **/task_outputs
 **/dataset
+**/datasets
 **/models
 *.zip
+**/secret.txt
