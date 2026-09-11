@@ -55,10 +55,6 @@ The dashboard should now be visible at [`localhost:5173`](http://localhost:5173)
 
 By default the client connects to a model server located at `http://localhost:5001`. You can also connect the client to a different URL, such as a remote host, by clicking the **Connect to Model...** button in the top right of the web interface. Make sure that if running a model server remotely using Flask, you open your instance to incoming traffic by setting the `debug` parameter to `False` in your call to `start_flask_server`, and enable traffic on the selected port using something like `sudo ufw allow <PORT>` on your instance.
 
-## Contributing
-
-When making contributions, refer to the [`CONTRIBUTING`](CONTRIBUTING.md) guidelines and read the [`CODE OF CONDUCT`](CODE_OF_CONDUCT.md).
-
 ## BibTeX
 
 To cite our paper, please use:
